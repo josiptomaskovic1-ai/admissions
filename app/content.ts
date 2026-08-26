@@ -1,7 +1,7 @@
 export const translations = {
   bs: {
     localeName: 'Bosanski',
-    nav: { services: 'Usluge', process: 'Kako radimo', pricing: 'Cijene', faq: 'Pitanja', book: 'Zakažite razgovor' },
+    nav: { services: 'Usluge', process: 'Kako radimo', pricing: 'Cijene', faq: 'Pitanja', book: 'Zakažite razgovor', language: 'Jezik' },
     hero: {
       eyebrow: 'Evropske prijave · Balkan i dijaspora',
       titleA: 'Prava prijava ne počinje formularom.',
@@ -32,6 +32,7 @@ export const translations = {
       title: 'Podrška onoliko široka koliko vam zaista treba.',
       body: 'Počnite jednom strateškom sesijom ili radite s nama kroz cijeli prijavni ciklus.',
       cta: 'Razgovarajmo o vašem planu',
+      badge: 'Preporučeno',
       cards: [
         { name: 'Strateška konsultacija', price: '100 €', meta: '60 minuta', desc: 'Za konkretno pitanje, drugu procjenu ili odluku koju trebate donijeti sada.', bullets: ['Razgovor 1 na 1', 'Jasni naredni koraci'] },
         { name: 'Admissions Blueprint', price: '240 €', meta: 'fiksna cijena', desc: 'Procjena profila i pisani plan koji postavlja smjer cijelog procesa.', bullets: ['Analiza profila', 'Strateški razgovor', 'Pisani akcioni plan'] },
@@ -40,7 +41,7 @@ export const translations = {
       ],
     },
     process: {
-      kicker: 'Kako radimo',
+      kicker: 'Kako radimo', phase: 'Faza',
       title: 'Jedan proces. Tri jasne faze.',
       steps: [
         ['Upoznajemo vašu polaznu tačku', 'Profil, interesi, budžet, rokovi i ograničenja — bez uljepšavanja i bez generičnih savjeta.'],
@@ -62,7 +63,7 @@ export const translations = {
       body: 'Kompletni angažmani se najčešće kreću između 1.400 i 2.500 €, zavisno od broja programa, stipendija i složenosti procesa.',
       table: [
         ['Uvodni fit razgovor', '15 min', '0 €'],
-        ['Ekspertska konsultacija', '60 min', '100 €'],
+        ['Strateška konsultacija', '60 min', '100 €'],
         ['Profil i admissions strategija', 'od', '180 €'],
         ['Izbor univerziteta', 'od', '280 €'],
         ['Prva standardna prijava', 'od', '250 €'],
@@ -70,7 +71,7 @@ export const translations = {
         ['Priprema za intervju', 'od', '150 €'],
         ['Privatno mentorstvo', 'po satu', '110 €'],
       ],
-      note: 'Konačan obim usluge i cijenu potvrđujemo pisanim putem prije plaćanja.',
+      note: 'Stavke u tabeli su pojedinačne usluge; paketi iznad ih kombinuju po fiksnoj cijeni. Konačan obim usluge i cijenu potvrđujemo pisanim putem prije plaćanja.',
     },
     faq: {
       kicker: 'Česta pitanja',
@@ -96,11 +97,15 @@ export const translations = {
       line: 'Clarity for every step.',
       description: 'Nezavisno savjetovanje za međunarodne prijave na studije.',
       rights: 'Sva prava zadržana.',
+      email: 'kontakt@virela.com',
+      legalLabel: 'Impresum',
+      privacyLabel: 'Privatnost',
+      legalEntity: 'Virela Admissions',
     },
   },
   sr: {
     localeName: 'Srpski',
-    nav: { services: 'Usluge', process: 'Kako radimo', pricing: 'Cene', faq: 'Pitanja', book: 'Zakažite razgovor' },
+    nav: { services: 'Usluge', process: 'Kako radimo', pricing: 'Cene', faq: 'Pitanja', book: 'Zakažite razgovor', language: 'Jezik' },
     hero: {
       eyebrow: 'Evropske prijave · Balkan i dijaspora',
       titleA: 'Prava prijava ne počinje formularom.',
@@ -128,6 +133,7 @@ export const translations = {
     services: {
       kicker: 'Usluge', title: 'Podrška onoliko široka koliko vam zaista treba.',
       body: 'Počnite jednom strateškom sesijom ili radite s nama kroz ceo prijavni ciklus.', cta: 'Razgovarajmo o vašem planu',
+      badge: 'Preporučeno',
       cards: [
         { name: 'Strateška konsultacija', price: '100 €', meta: '60 minuta', desc: 'Za konkretno pitanje, drugo mišljenje ili odluku koju treba da donesete sada.', bullets: ['Razgovor 1 na 1', 'Jasni naredni koraci'] },
         { name: 'Admissions Blueprint', price: '240 €', meta: 'fiksna cena', desc: 'Procena profila i pisani plan koji postavlja smer celog procesa.', bullets: ['Analiza profila', 'Strateški razgovor', 'Pisani akcioni plan'] },
@@ -136,7 +142,7 @@ export const translations = {
       ],
     },
     process: {
-      kicker: 'Kako radimo', title: 'Jedan proces. Tri jasne faze.',
+      kicker: 'Kako radimo', phase: 'Faza', title: 'Jedan proces. Tri jasne faze.',
       steps: [
         ['Upoznajemo vašu polaznu tačku', 'Profil, interesovanja, budžet, rokovi i ograničenja — bez ulepšavanja i generičnih saveta.'],
         ['Mapiramo realan put', 'Prioriteti, uži izbor i konkretan plan rada zasnovan na vašem cilju.'],
@@ -154,12 +160,12 @@ export const translations = {
       kicker: 'Transparentne cene', title: 'Znate okvir pre prvog plaćanja.',
       body: 'Kompletni angažmani se najčešće kreću između 1.400 i 2.500 €, zavisno od broja programa, stipendija i složenosti procesa.',
       table: [
-        ['Uvodni fit razgovor', '15 min', '0 €'], ['Ekspertska konsultacija', '60 min', '100 €'],
+        ['Uvodni fit razgovor', '15 min', '0 €'], ['Strateška konsultacija', '60 min', '100 €'],
         ['Profil i admissions strategija', 'od', '180 €'], ['Izbor univerziteta', 'od', '280 €'],
         ['Prva standardna prijava', 'od', '250 €'], ['Scholarship advisory', 'od', '200 €'],
         ['Priprema za intervju', 'od', '150 €'], ['Privatno mentorstvo', 'po satu', '110 €'],
       ],
-      note: 'Konačan obim usluge i cenu potvrđujemo pisanim putem pre plaćanja.',
+      note: 'Stavke u tabeli su pojedinačne usluge; paketi iznad ih kombinuju po fiksnoj ceni. Konačan obim usluge i cenu potvrđujemo pisanim putem pre plaćanja.',
     },
     faq: {
       kicker: 'Česta pitanja', title: 'Pre nego što rezervišete.',
@@ -179,11 +185,11 @@ export const translations = {
       button: 'Otvori booking kalendar', pending: 'Cal.com kalendar spreman za povezivanje',
       paid: 'Za detaljnu procenu profila rezervišite stratešku konsultaciju od 60 minuta.',
     },
-    footer: { line: 'Clarity for every step.', description: 'Nezavisno savetovanje za međunarodne prijave na studije.', rights: 'Sva prava zadržana.' },
+    footer: { line: 'Clarity for every step.', description: 'Nezavisno savetovanje za međunarodne prijave na studije.', rights: 'Sva prava zadržana.', email: 'kontakt@virela.com', legalLabel: 'Impresum', privacyLabel: 'Privatnost', legalEntity: 'Virela Admissions' },
   },
   hr: {
     localeName: 'Hrvatski',
-    nav: { services: 'Usluge', process: 'Kako radimo', pricing: 'Cijene', faq: 'Pitanja', book: 'Rezervirajte razgovor' },
+    nav: { services: 'Usluge', process: 'Kako radimo', pricing: 'Cijene', faq: 'Pitanja', book: 'Rezervirajte razgovor', language: 'Jezik' },
     hero: {
       eyebrow: 'Europske prijave · Balkan i dijaspora', titleA: 'Prava prijava ne počinje obrascem.', titleB: 'Počinje smjerom.',
       body: 'Individualno, neovisno savjetovanje za studij u inozemstvu — od odabira programa do prijave koja jasno predstavlja tko ste.',
@@ -208,6 +214,7 @@ export const translations = {
     services: {
       kicker: 'Usluge', title: 'Podrška onoliko široka koliko vam doista treba.',
       body: 'Počnite jednom strateškom sesijom ili radite s nama kroz cijeli prijavni ciklus.', cta: 'Razgovarajmo o vašem planu',
+      badge: 'Preporučeno',
       cards: [
         { name: 'Strateško savjetovanje', price: '100 €', meta: '60 minuta', desc: 'Za konkretno pitanje, drugo mišljenje ili odluku koju trebate donijeti sada.', bullets: ['Razgovor 1 na 1', 'Jasni sljedeći koraci'] },
         { name: 'Admissions Blueprint', price: '240 €', meta: 'fiksna cijena', desc: 'Procjena profila i pisani plan koji postavlja smjer cijelog procesa.', bullets: ['Analiza profila', 'Strateški razgovor', 'Pisani akcijski plan'] },
@@ -216,7 +223,7 @@ export const translations = {
       ],
     },
     process: {
-      kicker: 'Kako radimo', title: 'Jedan proces. Tri jasne faze.',
+      kicker: 'Kako radimo', phase: 'Faza', title: 'Jedan proces. Tri jasne faze.',
       steps: [
         ['Upoznajemo vašu polaznu točku', 'Profil, interesi, budžet, rokovi i ograničenja — bez uljepšavanja i generičkih savjeta.'],
         ['Mapiramo realan put', 'Prioriteti, uži izbor i konkretan plan rada zasnovan na vašem cilju.'],
@@ -239,7 +246,7 @@ export const translations = {
         ['Prva standardna prijava', 'od', '250 €'], ['Savjetovanje za stipendije', 'od', '200 €'],
         ['Priprema za intervju', 'od', '150 €'], ['Privatno mentorstvo', 'po satu', '110 €'],
       ],
-      note: 'Konačan opseg usluge i cijenu potvrđujemo pisanim putem prije plaćanja.',
+      note: 'Stavke u tablici su pojedinačne usluge; paketi iznad ih kombiniraju po fiksnoj cijeni. Konačan opseg usluge i cijenu potvrđujemo pisanim putem prije plaćanja.',
     },
     faq: {
       kicker: 'Česta pitanja', title: 'Prije nego rezervirate.',
@@ -259,11 +266,11 @@ export const translations = {
       button: 'Otvori booking kalendar', pending: 'Cal.com kalendar spreman za povezivanje',
       paid: 'Za detaljnu procjenu profila rezervirajte strateško savjetovanje od 60 minuta.',
     },
-    footer: { line: 'Clarity for every step.', description: 'Neovisno savjetovanje za međunarodne prijave na studij.', rights: 'Sva prava pridržana.' },
+    footer: { line: 'Clarity for every step.', description: 'Neovisno savjetovanje za međunarodne prijave na studij.', rights: 'Sva prava pridržana.', email: 'kontakt@virela.com', legalLabel: 'Impresum', privacyLabel: 'Privatnost', legalEntity: 'Virela Admissions' },
   },
   en: {
     localeName: 'English',
-    nav: { services: 'Services', process: 'How it works', pricing: 'Pricing', faq: 'FAQ', book: 'Book a call' },
+    nav: { services: 'Services', process: 'How it works', pricing: 'Pricing', faq: 'FAQ', book: 'Book a call', language: 'Language' },
     hero: {
       eyebrow: 'European admissions · Balkans & diaspora', titleA: 'A strong application does not start with a form.', titleB: 'It starts with direction.',
       body: 'Independent, one-to-one guidance for studying abroad—from choosing the right programs to submitting an application that clearly represents who you are.',
@@ -288,6 +295,7 @@ export const translations = {
     services: {
       kicker: 'Services', title: 'Support as focused—or as complete—as you need.',
       body: 'Start with one strategic session or work with us throughout the application cycle.', cta: 'Discuss your plan',
+      badge: 'Recommended',
       cards: [
         { name: 'Strategy Consultation', price: '€100', meta: '60 minutes', desc: 'For a concrete question, a second opinion or a decision you need to make now.', bullets: ['One-to-one session', 'Clear next steps'] },
         { name: 'Admissions Blueprint', price: '€240', meta: 'fixed price', desc: 'A profile assessment and written plan that sets the direction for the process.', bullets: ['Profile analysis', 'Strategy session', 'Written action plan'] },
@@ -296,7 +304,7 @@ export const translations = {
       ],
     },
     process: {
-      kicker: 'How it works', title: 'One process. Three clear phases.',
+      kicker: 'How it works', phase: 'Phase', title: 'One process. Three clear phases.',
       steps: [
         ['Understand your starting point', 'Your profile, interests, budget, deadlines and constraints—with candour and without generic advice.'],
         ['Map a realistic route', 'Priorities, a reasoned shortlist and a concrete work plan built around your goal.'],
@@ -314,12 +322,12 @@ export const translations = {
       kicker: 'Transparent pricing', title: 'Know the range before you pay.',
       body: 'Complete engagements typically range from €1,400 to €2,500, depending on the number of programs, scholarship work and complexity.',
       table: [
-        ['Introductory fit call', '15 min', '€0'], ['Expert consultation', '60 min', '€100'],
+        ['Introductory fit call', '15 min', '€0'], ['Strategy Consultation', '60 min', '€100'],
         ['Profile & admissions strategy', 'from', '€180'], ['University selection', 'from', '€280'],
         ['First standard application', 'from', '€250'], ['Scholarship advisory', 'from', '€200'],
         ['Interview preparation', 'from', '€150'], ['Private mentoring', 'per hour', '€110'],
       ],
-      note: 'We confirm the final scope and fee in writing before payment.',
+      note: 'The table lists individual services; the packages above bundle them at a set price. We confirm the final scope and fee in writing before payment.',
     },
     faq: {
       kicker: 'Frequently asked', title: 'Before you book.',
@@ -339,11 +347,11 @@ export const translations = {
       button: 'Open booking calendar', pending: 'Cal.com calendar ready to connect',
       paid: 'For a detailed profile review, book a 60-minute strategy consultation.',
     },
-    footer: { line: 'Clarity for every step.', description: 'Independent guidance for international university applications.', rights: 'All rights reserved.' },
+    footer: { line: 'Clarity for every step.', description: 'Independent guidance for international university applications.', rights: 'All rights reserved.', email: 'kontakt@virela.com', legalLabel: 'Legal notice', privacyLabel: 'Privacy', legalEntity: 'Virela Admissions' },
   },
   de: {
     localeName: 'Deutsch',
-    nav: { services: 'Leistungen', process: 'Ablauf', pricing: 'Preise', faq: 'FAQ', book: 'Gespräch buchen' },
+    nav: { services: 'Leistungen', process: 'Ablauf', pricing: 'Preise', faq: 'FAQ', book: 'Gespräch buchen', language: 'Sprache' },
     hero: {
       eyebrow: 'Europäische Bewerbungen · Balkan & Diaspora', titleA: 'Eine starke Bewerbung beginnt nicht mit einem Formular.', titleB: 'Sie beginnt mit Orientierung.',
       body: 'Unabhängige, persönliche Beratung für ein Studium im Ausland – von der Auswahl passender Programme bis zu einer Bewerbung, die Sie klar und authentisch zeigt.',
@@ -368,6 +376,7 @@ export const translations = {
     services: {
       kicker: 'Leistungen', title: 'So fokussiert oder umfassend, wie Sie es benötigen.',
       body: 'Starten Sie mit einer Strategiesitzung oder arbeiten Sie mit uns durch den gesamten Bewerbungszyklus.', cta: 'Plan besprechen',
+      badge: 'Empfohlen',
       cards: [
         { name: 'Strategieberatung', price: '100 €', meta: '60 Minuten', desc: 'Für eine konkrete Frage, eine zweite Einschätzung oder eine anstehende Entscheidung.', bullets: ['Persönliches Gespräch', 'Klare nächste Schritte'] },
         { name: 'Admissions Blueprint', price: '240 €', meta: 'Festpreis', desc: 'Profilanalyse und schriftlicher Plan als Richtung für den gesamten Prozess.', bullets: ['Profilanalyse', 'Strategiegespräch', 'Schriftlicher Aktionsplan'] },
@@ -376,7 +385,7 @@ export const translations = {
       ],
     },
     process: {
-      kicker: 'So arbeiten wir', title: 'Ein Prozess. Drei klare Phasen.',
+      kicker: 'So arbeiten wir', phase: 'Phase', title: 'Ein Prozess. Drei klare Phasen.',
       steps: [
         ['Ausgangslage verstehen', 'Profil, Interessen, Budget, Fristen und Grenzen – ehrlich und ohne allgemeine Standardtipps.'],
         ['Einen realistischen Weg planen', 'Prioritäten, eine begründete Auswahl und ein konkreter Arbeitsplan für Ihr Ziel.'],
@@ -388,7 +397,7 @@ export const translations = {
       body: 'Unsere Empfehlungen basieren auf Ihrem Profil, Ihren Zielen, Ihrem Budget und Ihren Fristen. Wir versprechen keine Zulassung; wir schaffen einen Prozess, in dem jede Entscheidung begründet ist.',
       labels: [['01', 'Unabhängige Einschätzung'], ['02', 'Direkter Beraterkontakt'], ['03', 'Transparenter Umfang & Preis']],
       ethicsTitle: 'Ihre Bewerbung bleibt Ihre eigene.',
-      ethicsBody: 'Wir schreiben keine Essays für Bewerber:innen und versprechen weder Zulassung noch Stipendien. Wir geben Struktur, stellen die richtigen Fragen und liefern detailliertes Feedback.',
+      ethicsBody: 'Wir schreiben keine Essays für Bewerber:innen und versprechen weder Zulassung noch Stipendien. Wir geben Struktur, stellen die richtigen Fragen und liefern detailliertes Feedback, damit Sie Ihre Geschichte klar und authentisch darstellen können.',
     },
     pricing: {
       kicker: 'Transparente Preise', title: 'Kennen Sie den Rahmen vor der Zahlung.',
@@ -399,7 +408,7 @@ export const translations = {
         ['Erste Standardbewerbung', 'ab', '250 €'], ['Stipendienberatung', 'ab', '200 €'],
         ['Interviewvorbereitung', 'ab', '150 €'], ['Persönliches Mentoring', 'pro Std.', '110 €'],
       ],
-      note: 'Den endgültigen Umfang und Preis bestätigen wir vor der Zahlung schriftlich.',
+      note: 'Die Tabelle listet Einzelleistungen; die Pakete oben bündeln sie zu einem Festpreis. Den endgültigen Umfang und Preis bestätigen wir vor der Zahlung schriftlich.',
     },
     faq: {
       kicker: 'Häufige Fragen', title: 'Bevor Sie buchen.',
@@ -419,7 +428,7 @@ export const translations = {
       button: 'Buchungskalender öffnen', pending: 'Cal.com-Kalender bereit zur Verbindung',
       paid: 'Für eine ausführliche Profilanalyse buchen Sie eine 60-minütige Strategieberatung.',
     },
-    footer: { line: 'Klarheit bei jedem Schritt.', description: 'Unabhängige Beratung für internationale Hochschulbewerbungen.', rights: 'Alle Rechte vorbehalten.' },
+    footer: { line: 'Klarheit bei jedem Schritt.', description: 'Unabhängige Beratung für internationale Hochschulbewerbungen.', rights: 'Alle Rechte vorbehalten.', email: 'kontakt@virela.com', legalLabel: 'Impressum', privacyLabel: 'Datenschutz', legalEntity: 'Virela Admissions' },
   },
 } as const;
 
