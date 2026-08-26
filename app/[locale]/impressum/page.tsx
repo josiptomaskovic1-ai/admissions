@@ -9,10 +9,11 @@ export const metadata: Metadata = {
 // NOTE: The bracketed [ … ] values below are placeholders. Replace them with the
 // real registered operator details before publishing — this page is legally
 // required in the German-speaking market (DDG §5 / ECG §5) and recommended EU-wide.
-export default function ImpressumPage() {
+export default async function ImpressumPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
   return (
     <main className="legal-page">
-      <p className="legal-back"><Link href="/">← Virela Admissions</Link></p>
+      <p className="legal-back"><Link href={`/${locale}`}>← Virela Admissions</Link></p>
       <h1>Impressum / Legal notice</h1>
 
       <h2>Diensteanbieter / Service provider</h2>

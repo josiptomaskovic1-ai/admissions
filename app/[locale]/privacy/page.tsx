@@ -8,17 +8,18 @@ export const metadata: Metadata = {
 
 // NOTE: Template privacy policy. Replace bracketed [ … ] placeholders and have it
 // reviewed for your jurisdiction before publishing.
-export default function PrivacyPage() {
+export default async function PrivacyPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
   return (
     <main className="legal-page">
-      <p className="legal-back"><Link href="/">← Virela Admissions</Link></p>
+      <p className="legal-back"><Link href={`/${locale}`}>← Virela Admissions</Link></p>
       <h1>Privacy Policy / Datenschutzerklärung</h1>
 
       <h2>1. Controller</h2>
       <p>
         The controller responsible for data processing is [registered legal name],
         [address], e-mail <a href="mailto:kontakt@virela.com">kontakt@virela.com</a>.
-        See the <Link href="/impressum">Impressum</Link> for full details.
+        See the <Link href={`/${locale}/impressum`}>Impressum</Link> for full details.
       </p>
 
       <h2>2. What we process</h2>
@@ -34,10 +35,9 @@ export default function PrivacyPage() {
           address and content you send in order to reply.
         </li>
         <li>
-          <strong>Local storage.</strong> We store a single value,
-          <code> virela-locale</code>, in your browser&rsquo;s local storage to
-          remember your language preference. It is not sent to any server and is
-          not used for tracking.
+          <strong>Language preference.</strong> We store a single cookie,
+          <code> virela-locale</code>, to remember your language choice and route
+          you to the right language version. It is not used for tracking.
         </li>
       </ul>
 

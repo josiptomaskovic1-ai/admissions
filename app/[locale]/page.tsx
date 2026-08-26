@@ -1,23 +1,6 @@
-'use client';
-
-import { useEffect, useState } from 'react';
-import { Locale, translations } from './content';
-
-const languageLabels: Record<Locale, string> = {
-  bs: 'BS',
-  sr: 'SR',
-  hr: 'HR',
-  en: 'EN',
-  de: 'DE',
-};
-
-const htmlLanguages: Record<Locale, string> = {
-  bs: 'bs',
-  sr: 'sr-Latn',
-  hr: 'hr',
-  en: 'en',
-  de: 'de',
-};
+import { notFound } from 'next/navigation';
+import { Locale, translations } from '../content';
+import LocaleSwitcher from './LocaleSwitcher';
 
 const skipLabels: Record<Locale, string> = {
   bs: 'Preskoči na sadržaj',
@@ -37,27 +20,13 @@ const newTabLabels: Record<Locale, string> = {
 
 const calendarLink = process.env.NEXT_PUBLIC_CAL_LINK;
 
-export default function Home() {
-  const [locale, setLocale] = useState<Locale>('bs');
+const isLocale = (v: string): v is Locale => v in translations;
+
+export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  if (!isLocale(locale)) notFound();
   const t = translations[locale];
   const contactEmail = t.footer.email;
-
-  useEffect(() => {
-    const saved = window.localStorage.getItem('virela-locale') as Locale | null;
-    const detected = navigator.language.toLowerCase().split('-')[0] as Locale;
-    const next = saved && saved in translations ? saved : detected in translations ? detected : 'bs';
-    // One-time sync from a browser-only external store (localStorage + navigator)
-    // that cannot be read during SSR; runs only on mount.
-    // eslint-disable-next-line react-hooks/set-state-in-effect
-    setLocale(next);
-    document.documentElement.lang = htmlLanguages[next];
-  }, []);
-
-  const changeLanguage = (next: Locale) => {
-    setLocale(next);
-    document.documentElement.lang = htmlLanguages[next];
-    window.localStorage.setItem('virela-locale', next);
-  };
 
   return (
     <>
@@ -80,14 +49,7 @@ export default function Home() {
         </nav>
 
         <div className="header-actions">
-          <label className="language-control">
-            <span className="sr-only">{t.nav.language}</span>
-            <select value={locale} onChange={(event) => changeLanguage(event.target.value as Locale)}>
-              {(Object.keys(translations) as Locale[]).map((key) => (
-                <option value={key} key={key}>{languageLabels[key]}</option>
-              ))}
-            </select>
-          </label>
+          <LocaleSwitcher locale={locale} label={t.nav.language} />
           <a className="nav-cta" href="#booking">{t.nav.book}</a>
         </div>
       </header>
@@ -324,8 +286,8 @@ export default function Home() {
         <div className="footer-bottom">
           <span>© {new Date().getFullYear()} {t.footer.legalEntity}. {t.footer.rights}</span>
           <div>
-            <a href="/impressum">{t.footer.legalLabel}</a>
-            <a href="/privacy">{t.footer.privacyLabel}</a>
+            <a href={`/${locale}/impressum`}>{t.footer.legalLabel}</a>
+            <a href={`/${locale}/privacy`}>{t.footer.privacyLabel}</a>
             <a href="#booking">{t.nav.book}</a>
           </div>
         </div>
