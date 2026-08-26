@@ -145,6 +145,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
                   <strong>{card.price}</strong>
                   <span>{card.meta}</span>
                 </div>
+                {'featured' in card && card.featured && <p className="service-range">{t.services.featuredNote}</p>}
                 <p>{card.desc}</p>
                 <ul>
                   {card.bullets.map((bullet) => <li key={bullet}>{bullet}</li>)}
@@ -176,6 +177,21 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
         </div>
       </section>
 
+      <section className="about-section section-shell" id="about" aria-labelledby="about-title">
+        <div className="about-grid">
+          <div className="about-portrait" aria-hidden="true"><span>V</span></div>
+          <div className="about-copy">
+            <p className="section-kicker">{t.about.kicker}</p>
+            <h2 id="about-title">{t.about.title}</h2>
+            <p className="about-bio">{t.about.body}</p>
+            <p className="about-name"><strong>{t.about.name}</strong> · {t.about.role}</p>
+            <ul className="about-credentials">
+              {t.about.credentials.map((c, i) => <li key={i}>{c}</li>)}
+            </ul>
+          </div>
+        </div>
+      </section>
+
       <section className="principles-section" aria-labelledby="principles-title">
         <div className="principles-map" aria-hidden="true">
           <span className="principle-orbit orbit-a" />
@@ -197,6 +213,33 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
               <h3>{t.principles.ethicsTitle}</h3>
               <p>{t.principles.ethicsBody}</p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="proof-section section-shell" aria-labelledby="proof-title">
+        <div className="section-heading split-heading">
+          <div>
+            <p className="section-kicker">{t.proof.kicker}</p>
+            <h2 id="proof-title">{t.proof.title}</h2>
+          </div>
+          <p>{t.proof.body}</p>
+        </div>
+        <div className="proof-grid">
+          {t.proof.items.map((item, i) => (
+            <figure className="proof-card" key={i}>
+              <blockquote>{item.quote}</blockquote>
+              <figcaption>
+                <strong>{item.name}</strong>
+                <span>{item.detail}</span>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+        <div className="proof-placements">
+          <p className="section-kicker">{t.proof.placementsTitle}</p>
+          <div className="placement-row">
+            {t.proof.placements.map((p, i) => <span key={i}>{p}</span>)}
           </div>
         </div>
       </section>

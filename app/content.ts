@@ -33,6 +33,7 @@ export const translations = {
       body: 'Počnite jednom strateškom sesijom ili radite s nama kroz cijeli prijavni ciklus.',
       cta: 'Razgovarajmo o vašem planu',
       badge: 'Preporučeno',
+      featuredNote: '1.400–2.500 € za cijeli ciklus',
       cards: [
         { name: 'Strateška konsultacija', price: '100 €', meta: '60 minuta', desc: 'Za konkretno pitanje, drugu procjenu ili odluku koju trebate donijeti sada.', bullets: ['Razgovor 1 na 1', 'Jasni naredni koraci'] },
         { name: 'Admissions Blueprint', price: '240 €', meta: 'fiksna cijena', desc: 'Procjena profila i pisani plan koji postavlja smjer cijelog procesa.', bullets: ['Analiza profila', 'Strateški razgovor', 'Pisani akcioni plan'] },
@@ -56,6 +57,20 @@ export const translations = {
       labels: [['01', 'Nezavisna procjena'], ['02', 'Direktan rad sa savjetnikom'], ['03', 'Transparentan obim i cijena']],
       ethicsTitle: 'Vaša prijava ostaje vaša.',
       ethicsBody: 'Ne pišemo eseje umjesto kandidata i ne obećavamo prijem ili stipendiju. Dajemo strukturu, prava pitanja i povratne informacije kako biste svoju priču predstavili jasno i vjerodostojno.',
+    },
+    proof: {
+      kicker: 'Rezultati', title: 'Šta kažu kandidati.', body: 'Zamijenite ove primjere stvarnim izjavama i rezultatima prije objave.', placementsTitle: 'Prijem ostvaren na:',
+      items: [
+        { quote: '[Kratka izjava kandidata — zamijenite stvarnom]', name: '[Ime i inicijal]', detail: '[Program · Univerzitet · Godina]' },
+        { quote: '[Kratka izjava kandidata — zamijenite stvarnom]', name: '[Ime i inicijal]', detail: '[Program · Univerzitet · Godina]' },
+        { quote: '[Kratka izjava kandidata — zamijenite stvarnom]', name: '[Ime i inicijal]', detail: '[Program · Univerzitet · Godina]' },
+      ],
+      placements: ['[Univerzitet 1]', '[Univerzitet 2]', '[Univerzitet 3]', '[Univerzitet 4]'],
+    },
+    about: {
+      kicker: 'O nama', title: 'S kim radite.', body: '[Kratka biografija savjetnika: obrazovanje, iskustvo i zašto radite ovaj posao. Zamijenite stvarnim tekstom.]',
+      name: '[Ime savjetnika]', role: '[Uloga — npr. Osnivač i savjetnik]',
+      credentials: ['[Kvalifikacija ili iskustvo 1]', '[Kvalifikacija 2]', '[Broj kandidata / godine rada]'],
     },
     pricing: {
       kicker: 'Transparentne cijene',
@@ -134,6 +149,7 @@ export const translations = {
       kicker: 'Usluge', title: 'Podrška onoliko široka koliko vam zaista treba.',
       body: 'Počnite jednom strateškom sesijom ili radite s nama kroz ceo prijavni ciklus.', cta: 'Razgovarajmo o vašem planu',
       badge: 'Preporučeno',
+      featuredNote: '1.400–2.500 € za ceo ciklus',
       cards: [
         { name: 'Strateška konsultacija', price: '100 €', meta: '60 minuta', desc: 'Za konkretno pitanje, drugo mišljenje ili odluku koju treba da donesete sada.', bullets: ['Razgovor 1 na 1', 'Jasni naredni koraci'] },
         { name: 'Admissions Blueprint', price: '240 €', meta: 'fiksna cena', desc: 'Procena profila i pisani plan koji postavlja smer celog procesa.', bullets: ['Analiza profila', 'Strateški razgovor', 'Pisani akcioni plan'] },
@@ -155,6 +171,20 @@ export const translations = {
       labels: [['01', 'Nezavisna procena'], ['02', 'Direktan rad sa savetnikom'], ['03', 'Transparentan obim i cena']],
       ethicsTitle: 'Vaša prijava ostaje vaša.',
       ethicsBody: 'Ne pišemo eseje umesto kandidata i ne obećavamo prijem ili stipendiju. Dajemo strukturu, prava pitanja i povratne informacije kako biste svoju priču predstavili jasno i autentično.',
+    },
+    proof: {
+      kicker: 'Rezultati', title: 'Šta kažu kandidati.', body: 'Zamenite ove primere stvarnim izjavama i rezultatima pre objave.', placementsTitle: 'Prijem ostvaren na:',
+      items: [
+        { quote: '[Kratka izjava kandidata — zamenite stvarnom]', name: '[Ime i inicijal]', detail: '[Program · Univerzitet · Godina]' },
+        { quote: '[Kratka izjava kandidata — zamenite stvarnom]', name: '[Ime i inicijal]', detail: '[Program · Univerzitet · Godina]' },
+        { quote: '[Kratka izjava kandidata — zamenite stvarnom]', name: '[Ime i inicijal]', detail: '[Program · Univerzitet · Godina]' },
+      ],
+      placements: ['[Univerzitet 1]', '[Univerzitet 2]', '[Univerzitet 3]', '[Univerzitet 4]'],
+    },
+    about: {
+      kicker: 'O nama', title: 'S kim radite.', body: '[Kratka biografija savetnika: obrazovanje, iskustvo i zašto radite ovaj posao. Zamenite stvarnim tekstom.]',
+      name: '[Ime savetnika]', role: '[Uloga — npr. Osnivač i savetnik]',
+      credentials: ['[Kvalifikacija ili iskustvo 1]', '[Kvalifikacija 2]', '[Broj kandidata / godine rada]'],
     },
     pricing: {
       kicker: 'Transparentne cene', title: 'Znate okvir pre prvog plaćanja.',
@@ -215,6 +245,7 @@ export const translations = {
       kicker: 'Usluge', title: 'Podrška onoliko široka koliko vam doista treba.',
       body: 'Počnite jednom strateškom sesijom ili radite s nama kroz cijeli prijavni ciklus.', cta: 'Razgovarajmo o vašem planu',
       badge: 'Preporučeno',
+      featuredNote: '1.400–2.500 € za cijeli ciklus',
       cards: [
         { name: 'Strateško savjetovanje', price: '100 €', meta: '60 minuta', desc: 'Za konkretno pitanje, drugo mišljenje ili odluku koju trebate donijeti sada.', bullets: ['Razgovor 1 na 1', 'Jasni sljedeći koraci'] },
         { name: 'Admissions Blueprint', price: '240 €', meta: 'fiksna cijena', desc: 'Procjena profila i pisani plan koji postavlja smjer cijelog procesa.', bullets: ['Analiza profila', 'Strateški razgovor', 'Pisani akcijski plan'] },
@@ -236,6 +267,20 @@ export const translations = {
       labels: [['01', 'Neovisna procjena'], ['02', 'Izravan rad sa savjetnikom'], ['03', 'Transparentan opseg i cijena']],
       ethicsTitle: 'Vaša prijava ostaje vaša.',
       ethicsBody: 'Ne pišemo eseje umjesto kandidata i ne obećavamo upis ili stipendiju. Dajemo strukturu, prava pitanja i povratne informacije kako biste svoju priču predstavili jasno i autentično.',
+    },
+    proof: {
+      kicker: 'Rezultati', title: 'Što kažu kandidati.', body: 'Zamijenite ove primjere stvarnim izjavama i rezultatima prije objave.', placementsTitle: 'Upis ostvaren na:',
+      items: [
+        { quote: '[Kratka izjava kandidata — zamijenite stvarnom]', name: '[Ime i inicijal]', detail: '[Program · Sveučilište · Godina]' },
+        { quote: '[Kratka izjava kandidata — zamijenite stvarnom]', name: '[Ime i inicijal]', detail: '[Program · Sveučilište · Godina]' },
+        { quote: '[Kratka izjava kandidata — zamijenite stvarnom]', name: '[Ime i inicijal]', detail: '[Program · Sveučilište · Godina]' },
+      ],
+      placements: ['[Sveučilište 1]', '[Sveučilište 2]', '[Sveučilište 3]', '[Sveučilište 4]'],
+    },
+    about: {
+      kicker: 'O nama', title: 'S kim radite.', body: '[Kratki životopis savjetnika: obrazovanje, iskustvo i zašto radite ovaj posao. Zamijenite stvarnim tekstom.]',
+      name: '[Ime savjetnika]', role: '[Uloga — npr. Osnivač i savjetnik]',
+      credentials: ['[Kvalifikacija ili iskustvo 1]', '[Kvalifikacija 2]', '[Broj kandidata / godine rada]'],
     },
     pricing: {
       kicker: 'Transparentne cijene', title: 'Znate okvir prije prvog plaćanja.',
@@ -296,6 +341,7 @@ export const translations = {
       kicker: 'Services', title: 'Support as focused—or as complete—as you need.',
       body: 'Start with one strategic session or work with us throughout the application cycle.', cta: 'Discuss your plan',
       badge: 'Recommended',
+      featuredNote: '€1,400–€2,500 for the full cycle',
       cards: [
         { name: 'Strategy Consultation', price: '€100', meta: '60 minutes', desc: 'For a concrete question, a second opinion or a decision you need to make now.', bullets: ['One-to-one session', 'Clear next steps'] },
         { name: 'Admissions Blueprint', price: '€240', meta: 'fixed price', desc: 'A profile assessment and written plan that sets the direction for the process.', bullets: ['Profile analysis', 'Strategy session', 'Written action plan'] },
@@ -317,6 +363,20 @@ export const translations = {
       labels: [['01', 'Independent assessment'], ['02', 'Direct adviser access'], ['03', 'Transparent scope & fees']],
       ethicsTitle: 'Your application remains yours.',
       ethicsBody: 'We do not write essays for applicants or promise admission or scholarships. We provide structure, the right questions and detailed feedback so you can present your own story clearly and authentically.',
+    },
+    proof: {
+      kicker: 'Proof', title: 'What applicants say.', body: 'Replace these examples with real testimonials and outcomes before publishing.', placementsTitle: 'Admitted to:',
+      items: [
+        { quote: '[Short applicant testimonial — replace with a real one]', name: '[First name, initial]', detail: '[Program · University · Year]' },
+        { quote: '[Short applicant testimonial — replace with a real one]', name: '[First name, initial]', detail: '[Program · University · Year]' },
+        { quote: '[Short applicant testimonial — replace with a real one]', name: '[First name, initial]', detail: '[Program · University · Year]' },
+      ],
+      placements: ['[University 1]', '[University 2]', '[University 3]', '[University 4]'],
+    },
+    about: {
+      kicker: 'About', title: 'Who you work with.', body: '[Short adviser bio: background, experience and why you do this. Replace with real text.]',
+      name: '[Adviser name]', role: '[Role — e.g. Founder & adviser]',
+      credentials: ['[Qualification or experience 1]', '[Qualification 2]', '[Students advised / years]'],
     },
     pricing: {
       kicker: 'Transparent pricing', title: 'Know the range before you pay.',
@@ -377,6 +437,7 @@ export const translations = {
       kicker: 'Leistungen', title: 'So fokussiert oder umfassend, wie Sie es benötigen.',
       body: 'Starten Sie mit einer Strategiesitzung oder arbeiten Sie mit uns durch den gesamten Bewerbungszyklus.', cta: 'Plan besprechen',
       badge: 'Empfohlen',
+      featuredNote: '1.400–2.500 € für den ganzen Zyklus',
       cards: [
         { name: 'Strategieberatung', price: '100 €', meta: '60 Minuten', desc: 'Für eine konkrete Frage, eine zweite Einschätzung oder eine anstehende Entscheidung.', bullets: ['Persönliches Gespräch', 'Klare nächste Schritte'] },
         { name: 'Admissions Blueprint', price: '240 €', meta: 'Festpreis', desc: 'Profilanalyse und schriftlicher Plan als Richtung für den gesamten Prozess.', bullets: ['Profilanalyse', 'Strategiegespräch', 'Schriftlicher Aktionsplan'] },
@@ -398,6 +459,20 @@ export const translations = {
       labels: [['01', 'Unabhängige Einschätzung'], ['02', 'Direkter Beraterkontakt'], ['03', 'Transparenter Umfang & Preis']],
       ethicsTitle: 'Ihre Bewerbung bleibt Ihre eigene.',
       ethicsBody: 'Wir schreiben keine Essays für Bewerber:innen und versprechen weder Zulassung noch Stipendien. Wir geben Struktur, stellen die richtigen Fragen und liefern detailliertes Feedback, damit Sie Ihre Geschichte klar und authentisch darstellen können.',
+    },
+    proof: {
+      kicker: 'Ergebnisse', title: 'Was Bewerber:innen sagen.', body: 'Ersetzen Sie diese Beispiele vor der Veröffentlichung durch echte Stimmen und Ergebnisse.', placementsTitle: 'Zugelassen an:',
+      items: [
+        { quote: '[Kurzes Bewerber-Statement — durch ein echtes ersetzen]', name: '[Vorname, Initiale]', detail: '[Programm · Universität · Jahr]' },
+        { quote: '[Kurzes Bewerber-Statement — durch ein echtes ersetzen]', name: '[Vorname, Initiale]', detail: '[Programm · Universität · Jahr]' },
+        { quote: '[Kurzes Bewerber-Statement — durch ein echtes ersetzen]', name: '[Vorname, Initiale]', detail: '[Programm · Universität · Jahr]' },
+      ],
+      placements: ['[Universität 1]', '[Universität 2]', '[Universität 3]', '[Universität 4]'],
+    },
+    about: {
+      kicker: 'Über uns', title: 'Mit wem Sie arbeiten.', body: '[Kurze Beraterbiografie: Hintergrund, Erfahrung und warum Sie das tun. Durch echten Text ersetzen.]',
+      name: '[Name der Beraterin/des Beraters]', role: '[Rolle — z. B. Gründer:in & Berater:in]',
+      credentials: ['[Qualifikation oder Erfahrung 1]', '[Qualifikation 2]', '[Betreute Bewerber:innen / Jahre]'],
     },
     pricing: {
       kicker: 'Transparente Preise', title: 'Kennen Sie den Rahmen vor der Zahlung.',
