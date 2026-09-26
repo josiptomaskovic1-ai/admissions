@@ -13,12 +13,12 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const value = (await params).locale;
   const locale = isLocale(value) ? value : 'bs';
-  return pageMetadata(locale, '/privacy', utility[locale].privacyTitle, utility[locale].privacyLead);
+  return pageMetadata(locale, '/service-information', utility[locale].serviceTitle, utility[locale].serviceLead);
 }
 
-export default async function Privacy({ params }: Props) {
+export default async function ServiceInformation({ params }: Props) {
   const { locale } = await params;
   if (!isLocale(locale)) notFound();
-  return <LegalInfoPage locale={locale} kind="privacy" />;
+  return <LegalInfoPage locale={locale} kind="service-information" />;
 }
 

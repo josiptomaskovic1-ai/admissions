@@ -1,38 +1,14 @@
 import type { MetadataRoute } from 'next';
-
-const base = process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000';
-const LOCALES = ['bs', 'sr', 'hr', 'en', 'de'] as const;
-
-const languagesFor = (path: string) =>
-  Object.fromEntries(LOCALES.map((l) => [l, `${base}/${l}${path}`]));
+import { locales } from './i18n';
+import { publicLaunchReady, siteUrl } from './site-config';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const now = new Date();
-  const entries: MetadataRoute.Sitemap = [];
-
-  for (const locale of LOCALES) {
-    entries.push({
-      url: `${base}/${locale}`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 1,
-      alternates: { languages: languagesFor('') },
-    });
-    entries.push({
-      url: `${base}/${locale}/impressum`,
-      lastModified: now,
-      changeFrequency: 'yearly',
-      priority: 0.2,
-      alternates: { languages: languagesFor('/impressum') },
-    });
-    entries.push({
-      url: `${base}/${locale}/privacy`,
-      lastModified: now,
-      changeFrequency: 'yearly',
-      priority: 0.2,
-      alternates: { languages: languagesFor('/privacy') },
-    });
-  }
-
-  return entries;
+  if (!publicLaunchReady) return [];
+  const pages = ['', '/contact', '/privacy', '/service-information'];
+  return locales.flatMap((locale) => pages.map((page) => ({
+    url: `${siteUrl}/${locale}${page}`,
+    changeFrequency: page ? 'monthly' as const : 'weekly' as const,
+    priority: page ? 0.6 : 1,
+  })));
 }
+
