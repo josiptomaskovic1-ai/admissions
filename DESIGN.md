@@ -1,6 +1,6 @@
 ---
 version: alpha
-name: "Virela Admissions"
+name: "The Candidate Studio"
 description: "A compact, decision-led admissions consultancy site for Balkan students, families, and diaspora applicants targeting European universities."
 colors:
   primary: "#2F57FF"
@@ -59,7 +59,7 @@ components:
     height: "4.5rem"
 ---
 
-# Virela Admissions Design System
+# The Candidate Studio Design System
 
 ## Overview
 
@@ -69,7 +69,7 @@ The site should feel like a precise admissions decision desk: a calm, compact do
 
 ### Product context and register
 
-- **Audience and primary job:** Balkan and diaspora students, parents, and early-career applicants who need to understand Virela's fit, scope, pricing, and next step quickly.
+- **Audience and primary job:** Balkan and diaspora students, parents, and early-career applicants who need to understand The Candidate Studio's fit, scope, pricing, and next step quickly.
 - **Target markets:** Bosnia and Herzegovina, Serbia, Montenegro, Croatia, the wider Balkan diaspora, and English-, German-, and French-speaking European visitors.
 - **Locales:** Croatian, Bosnian/Bošnjački, Serbian/Montenegrin Latin, English, German, and French. Each language has a stable URL; Bosnian is the default. No browser storage is used for language selection.
 - **Usage scene:** Mostly mobile and small-laptop comparison shopping under deadline pressure. Users should see the proposition, starting price, ethics, and booking route without prolonged scrolling.

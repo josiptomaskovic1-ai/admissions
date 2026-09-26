@@ -1,14 +1,15 @@
 import type { Locale } from '../content';
 import { localeMeta, locales, utility } from '../i18n';
 import { translations } from '../content';
+import { brandName } from '../site-config';
 
 type PageKind = 'home' | 'contact' | 'privacy' | 'service-information';
 
 function Brand({ locale, footer = false }: { locale: Locale; footer?: boolean }) {
   return (
-    <a className={footer ? 'brand footer-brand' : 'brand'} href={`/${locale}`} aria-label="Virela Admissions">
-      <span className="brand-mark" aria-hidden="true">V</span>
-      <span className="brand-type"><strong>Virela</strong><small>Admissions</small></span>
+    <a className={footer ? 'brand footer-brand' : 'brand'} href={`/${locale}`} aria-label={brandName}>
+      <span className="brand-mark" aria-hidden="true">CS</span>
+      <span className="brand-type"><strong>The Candidate Studio</strong><small>Admissions advisory</small></span>
     </a>
   );
 }
@@ -67,7 +68,7 @@ export function SiteFooter({ locale }: { locale: Locale }) {
         <strong>{t.footer.line}</strong>
       </div>
       <div className="footer-bottom">
-        <span>© {new Date().getFullYear()} Virela Admissions. {t.footer.rights}</span>
+        <span>© {new Date().getFullYear()} {brandName}. {t.footer.rights}</span>
         <nav aria-label={u.navigation}>
           <a href={`/${locale}/contact`}>{u.contact}</a>
           <a href={`/${locale}/privacy`}>{u.privacy}</a>

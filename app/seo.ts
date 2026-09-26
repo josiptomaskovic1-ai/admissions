@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import type { Locale } from './content';
 import { localeMeta, locales } from './i18n';
-import { publicLaunchReady, siteUrl } from './site-config';
+import { brandName, publicLaunchReady, siteUrl } from './site-config';
 
 const seoCopy: Record<Locale, { title: string; description: string }> = {
   hr: { title: 'Savjetovanje za međunarodne prijave', description: 'Neovisno, individualno savjetovanje za bachelor i master prijave u Europi — za Balkan i dijasporu.' },
@@ -31,13 +31,12 @@ export function pageMetadata(locale: Locale, suffix = '', title?: string, descri
     openGraph: {
       type: 'website',
       url: canonical,
-      siteName: 'Virela Admissions',
+      siteName: brandName,
       locale: localeMeta[locale].hrefLang.replace('-', '_'),
-      title: `${pageTitle} | Virela Admissions`,
+      title: `${pageTitle} | ${brandName}`,
       description: pageDescription,
-      images: [{ url: `${siteUrl}/og.png`, width: 1200, height: 630, alt: 'Virela Admissions — Clarity for every step' }],
+      images: [{ url: `${siteUrl}/og.png`, width: 1200, height: 630, alt: `${brandName} — Clarity for every step` }],
     },
-    twitter: { card: 'summary_large_image', title: `${pageTitle} | Virela Admissions`, description: pageDescription, images: [`${siteUrl}/og.png`] },
+    twitter: { card: 'summary_large_image', title: `${pageTitle} | ${brandName}`, description: pageDescription, images: [`${siteUrl}/og.png`] },
   };
 }
-

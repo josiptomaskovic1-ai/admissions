@@ -180,7 +180,9 @@ h3 {
   background: var(--ink);
   color: var(--white);
   font-family: var(--font-display), Arial, sans-serif;
+  font-size: 0.72rem;
   font-weight: 800;
+  letter-spacing: -0.06em;
 }
 
 .brand-type {
@@ -190,7 +192,7 @@ h3 {
 
 .brand-type strong {
   font-family: var(--font-display), Arial, sans-serif;
-  font-size: 1.05rem;
+  font-size: 0.98rem;
   letter-spacing: -0.03em;
 }
 
@@ -1337,7 +1339,7 @@ h3 {
   .pricing-band,
   .closing-section,
   .contact-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .hero {
@@ -1360,6 +1362,17 @@ h3 {
   .split-heading,
   .services-heading {
     gap: 0.8rem;
+  }
+
+  .split-heading > *,
+  .services-heading > * {
+    min-width: 0;
+  }
+
+  .split-heading h2,
+  .services-heading h2 {
+    max-width: 100%;
+    overflow-wrap: anywhere;
   }
 
   .decision-grid {

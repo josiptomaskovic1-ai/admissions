@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import { Manrope, Syne } from 'next/font/google';
+import { brandName } from './site-config';
 
 const manrope = Manrope({
   variable: '--font-body',
@@ -16,8 +17,8 @@ export const bodyClassName = `${manrope.variable} ${syne.variable}`;
 export const siteMetadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'https://virela-admissions.friesenjung.chatgpt.site'),
   title: {
-    default: 'Virela Admissions',
-    template: '%s | Virela Admissions',
+    default: brandName,
+    template: `%s | ${brandName}`,
   },
   description: 'Independent, one-to-one guidance for European university applications.',
   keywords: ['university admissions', 'studije u inostranstvu', 'prijave na fakultet', 'scholarships', 'European universities', 'Balkans'],

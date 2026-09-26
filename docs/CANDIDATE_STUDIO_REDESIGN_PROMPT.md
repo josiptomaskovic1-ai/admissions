@@ -1,6 +1,6 @@
-# Virela Admissions — production redesign prompt
+# The Candidate Studio — production redesign prompt
 
-Use this prompt to review, redesign, test and ship the Virela Admissions website. Treat the existing repository as the source of truth and preserve user-owned work. Do not invent credentials, testimonials, acceptance rates, partnerships, office addresses, legal identities or outcomes.
+Use this prompt to review, redesign, test and ship The Candidate Studio website. Treat the existing repository as the source of truth and preserve user-owned work. Do not invent credentials, testimonials, acceptance rates, partnerships, office addresses, legal identities or outcomes.
 
 ## Objective
 
@@ -8,7 +8,7 @@ Create a premium, compact admissions-consultancy website that feels like a preci
 
 The site should answer five questions quickly:
 
-1. What does Virela do?
+1. What does The Candidate Studio do?
 2. Is it independent and ethical?
 3. What does it cost?
 4. Who will I meet and what happens next?
@@ -52,7 +52,7 @@ Do not create thin “SEO pages” merely to increase page count. Add About/Team
 
 Keep the team anonymous on the public page. Never publish names, personal profile links, portraits or uniquely identifying biographies without a separate explicit decision. Use only a short statement near booking/contact:
 
-> On the introductory call, clients meet members of the team, which combines strong international academic, research, economics and digital experience.
+> On the introductory call, clients meet one available member of the team. Together, the team brings strong international academic, research, economics and digital experience.
 
 Do not imply that every team member holds every qualification. Do not describe unverified admissions outcomes.
 
@@ -98,7 +98,7 @@ Apply these synthesized lessons:
 
 ## Content and integrity rules
 
-- State that Virela is independent and is not a university sales channel.
+- State that The Candidate Studio is independent and is not a university sales channel.
 - State that universities and scholarship bodies make final decisions.
 - Do not promise admission or scholarships.
 - Do not write essays for applicants; describe structure, questions and feedback.
@@ -109,9 +109,9 @@ Apply these synthesized lessons:
 
 ## Calendar, minors and privacy
 
-Keep Cal.com as an external link, not an embedded iframe. This prevents an unnecessary third-party tracker surface and keeps the page fast. Before activating it, require a valid event URL and complete the vendor/DPA review.
+Keep Cal.com as an external link behind the stable localized `/{locale}/book` route, not an embedded iframe. Use one 20-minute team round-robin event with a 10-minute post-call buffer, 24 hours' minimum notice, a rolling 21-day booking window and least-recently-booked assignment. Before activating it, require a valid event URL, connect all three advisers' calendars, complete the vendor/DPA review and pass real conflict/assignment tests.
 
-Applicants under 18 must be told that a parent or guardian should book using their own details and attend the call. Do not request sensitive personal information in booking notes.
+Applicants under 18 must be told that a parent or guardian should book using their own name and email and attend the call. The scheduling form must not request a minor's name, date of birth, school, grades, transcripts or other sensitive material.
 
 Do not show a cookie banner when the site uses no non-essential cookies, analytics, advertising, embedded calendar or browser storage. Instead, publish an accurate privacy/cookie page. If analytics, retargeting, embedded scheduling, chat or video is later added, re-audit storage, consent and disclosures before release.
 

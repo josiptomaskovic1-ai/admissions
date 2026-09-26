@@ -1,16 +1,16 @@
 import type { Locale } from '../content';
 import { translations } from '../content';
 import { utility } from '../i18n';
-import { calendarLink, siteUrl } from '../site-config';
+import { brandName, calendarLink, siteUrl } from '../site-config';
 import { SiteFooter, SiteHeader } from './SiteChrome';
 
-export function VirelaPage({ locale }: { locale: Locale }) {
+export function HomePage({ locale }: { locale: Locale }) {
   const t = translations[locale];
   const u = utility[locale];
   const structuredData = {
     '@context': 'https://schema.org',
     '@type': 'ProfessionalService',
-    name: 'Virela Admissions',
+    name: brandName,
     url: `${siteUrl}/${locale}`,
     description: t.footer.description,
     areaServed: ['Europe', 'Balkans'],
@@ -125,7 +125,7 @@ export function VirelaPage({ locale }: { locale: Locale }) {
               <div><dt>{t.booking.location}</dt><dd>{t.booking.timezone}</dd></div>
             </dl>
             {calendarLink ? (
-              <a className="button button-primary booking-button" href={calendarLink} target="_blank" rel="noopener noreferrer">{t.booking.button}<span className="sr-only"> — {u.external}</span><span aria-hidden="true">↗</span></a>
+              <a className="button button-primary booking-button" href={`/${locale}/book`} target="_blank" rel="noopener noreferrer">{t.booking.button}<span className="sr-only"> — {u.external}</span><span aria-hidden="true">↗</span></a>
             ) : (
               <span className="button booking-button disabled" aria-disabled="true">{u.unavailable}</span>
             )}

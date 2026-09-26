@@ -1,4 +1,4 @@
-# Virela Admissions — redesign and launch-readiness audit
+# The Candidate Studio — redesign and launch-readiness audit
 
 Audit date: 2026-09-26  
 Status: technically release-ready as a private, non-indexed preview; not yet legally ready for public commercial launch.
@@ -11,14 +11,14 @@ Measured page length:
 
 - Before: 11,039 px at a 648 × 790 browser viewport.
 - After: 5,138 px at a comparable 663 × 790 viewport (53% shorter).
-- After: 3,710 px at a 1,280 × 720 laptop viewport.
-- After: 7,019 px at 390 × 844, with no horizontal overflow and the primary CTA inside the first viewport.
+- After: 3,845 px at a 1,280 × 720 laptop viewport.
+- After: 6,502 px at 390 × 844, with no horizontal overflow and the primary CTA inside the first viewport.
 
-There is no meaningful universal “average website length.” The practical target is the shortest page that resolves the visitor’s decision. Virela now uses four homepage bands; further content is split only where it represents a distinct task (contact, privacy, service information). About/team, results and individual service pages should wait until there is verified, non-anonymous source material substantial enough to avoid thin pages.
+There is no meaningful universal “average website length.” The practical target is the shortest page that resolves the visitor’s decision. The Candidate Studio now uses four homepage bands; further content is split only where it represents a distinct task (contact, privacy, service information). About/team, results and individual service pages should wait until there is verified, non-anonymous source material substantial enough to avoid thin pages.
 
 ## International competitor benchmark
 
-| Consultancy | Official site | Pattern studied | Virela decision |
+| Consultancy | Official site | Pattern studied | The Candidate Studio decision |
 |---|---|---|---|
 | Crimson Education | https://www.crimsoneducation.org/us | Strong proposition and high conversion focus | Keep one dominant CTA, but avoid inflated proof density |
 | IvyWise | https://www.ivywise.com/ | Established editorial authority | Use calm authority without creating a long article-like homepage |
@@ -66,7 +66,7 @@ Resolved:
 - Replaced the map/globe social image with a route-led 1200 × 630 asset.
 - Reduced the social image from 1.49 MB to 24 KB.
 - Added an honest inactive booking state when no Cal.com URL is configured.
-- Added a short anonymous team note near booking/contact. It describes combined international academic, research, economics and digital experience without names, profile links, credentials or uniquely identifying biographies.
+- Added a short anonymous team note near booking/contact. It explains that the introductory caller meets one available team member and describes the team's combined international academic, research, economics and digital experience without names, profile links, credentials or uniquely identifying biographies.
 
 Deliberately not added:
 
@@ -109,12 +109,12 @@ Results:
 
 Production-build Lighthouse (simulated mobile):
 
-- Performance: 87/100
+- Performance: 90/100
 - Accessibility: 100/100
 - Best practices: 100/100
 - SEO: 66/100 because indexing is intentionally disabled
-- First Contentful Paint: 2.4 s
-- Largest Contentful Paint: 3.6 s
+- First Contentful Paint: 2.1 s
+- Largest Contentful Paint: 3.4 s
 - Total Blocking Time: 0 ms
 - Cumulative Layout Shift: 0
 
@@ -130,6 +130,38 @@ Automated engineering results:
 - DESIGN.md linter: 0 errors, 0 warnings
 - Security headers verified in production build: `X-Content-Type-Options`, `X-Frame-Options`, `Referrer-Policy`, `Permissions-Policy`, `Cross-Origin-Opener-Policy`; `X-Powered-By` removed
 
+## Introductory call and pricing audit
+
+The client-facing introductory call is set to 20 minutes, followed by an internal 10-minute buffer. This sits between the 15-minute fit call used by Ivy Coach and the 30-minute introductory calls used by InGenius Prep, Collegewise and Accepted. Twenty minutes is long enough to establish the applicant's study level, target countries, timing, needs and mutual fit without turning the free call into a detailed profile evaluation. The buffer preserves a simple 30-minute operating block for the adviser.
+
+Call-duration sources checked on 2026-09-26:
+
+- Ivy Coach, free 15-minute consultation: https://www.ivycoach.com/admissions-counseling/college-admissions-counseling/
+- InGenius Prep, free 30-minute consultation: https://ingeniusprep.com/free-consultation/
+- Collegewise, free 30-minute consultation: https://collegewise.com/online
+- Accepted, free 30-minute consultation: https://www.accepted.com/about/team/
+
+The launch pricing is internally aligned as follows:
+
+| Service | Launch price | Scope signal |
+|---|---:|---|
+| Introductory fit call | 0 € | 20 minutes; fit and routing only |
+| Expert/strategy consultation | 100 € | 60 minutes |
+| Admissions Blueprint | 240 € | fixed price; profile inputs, session and written plan |
+| University Direction | from 490 € | up to eight programs, deadline/cost map and one revision |
+| Full Application Partnership | 1,400–2,500 € | tightly scoped European application cycle |
+
+The 100 € consultation and 240 € blueprint are deliberately accessible regional launch prices. The full-support range is materially below the international premium consultancies reviewed, so it requires explicit limits: up to four European programs, two review rounds per agreed document and a defined support period. US/UK-heavy work, additional applications and substantial scholarship work should be quoted separately.
+
+Pricing comparators checked on 2026-09-26:
+
+- Collegewise lists comprehensive packages at USD 8,000–15,000 and higher-touch tiers above that range: https://collegewise.com/
+- Accepted lists a two-hour college package at USD 840 by card and additional hours at USD 420: https://shop.accepted.com/products/college-application-hourly-services
+- Oxbridge Applications lists a 75-minute consultation with report at GBP 395 and publishes separate service fees: https://oxbridgeapplications.com/about-us/fees/
+- The Profs lists admissions tuition from GBP 150 per hour plus a placement fee and minimum engagement: https://www.theprofs.co.uk/university-admissions/
+
+These comparisons support the launch positioning; they are not claims that the services are identical. Final scope and price must be confirmed in writing before payment. The expanded price table must distinguish its first four core rows from the remaining standalone tasks and add-ons so lower task prices are not mistaken for package prices.
+
 ## Privacy, cookies and calendar audit
 
 Current implementation:
@@ -139,18 +171,31 @@ Current implementation:
 - no local/session storage;
 - no first-party contact form;
 - no iframe or embedded calendar;
-- Cal.com, when configured, opens as a clearly external link;
-- minors guidance requires a parent/guardian to book with their own details and attend.
+- Cal.com, when configured, opens as a clearly external link behind the stable localized `/{locale}/book` route;
+- minors guidance requires a parent/legal guardian to book with their own adult details and attend;
+- the scheduler intake excludes a minor's name, date of birth, school, grades and documents.
 
 Calendar decision and current cost check:
 
-- Start with the Cal.com individual plan at no monthly cost for one host and one short introductory event.
-- The current live pricing page presents the individual tier as free forever with one user, unlimited event types and calendars, notifications and integrations.
-- Upgrade only when the team genuinely needs shared availability, round-robin assignment or Cal.com branding removal; the live pricing page lists Teams at USD 12 per user/month when billed annually.
-- Cal.com’s own help/blog material has not always described free-tier limits consistently, so the live account and pricing page must be verified when the event is created.
-- Use an external link rather than an embedded scheduler, and require a parent/guardian to make and attend bookings for applicants under 18 because Cal.com’s terms require users to be at least 18.
+- Use Cal.com Teams for all three advisers. The live pricing page lists Teams at USD 12 per user/month when billed annually, so three seats cost USD 36/month or USD 432/year before tax and currency conversion.
+- Configure one public 20-minute team round-robin event using least-recently-booked assignment, a 10-minute post-call buffer, 24-hour minimum notice, a rolling 21-day booking window and a limit of four introductory calls per adviser per day.
+- Each adviser connects every Google, Outlook or Apple/iCloud calendar that can make them unavailable and controls their own availability. The public site exposes only the single team event, not individual calendar links.
+- Send confirmation immediately and reminders 24 hours and 2 hours before the call.
+- Keep a separate unlisted 45-minute collective event only for cases that genuinely need two advisers; it is not the public default.
+- Use an external link rather than an embedded scheduler. Require a parent/legal guardian to make and attend bookings for applicants under 18 because Cal.com's terms require users to be at least 18.
+- Complete the vendor/DPA review and document retention before activation; six months is a practical starting retention period for unqualified leads unless another lawful need applies.
 
-Pricing source checked on 2026-09-26: https://cal.com/pricing
+Calendar sources checked on 2026-09-26:
+
+- Pricing: https://cal.com/pricing
+- Teams: https://cal.com/teams
+- Round robin: https://cal.com/blog/round-robin-scheduling-guide
+- Google Calendar: https://cal.com/docs/atoms/google-calendar-connect
+- Outlook Calendar: https://cal.com/docs/atoms/outlook-calendar-connect
+- Apple Calendar: https://cal.com/docs/atoms/apple-calendar-connect
+- Terms, privacy and trust/DPA information: https://cal.com/terms, https://cal.com/privacy, https://trust.cal.com/
+
+The full operator setup and acceptance test are documented in `docs/TEAM_CALENDAR_SETUP.md`. The code can provide the stable redirect and an honest inactive state, but round-robin booking is not live until the Teams workspace exists, all three members have connected their calendars, the event URL is configured and test bookings prove conflict avoidance and assignment.
 
 On this implementation, a cookie consent banner would be misleading because there are no non-essential cookies or equivalent browser storage to consent to. Re-audit before adding analytics, retargeting, chat, video, an embedded scheduler or other third-party code.
 
@@ -175,7 +220,7 @@ Do not enable public indexing or paid online contracting until the owner supplie
 3. public contact email;
 4. registry and VAT/tax identifiers where applicable;
 5. final terms, cancellation policy, governing-law/consumer information and statutory withdrawal notice;
-6. active Cal.com event URL and completed data-processing/DPA review;
+6. active Cal.com Teams round-robin event URL, all three calendar connections tested, and completed data-processing/DPA review;
 7. verified founder/team proof if a public About/Team section is desired.
 
 Until then, keep `NEXT_PUBLIC_PUBLIC_LAUNCH=false` and `NEXT_PUBLIC_LEGAL_READY=false`, keep booking inactive unless its external workflow is approved, and preserve private deployment access. Indexing is enabled only when both gates are true and valid public calendar/contact values are also present.

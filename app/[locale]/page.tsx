@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { VirelaPage } from '../components/VirelaPage';
+import { HomePage } from '../components/HomePage';
 import { isLocale, locales } from '../i18n';
 import { pageMetadata } from '../seo';
 
@@ -18,6 +18,5 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function LocaleHome({ params }: Props) {
   const { locale } = await params;
   if (!isLocale(locale)) notFound();
-  return <VirelaPage locale={locale} />;
+  return <HomePage locale={locale} />;
 }
-

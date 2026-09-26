@@ -3,6 +3,15 @@ const locales = ['hr', 'bs', 'sr', 'en', 'de', 'fr'];
 const pageSuffixes = ['', '/contact', '/privacy', '/service-information'];
 const failures = [];
 const checked = new Map();
+const homepageExpectations = {
+  hr: ['20 min', '0 €', '100 €', '240 €', '490 €', '1.400–2.500 €'],
+  bs: ['20 min', '0 €', '100 €', '240 €', '490 €', '1.400–2.500 €'],
+  sr: ['20 min', '0 €', '100 €', '240 €', '490 €', '1.400–2.500 €'],
+  en: ['20 min', '€0', '€100', '€240', '€490', '€1,400–2,500'],
+  de: ['20 Min.', '0 €', '100 €', '240 €', '490 €', '1.400–2.500 €'],
+  fr: ['20 min', '0 €', '100 €', '240 €', '490 €', '1 400–2 500 €'],
+};
+const staleTeamCopy = /upoznat ćete članove našeg tima|upoznaćete članove našeg tima|meet members of our team|lernen Sie Mitglieder unseres Teams kennen|rencontrerez des membres de notre équipe/iu;
 
 function assert(condition, message) {
   if (!condition) failures.push(message);
@@ -38,10 +47,31 @@ for (const locale of locales) {
 
     if (!suffix) {
       assert(text.includes('application/ld+json'), `${path} is missing structured data`);
+      assert(!/15\s+min/iu.test(text), `${path} still exposes the old 15-minute introductory call`);
+      assert(!/(?:€\s*(?:180|280)|(?:180|280)\s*€)/u.test(text), `${path} still exposes a superseded €180/€280 core price`);
+      assert(!staleTeamCopy.test(text), `${path} still promises that clients meet multiple team members`);
+      for (const expected of homepageExpectations[locale]) {
+        assert(text.includes(expected), `${path} is missing the expected pricing/duration copy: ${expected}`);
+      }
       const ids = new Set([...text.matchAll(/\sid="([^"]+)"/g)].map((match) => match[1]));
       for (const href of [...text.matchAll(/href="(#[^"]+)"/g)].map((match) => match[1])) {
         assert(ids.has(href.slice(1)), `${path} has a broken in-page link: ${href}`);
       }
+    }
+  }
+
+  const booking = await read(`/${locale}/book`, { redirect: 'manual' });
+  assert(booking.response.status === 307, `/${locale}/book must return 307 when the calendar is unconfigured; received ${booking.response.status}`);
+  const bookingLocation = booking.response.headers.get('location');
+  assert(Boolean(bookingLocation), `/${locale}/book is missing its fallback Location header`);
+  if (bookingLocation) {
+    try {
+      const destination = new URL(bookingLocation, origin);
+      const expectedOrigin = new URL(origin).origin;
+      assert(destination.origin === expectedOrigin, `/${locale}/book unexpectedly redirects to an external calendar in the unconfigured audit state`);
+      assert(destination.pathname === `/${locale}` && destination.hash === '#booking', `/${locale}/book must fall back to /${locale}#booking; received ${destination.pathname}${destination.hash}`);
+    } catch {
+      assert(false, `/${locale}/book returned an invalid Location header: ${bookingLocation}`);
     }
   }
 }
@@ -60,4 +90,4 @@ if (failures.length) {
   process.exit(1);
 }
 
-console.log(`Audit passed: ${locales.length * pageSuffixes.length} localized pages, redirect, metadata, anchors, robots and sitemap.`);
+console.log(`Audit passed: ${locales.length * pageSuffixes.length} localized pages, ${locales.length} booking fallbacks, copy regressions, metadata, anchors, robots and sitemap.`);
