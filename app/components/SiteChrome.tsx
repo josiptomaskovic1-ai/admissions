@@ -8,8 +8,15 @@ type PageKind = 'home' | 'contact' | 'privacy' | 'service-information';
 function Brand({ locale, footer = false }: { locale: Locale; footer?: boolean }) {
   return (
     <a className={footer ? 'brand footer-brand' : 'brand'} href={`/${locale}`} aria-label={brandName}>
-      <span className="brand-mark" aria-hidden="true">CS</span>
-      <span className="brand-type"><strong>The Candidate Studio</strong><small>Admissions advisory</small></span>
+      <span className="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 64 64" focusable="false">
+          <path d="M9 52.5h8.5L32.1 9l3.2 6.2-15 37.3H9Z" />
+          <path d="M32.1 9 55 52.5H43.8L27.6 20.8 32.1 9Z" />
+          <path className="brand-mark-arc" d="M19.7 40.8c7.2-16 20.6-14.9 31.1 5.2" />
+          <path d="M7.5 52.5h49v2H7.5z" />
+        </svg>
+      </span>
+      <span className="brand-type"><strong>Adria Admissions</strong><small>Study abroad advisory</small></span>
     </a>
   );
 }

@@ -179,10 +179,20 @@ h3 {
   border-radius: 50%;
   background: var(--ink);
   color: var(--white);
-  font-family: var(--font-display), Arial, sans-serif;
-  font-size: 0.72rem;
-  font-weight: 800;
-  letter-spacing: -0.06em;
+  overflow: hidden;
+}
+
+.brand-mark svg {
+  width: 1.82rem;
+  height: 1.82rem;
+  fill: currentColor;
+}
+
+.brand-mark .brand-mark-arc {
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-width: 2.4;
 }
 
 .brand-type {

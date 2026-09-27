@@ -1,4 +1,4 @@
-# The Candidate Studio — redesign and launch-readiness audit
+# Adria Admissions — redesign and launch-readiness audit
 
 Audit date: 2026-09-26  
 Status: technically release-ready as a private, non-indexed preview; not yet legally ready for public commercial launch.
@@ -14,11 +14,11 @@ Measured page length:
 - After: 3,845 px at a 1,280 × 720 laptop viewport.
 - After: 6,502 px at 390 × 844, with no horizontal overflow and the primary CTA inside the first viewport.
 
-There is no meaningful universal “average website length.” The practical target is the shortest page that resolves the visitor’s decision. The Candidate Studio now uses four homepage bands; further content is split only where it represents a distinct task (contact, privacy, service information). About/team, results and individual service pages should wait until there is verified, non-anonymous source material substantial enough to avoid thin pages.
+There is no meaningful universal “average website length.” The practical target is the shortest page that resolves the visitor’s decision. Adria Admissions now uses four homepage bands; further content is split only where it represents a distinct task (contact, privacy, service information). About/team, results and individual service pages should wait until there is verified, non-anonymous source material substantial enough to avoid thin pages.
 
 ## International competitor benchmark
 
-| Consultancy | Official site | Pattern studied | The Candidate Studio decision |
+| Consultancy | Official site | Pattern studied | Adria Admissions decision |
 |---|---|---|---|
 | Crimson Education | https://www.crimsoneducation.org/us | Strong proposition and high conversion focus | Keep one dominant CTA, but avoid inflated proof density |
 | IvyWise | https://www.ivywise.com/ | Established editorial authority | Use calm authority without creating a long article-like homepage |
@@ -65,7 +65,7 @@ Resolved:
 - Added a compact sticky header, visible focus states, 44 px or larger controls and responsive grids.
 - Replaced the map/globe social image with a route-led 1200 × 630 asset.
 - Reduced the social image from 1.49 MB to 24 KB.
-- Added an honest inactive booking state when no Cal.com URL is configured.
+- Added a stable localized booking route that opens the configured Calendly profile externally.
 - Added a short anonymous team note near booking/contact. It explains that the introductory caller meets one available team member and describes the team's combined international academic, research, economics and digital experience without names, profile links, credentials or uniquely identifying biographies.
 
 Deliberately not added:
@@ -132,7 +132,7 @@ Automated engineering results:
 
 ## Introductory call and pricing audit
 
-The client-facing introductory call is set to 20 minutes, followed by an internal 10-minute buffer. This sits between the 15-minute fit call used by Ivy Coach and the 30-minute introductory calls used by InGenius Prep, Collegewise and Accepted. Twenty minutes is long enough to establish the applicant's study level, target countries, timing, needs and mutual fit without turning the free call into a detailed profile evaluation. The buffer preserves a simple 30-minute operating block for the adviser.
+The client-facing introductory call is set to 15 minutes, followed by an internal 15-minute buffer. This matches the concise fit-call model used by Ivy Coach while preserving a simple 30-minute operating block for the adviser. The call covers study level, target countries, timing, immediate needs and mutual fit; it does not include a detailed profile evaluation, shortlist or document review.
 
 Call-duration sources checked on 2026-09-26:
 
@@ -145,7 +145,7 @@ The launch pricing is internally aligned as follows:
 
 | Service | Launch price | Scope signal |
 |---|---:|---|
-| Introductory fit call | 0 € | 20 minutes; fit and routing only |
+| Introductory fit call | 0 € | 15 minutes; fit and routing only |
 | Expert/strategy consultation | 100 € | 60 minutes |
 | Admissions Blueprint | 240 € | fixed price; profile inputs, session and written plan |
 | University Direction | from 490 € | up to eight programs, deadline/cost map and one revision |
@@ -171,18 +171,17 @@ Current implementation:
 - no local/session storage;
 - no first-party contact form;
 - no iframe or embedded calendar;
-- Cal.com, when configured, opens as a clearly external link behind the stable localized `/{locale}/book` route;
+- Calendly opens as a clearly external link behind the stable localized `/{locale}/book` route;
 - minors guidance requires a parent/legal guardian to book with their own adult details and attend;
 - the scheduler intake excludes a minor's name, date of birth, school, grades and documents.
 
 Calendar decision and current cost check:
 
-- Use Cal.com Teams for all three advisers. The live pricing page lists Teams at USD 12 per user/month when billed annually, so three seats cost USD 36/month or USD 432/year before tax and currency conversion.
-- Configure one public 20-minute team round-robin event using least-recently-booked assignment, a 10-minute post-call buffer, 24-hour minimum notice, a rolling 21-day booking window and a limit of four introductory calls per adviser per day.
+- Use one Adria Admissions Calendly profile. When all advisers are added, configure one public 15-minute team round-robin event, a 15-minute post-call buffer, 24-hour minimum notice, a rolling 21-day booking window and a limit of four introductory calls per adviser per day.
 - Each adviser connects every Google, Outlook or Apple/iCloud calendar that can make them unavailable and controls their own availability. The public site exposes only the single team event, not individual calendar links.
 - Send confirmation immediately and reminders 24 hours and 2 hours before the call.
 - Keep a separate unlisted 45-minute collective event only for cases that genuinely need two advisers; it is not the public default.
-- Use an external link rather than an embedded scheduler. Require a parent/legal guardian to make and attend bookings for applicants under 18 because Cal.com's terms require users to be at least 18.
+- Use an external link rather than an embedded scheduler. Require a parent/legal guardian to make and attend bookings for applicants under 18 and keep minor data out of scheduling notes.
 - Complete the vendor/DPA review and document retention before activation; six months is a practical starting retention period for unqualified leads unless another lawful need applies.
 
 Calendar sources checked on 2026-09-26:
@@ -207,7 +206,7 @@ Primary legal references reviewed:
 - Croatian supervisory authority cookie guidance: https://azop.hr/obrada-osobnih-podataka-kolacici/
 - German DDG §5 provider-information duty: https://www.gesetze-im-internet.de/ddg/__5.html
 - EU Consumer Rights Directive: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32011L0083
-- Cal.com terms, privacy and trust/DPA information: https://cal.com/terms, https://cal.com/privacy, https://trust.cal.com/
+- Calendly privacy and legal information: https://calendly.com/legal/privacy-notice, https://calendly.com/legal
 
 This audit is product/legal-readiness information, not a substitute for advice from qualified counsel in the operator’s jurisdictions.
 
@@ -220,7 +219,7 @@ Do not enable public indexing or paid online contracting until the owner supplie
 3. public contact email;
 4. registry and VAT/tax identifiers where applicable;
 5. final terms, cancellation policy, governing-law/consumer information and statutory withdrawal notice;
-6. active Cal.com Teams round-robin event URL, all three calendar connections tested, and completed data-processing/DPA review;
+6. active 15-minute Calendly event with only the Adria Admissions public identity, all required calendar connections tested, and completed data-processing/DPA review;
 7. verified founder/team proof if a public About/Team section is desired.
 
 Until then, keep `NEXT_PUBLIC_PUBLIC_LAUNCH=false` and `NEXT_PUBLIC_LEGAL_READY=false`, keep booking inactive unless its external workflow is approved, and preserve private deployment access. Indexing is enabled only when both gates are true and valid public calendar/contact values are also present.

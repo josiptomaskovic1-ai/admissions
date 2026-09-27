@@ -7,7 +7,7 @@ export const viewport: Viewport = siteViewport;
 
 export default function RedirectLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="bs">
+    <html lang="sr-Latn">
       <body className={bodyClassName}>{children}</body>
     </html>
   );

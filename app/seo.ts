@@ -14,7 +14,7 @@ const seoCopy: Record<Locale, { title: string; description: string }> = {
 
 export function languageAlternates(suffix = ''): Record<string, string> {
   const entries = locales.map((locale) => [localeMeta[locale].hrefLang, `${siteUrl}/${locale}${suffix}`]);
-  return Object.fromEntries([...entries, ['x-default', `${siteUrl}/bs${suffix}`]]);
+  return Object.fromEntries([...entries, ['x-default', `${siteUrl}/sr${suffix}`]]);
 }
 
 export function pageMetadata(locale: Locale, suffix = '', title?: string, description?: string): Metadata {

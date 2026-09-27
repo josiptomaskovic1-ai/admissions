@@ -1,6 +1,6 @@
 ---
 version: alpha
-name: "The Candidate Studio"
+name: "Adria Admissions"
 description: "A compact, decision-led admissions consultancy site for Balkan students, families, and diaspora applicants targeting European universities."
 colors:
   primary: "#2F57FF"
@@ -59,7 +59,7 @@ components:
     height: "4.5rem"
 ---
 
-# The Candidate Studio Design System
+# Adria Admissions Design System
 
 ## Overview
 
@@ -69,12 +69,12 @@ The site should feel like a precise admissions decision desk: a calm, compact do
 
 ### Product context and register
 
-- **Audience and primary job:** Balkan and diaspora students, parents, and early-career applicants who need to understand The Candidate Studio's fit, scope, pricing, and next step quickly.
+- **Audience and primary job:** Balkan and diaspora students, parents, and early-career applicants who need to understand Adria Admissions' fit, scope, pricing, and next step quickly.
 - **Target markets:** Bosnia and Herzegovina, Serbia, Montenegro, Croatia, the wider Balkan diaspora, and English-, German-, and French-speaking European visitors.
 - **Locales:** Croatian, Bosnian/Bošnjački, Serbian/Montenegrin Latin, English, German, and French. Each language has a stable URL; Bosnian is the default. No browser storage is used for language selection.
 - **Usage scene:** Mostly mobile and small-laptop comparison shopping under deadline pressure. Users should see the proposition, starting price, ethics, and booking route without prolonged scrolling.
 - **Register:** Brand-led marketing with product-level clarity and accessibility.
-- **Memorable signature:** The admissions route panel and connected route line.
+- **Memorable signature:** The stylized Adria “A” mark paired with the admissions route panel and connected route line.
 - **Restraint:** All other sections use quiet grids, concise copy, honest starting prices, and limited motion.
 - **Anti-references:** Full-screen empty heroes, generic campus stock-photo collages, unverified acceptance claims, ornamental globes/maps, mega-menus, and repeated conversion banners.
 - **Token ownership/runtime mapping:** Model B. `app/globals.css` is the canonical runtime token source. This file mirrors approved values and rationale; token changes update both files in one changeset.
@@ -127,7 +127,7 @@ Desktop navigation exposes only services, process, pricing, FAQ, language, and o
 
 ### Forms and overlays
 
-The site has no first-party data-entry form. Cal.com remains an external link and is never embedded without a separate consent/privacy review. Native details/summary provides FAQ disclosure without client JavaScript.
+The site has no first-party data-entry form. Calendly remains an external link and is never embedded without a separate consent/privacy review. Native details/summary provides FAQ disclosure without client JavaScript.
 
 ### Iconography
 

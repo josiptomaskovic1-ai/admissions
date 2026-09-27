@@ -1,6 +1,6 @@
-# The Candidate Studio — production redesign prompt
+# Adria Admissions — production redesign prompt
 
-Use this prompt to review, redesign, test and ship The Candidate Studio website. Treat the existing repository as the source of truth and preserve user-owned work. Do not invent credentials, testimonials, acceptance rates, partnerships, office addresses, legal identities or outcomes.
+Use this prompt to review, redesign, test and ship the Adria Admissions website. Treat the existing repository as the source of truth and preserve user-owned work. Do not invent credentials, testimonials, acceptance rates, partnerships, office addresses, legal identities or outcomes.
 
 ## Objective
 
@@ -8,7 +8,7 @@ Create a premium, compact admissions-consultancy website that feels like a preci
 
 The site should answer five questions quickly:
 
-1. What does The Candidate Studio do?
+1. What does Adria Admissions do?
 2. Is it independent and ethical?
 3. What does it cost?
 4. Who will I meet and what happens next?
@@ -98,7 +98,7 @@ Apply these synthesized lessons:
 
 ## Content and integrity rules
 
-- State that The Candidate Studio is independent and is not a university sales channel.
+- State that Adria Admissions is independent and is not a university sales channel.
 - State that universities and scholarship bodies make final decisions.
 - Do not promise admission or scholarships.
 - Do not write essays for applicants; describe structure, questions and feedback.
@@ -109,7 +109,7 @@ Apply these synthesized lessons:
 
 ## Calendar, minors and privacy
 
-Keep Cal.com as an external link behind the stable localized `/{locale}/book` route, not an embedded iframe. Use one 20-minute team round-robin event with a 10-minute post-call buffer, 24 hours' minimum notice, a rolling 21-day booking window and least-recently-booked assignment. Before activating it, require a valid event URL, connect all three advisers' calendars, complete the vendor/DPA review and pass real conflict/assignment tests.
+Keep Calendly as an external link behind the stable localized `/{locale}/book` route, not an embedded iframe. Use one 15-minute introductory event with a 15-minute post-call buffer, 24 hours' minimum notice and a rolling 21-day booking window. When multiple advisers are active, use round-robin assignment without exposing individual adviser names. Before activating it, require a valid event URL, connect the required calendars, complete the vendor/DPA review and pass real conflict/assignment tests.
 
 Applicants under 18 must be told that a parent or guardian should book using their own name and email and attend the call. The scheduling form must not request a minor's name, date of birth, school, grades, transcripts or other sensitive material.
 
@@ -150,7 +150,7 @@ Do not claim the site is fully compliant until the real operator supplies and ve
 - registry and VAT/tax identifiers where applicable;
 - governing-law and consumer information;
 - cancellation and statutory withdrawal terms for paid distance services;
-- completed Cal.com data-processing review/DPA;
+- completed Calendly data-processing review/DPA;
 - final service contract/terms.
 
 Keep the deployment private and the pages `noindex` until those fields are complete. Never publish visible fake placeholders as legal data.

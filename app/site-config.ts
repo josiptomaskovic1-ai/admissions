@@ -15,12 +15,15 @@ function normalizedEmail(value: string | undefined): string {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) ? email : '';
 }
 
-export const calendarLink = normalizedHttpsUrl(process.env.NEXT_PUBLIC_CAL_LINK);
-export const contactEmail = normalizedEmail(process.env.NEXT_PUBLIC_CONTACT_EMAIL);
+const defaultCalendarLink = 'https://calendly.com/adria-admissions';
+const defaultContactEmail = 'adria.admissions@gmail.com';
+
+export const calendarLink = normalizedHttpsUrl(process.env.NEXT_PUBLIC_CAL_LINK || defaultCalendarLink);
+export const contactEmail = normalizedEmail(process.env.NEXT_PUBLIC_CONTACT_EMAIL || defaultContactEmail);
 const legalInformationReady = process.env.NEXT_PUBLIC_LEGAL_READY === 'true';
 export const publicLaunchReady = process.env.NEXT_PUBLIC_PUBLIC_LAUNCH === 'true'
   && legalInformationReady
   && Boolean(calendarLink)
   && Boolean(contactEmail);
 
-export const brandName = 'The Candidate Studio';
+export const brandName = 'Adria Admissions';
