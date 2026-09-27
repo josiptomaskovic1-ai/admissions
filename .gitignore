@@ -31,7 +31,8 @@ yarn-error.log*
 !.env.example
 
 # deployment and generated files
-.openai/
+.openai/*
+!.openai/hosting.json
 .vercel
 next-env.d.ts
 /dist/
@@ -40,3 +41,4 @@ next-env.d.ts
 /work/
 /premium-audit.json
 *.tsbuildinfo
+
