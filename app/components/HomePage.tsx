@@ -31,10 +31,6 @@ export function HomePage({ locale }: { locale: Locale }) {
               <a className="button button-primary" href="#booking">{t.hero.primary}<span aria-hidden="true">↗</span></a>
               <a className="text-link" href="#services">{t.hero.secondary}<span aria-hidden="true">↓</span></a>
             </div>
-            <p className="hero-price"><strong>{t.services.cards[0].price}</strong> · {t.services.cards[0].name}</p>
-            <div className="trust-row" aria-label={t.principles.kicker}>
-              {t.trust.map((item) => <span key={item}>{item}</span>)}
-            </div>
           </div>
 
           <aside className="route-panel" aria-label={t.route.title}>
@@ -130,7 +126,6 @@ export function HomePage({ locale }: { locale: Locale }) {
               <span className="button booking-button disabled" aria-disabled="true">{u.unavailable}</span>
             )}
             <p className="booking-note">{t.booking.paid}</p>
-            <p className="minor-note">{u.minors}</p>
             <a className="contact-link" href={`/${locale}/contact`}>{u.contact}<span aria-hidden="true">→</span></a>
           </aside>
         </section>

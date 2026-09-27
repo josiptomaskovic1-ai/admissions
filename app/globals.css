@@ -55,7 +55,9 @@ body {
 
 body,
 button,
-summary {
+summary,
+input,
+textarea {
   font-family: var(--font-body), Arial, sans-serif;
 }
 
@@ -173,26 +175,15 @@ h3 {
 
 .brand-mark {
   display: grid;
-  width: 2.35rem;
-  height: 2.35rem;
+  width: 2.5rem;
+  height: 2.5rem;
   place-items: center;
-  border-radius: 50%;
-  background: var(--ink);
-  color: var(--white);
+  border-radius: 0.42rem;
+  background-color: var(--ink);
+  background-image: url('/adria-logo.png');
+  background-position: center;
+  background-size: cover;
   overflow: hidden;
-}
-
-.brand-mark svg {
-  width: 1.82rem;
-  height: 1.82rem;
-  fill: currentColor;
-}
-
-.brand-mark .brand-mark-arc {
-  fill: none;
-  stroke: currentColor;
-  stroke-linecap: round;
-  stroke-width: 2.4;
 }
 
 .brand-type {
@@ -359,7 +350,11 @@ h3 {
   transition: background-color 160ms ease, border-color 160ms ease, color 160ms ease, transform 160ms ease;
 }
 
-.button:hover:not(.disabled) {
+.button:not(:disabled):not(.disabled) {
+  cursor: pointer;
+}
+
+.button:hover:not(.disabled):not(:disabled) {
   transform: translateY(-2px);
 }
 
@@ -383,6 +378,11 @@ h3 {
   background: rgba(255, 255, 255, 0.09);
   color: var(--dark-muted);
   cursor: not-allowed;
+}
+
+.button:disabled {
+  cursor: not-allowed;
+  opacity: 0.68;
 }
 
 .hero {
@@ -468,32 +468,6 @@ h3 {
 .contact-link:hover {
   color: var(--cobalt);
   text-decoration-color: currentColor;
-}
-
-.hero-price {
-  margin-bottom: 1rem;
-  color: var(--muted);
-  font-size: 0.78rem;
-}
-
-.hero-price strong {
-  color: var(--ink);
-  font-size: 0.95rem;
-}
-
-.trust-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.45rem;
-}
-
-.trust-row span {
-  padding: 0.38rem 0.7rem;
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  color: var(--muted);
-  font-size: 0.72rem;
-  font-weight: 750;
 }
 
 .route-panel {
@@ -1064,16 +1038,10 @@ h3 {
   width: 100%;
 }
 
-.booking-note,
-.minor-note {
+.booking-note {
   margin: 0.8rem 0 0;
   font-size: 0.75rem !important;
   line-height: 1.55;
-}
-
-.minor-note {
-  padding-top: 0.75rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.14);
 }
 
 .booking-card .contact-link {
@@ -1098,11 +1066,6 @@ h3 {
 
 .footer-main {
   padding-bottom: 1.35rem;
-}
-
-.footer-brand .brand-mark {
-  background: var(--white);
-  color: var(--ink);
 }
 
 .footer-brand .brand-type small,
@@ -1169,8 +1132,13 @@ h3 {
 
 .contact-grid {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
+  grid-template-areas:
+    'booking form'
+    'direct form'
+    'prepare form';
+  grid-template-columns: minmax(16rem, 0.82fr) minmax(0, 1.18fr);
   gap: 0.9rem;
+  align-items: stretch;
 }
 
 .contact-card {
@@ -1181,9 +1149,29 @@ h3 {
 }
 
 .contact-card.primary-card {
-  grid-row: span 2;
+  grid-area: booking;
   background: var(--ink);
   color: var(--white);
+}
+
+.contact-direct-card {
+  grid-area: direct;
+}
+
+.contact-direct-card h2,
+.contact-direct-card h2 a {
+  overflow-wrap: anywhere;
+}
+
+.prepare-card {
+  grid-area: prepare;
+}
+
+.contact-form-card {
+  grid-area: form;
+  border-color: rgba(47, 87, 255, 0.3);
+  background: var(--white);
+  box-shadow: 0 18px 48px rgba(7, 29, 43, 0.1);
 }
 
 .contact-card h2 {
@@ -1215,6 +1203,124 @@ h3 {
 
 .contact-card:not(.primary-card) .disabled {
   color: var(--muted);
+}
+
+.contact-form-lead {
+  max-width: 38rem;
+  margin-bottom: 1.35rem;
+  color: var(--muted);
+}
+
+.contact-form-fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.form-field {
+  min-width: 0;
+}
+
+.form-field-message {
+  grid-column: 1 / -1;
+}
+
+.form-field label {
+  display: block;
+  margin-bottom: 0.38rem;
+  color: var(--ink);
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.form-field input,
+.form-field textarea {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  background: var(--fog);
+  color: var(--ink);
+  font-size: 1rem;
+  line-height: 1.45;
+  transition: border-color 160ms ease, box-shadow 160ms ease, background-color 160ms ease;
+}
+
+.form-field input {
+  min-height: 3.15rem;
+  padding: 0.72rem 0.85rem;
+}
+
+.form-field textarea {
+  min-height: 9rem;
+  padding: 0.8rem 0.85rem;
+  resize: none;
+}
+
+.resize-none {
+  resize: none;
+}
+
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+  color: #60757c;
+  opacity: 1;
+}
+
+.form-field input:hover,
+.form-field textarea:hover {
+  border-color: #9db0af;
+}
+
+.form-field input:focus-visible,
+.form-field textarea:focus-visible {
+  outline: none;
+  border-color: var(--cobalt);
+  background: var(--white);
+  box-shadow: 0 0 0 3px rgba(47, 87, 255, 0.16);
+}
+
+.form-field input[aria-invalid='true'],
+.form-field textarea[aria-invalid='true'] {
+  border-color: #b63d2b;
+  background: #fff8f6;
+}
+
+.field-error {
+  margin: 0.38rem 0 0;
+  color: #8a2f22 !important;
+  font-size: 0.76rem;
+  font-weight: 750;
+}
+
+.contact-form-actions {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 1rem;
+  align-items: end;
+  margin-top: 1.1rem;
+}
+
+.contact-form-actions p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.74rem;
+  line-height: 1.55;
+}
+
+.contact-form-actions p a {
+  color: var(--cobalt);
+  font-weight: 800;
+  text-decoration: underline;
+  text-decoration-color: rgba(47, 87, 255, 0.35);
+  text-underline-offset: 0.16em;
+}
+
+.form-status {
+  min-height: 1.35rem;
+  margin: 0.65rem 0 0;
+  color: #176c5f !important;
+  font-size: 0.76rem;
+  font-weight: 750;
 }
 
 .prepare-card ol {
@@ -1347,8 +1453,16 @@ h3 {
   .split-heading,
   .services-heading,
   .pricing-band,
-  .closing-section,
+  .closing-section {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
   .contact-grid {
+    grid-template-areas:
+      'booking'
+      'form'
+      'direct'
+      'prepare';
     grid-template-columns: minmax(0, 1fr);
   }
 
@@ -1427,8 +1541,17 @@ h3 {
     text-align: left;
   }
 
-  .contact-card.primary-card {
-    grid-row: auto;
+  .contact-form-fields,
+  .contact-form-actions {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .contact-form-actions {
+    align-items: stretch;
+  }
+
+  .contact-form-actions .button {
+    width: 100%;
   }
 
   .legal-grid {

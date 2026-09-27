@@ -76,7 +76,7 @@ export const translations = {
       kicker: 'Česta pitanja',
       title: 'Prije nego rezervišete.',
       items: [
-        ['Da li garantujete prijem ili stipendiju?', 'Ne. Odluku uvijek donosi univerzitet ili stipendijska komisija. Naš posao je da proces bude strateški, kvalitetan i autentičan.'],
+        ['Kako pomažete kandidatu da napravi što snažniju prijavu?', 'Radimo individualno i maksimalno usmjeravamo kandidata prema kriterijima konkretnog programa — od strategije i izbora programa do argumenata, dokumenata i intervjua. Generički tekstovi, uključujući one nastale automatizovanim alatima bez ličnog konteksta, često ne pokazuju motivaciju, iskustvo i stvarnu usklađenost kandidata s programom. Naši stručnjaci imaju iskustvo s DAAD, Erasmus Mundus, OeAD i France Excellence stipendijskim programima.'],
         ['Da li radite bachelor i master prijave?', 'Da. Radimo s učenicima, studentima i porodicama koje ciljaju međunarodne bachelor i master programe, prvenstveno u Evropi.'],
         ['Pišete li motivaciona pisma umjesto kandidata?', 'Ne. Pomažemo da razvijete strukturu, argumente i vlastiti glas, a zatim dajemo detaljan feedback i revizije.'],
         ['Mogu li uzeti samo jednu uslugu?', 'Da. Možete početi konsultacijom, strategijom ili shortlistom bez obaveze da uzmete puni paket.'],
@@ -164,7 +164,7 @@ export const translations = {
     faq: {
       kicker: 'Česta pitanja', title: 'Pre nego što rezervišete.',
       items: [
-        ['Da li garantujete prijem ili stipendiju?', 'Ne. Odluku uvek donosi univerzitet ili komisija. Naš posao je da proces bude strateški, kvalitetan i autentičan.'],
+        ['Kako pomažete kandidatu da napravi što snažniju prijavu?', 'Radimo individualno i maksimalno usmeravamo kandidata prema kriterijumima konkretnog programa — od strategije i izbora programa do argumenata, dokumenata i intervjua. Generički tekstovi, uključujući one nastale automatizovanim alatima bez ličnog konteksta, često ne pokazuju motivaciju, iskustvo i stvarnu usklađenost kandidata sa programom. Naši stručnjaci imaju iskustvo sa DAAD, Erasmus Mundus, OeAD i France Excellence stipendijskim programima.'],
         ['Da li radite bachelor i master prijave?', 'Da. Radimo sa učenicima, studentima i porodicama koje ciljaju međunarodne bachelor i master programe, prvenstveno u Evropi.'],
         ['Pišete li motivaciona pisma umesto kandidata?', 'Ne. Pomažemo da razvijete strukturu, argumente i svoj glas, a zatim dajemo detaljan feedback i revizije.'],
         ['Mogu li uzeti samo jednu uslugu?', 'Da. Možete početi konsultacijom, strategijom ili shortlistom bez obaveze da uzmete puni paket.'],
@@ -244,7 +244,7 @@ export const translations = {
     faq: {
       kicker: 'Česta pitanja', title: 'Prije nego rezervirate.',
       items: [
-        ['Jamčite li upis ili stipendiju?', 'Ne. Odluku uvijek donosi sveučilište ili komisija. Naš je posao da proces bude strateški, kvalitetan i autentičan.'],
+        ['Kako pomažete kandidatu izraditi što snažniju prijavu?', 'Radimo individualno i maksimalno usmjeravamo kandidata prema kriterijima konkretnog programa — od strategije i izbora programa do argumenata, dokumenata i intervjua. Generički tekstovi, uključujući one nastale automatiziranim alatima bez osobnog konteksta, često ne pokazuju motivaciju, iskustvo i stvarnu usklađenost kandidata s programom. Naši stručnjaci imaju iskustvo s DAAD, Erasmus Mundus, OeAD i France Excellence stipendijskim programima.'],
         ['Radite li bachelor i master prijave?', 'Da. Radimo s učenicima, studentima i obiteljima koje ciljaju međunarodne bachelor i master programe, prvenstveno u Europi.'],
         ['Pišete li motivacijska pisma umjesto kandidata?', 'Ne. Pomažemo vam razviti strukturu, argumente i vlastiti glas, a zatim dajemo detaljan feedback i revizije.'],
         ['Mogu li uzeti samo jednu uslugu?', 'Da. Možete početi savjetovanjem, strategijom ili shortlistom bez obveze da uzmete puni paket.'],
@@ -324,7 +324,7 @@ export const translations = {
     faq: {
       kicker: 'Frequently asked', title: 'Before you book.',
       items: [
-        ['Do you guarantee admission or scholarships?', 'No. The university or scholarship committee always makes that decision. Our role is to make the process strategic, rigorous and authentic.'],
+        ['How do you help applicants build the strongest possible application?', 'We work individually and guide each applicant against the criteria of the specific programme — from strategy and programme choice to arguments, documents and interviews. Generic writing, including text produced by automated tools without personal context, often fails to show motivation, experience and genuine programme fit. Our experts have experience with DAAD, Erasmus Mundus, OeAD and France Excellence scholarship programmes.'],
         ['Do you support bachelor’s and master’s applicants?', 'Yes. We work with students and families targeting international bachelor’s and master’s programs, primarily across Europe.'],
         ['Do you write motivation letters for applicants?', 'No. We help you develop structure, arguments and your own voice, then provide detailed feedback and revisions.'],
         ['Can I purchase just one service?', 'Yes. You can start with a consultation, strategy or shortlist without committing to a full package.'],
@@ -404,7 +404,7 @@ export const translations = {
     faq: {
       kicker: 'Häufige Fragen', title: 'Bevor Sie buchen.',
       items: [
-        ['Garantieren Sie eine Zulassung oder ein Stipendium?', 'Nein. Die Entscheidung trifft immer die Universität oder die Stipendienkommission. Wir sorgen für einen strategischen, sorgfältigen und authentischen Prozess.'],
+        ['Wie helfen Sie Bewerber:innen, eine möglichst starke Bewerbung zu erstellen?', 'Wir arbeiten individuell und richten jede Bewerbung konsequent an den Kriterien des jeweiligen Programms aus — von Strategie und Programmauswahl bis zu Argumentation, Unterlagen und Interview. Generische Texte, einschließlich automatisch erstellter Inhalte ohne persönlichen Kontext, zeigen Motivation, Erfahrung und tatsächliche Passung häufig nicht ausreichend. Unser Team verfügt über Erfahrung mit den Stipendienprogrammen DAAD, Erasmus Mundus, OeAD und France Excellence.'],
         ['Begleiten Sie Bachelor- und Masterbewerbungen?', 'Ja. Wir arbeiten mit Schüler:innen, Studierenden und Familien für internationale Bachelor- und Masterprogramme, vor allem in Europa.'],
         ['Schreiben Sie Motivationsschreiben für Bewerber:innen?', 'Nein. Wir helfen bei Struktur, Argumenten und der eigenen Stimme und geben anschließend detailliertes Feedback.'],
         ['Kann ich nur eine einzelne Leistung buchen?', 'Ja. Sie können mit einer Beratung, Strategie oder Auswahl starten, ohne ein Gesamtpaket zu buchen.'],
@@ -484,7 +484,7 @@ export const translations = {
     faq: {
       kicker: 'Questions fréquentes', title: 'Avant de réserver.',
       items: [
-        ['Garantissez-vous une admission ou une bourse ?', 'Non. La décision appartient toujours à l’université ou au comité de bourse. Notre rôle est de rendre le processus stratégique, rigoureux et authentique.'],
+        ['Comment aidez-vous les candidats à construire le meilleur dossier possible ?', 'Nous travaillons de manière individuelle et alignons chaque dossier sur les critères du programme visé — de la stratégie et du choix des programmes aux arguments, documents et entretiens. Les textes génériques, y compris ceux produits par des outils automatisés sans contexte personnel, montrent souvent mal la motivation, l’expérience et l’adéquation réelle avec le programme. Nos spécialistes ont l’expérience des programmes de bourses DAAD, Erasmus Mundus, OeAD et France Excellence.'],
         ['Accompagnez-vous les candidatures en licence et en master ?', 'Oui. Nous travaillons avec des élèves, étudiants et familles visant des programmes internationaux de licence et de master, principalement en Europe.'],
         ['Rédigez-vous les lettres de motivation à la place des candidats ?', 'Non. Nous vous aidons à développer la structure, les arguments et votre propre voix, puis nous apportons un retour détaillé.'],
         ['Puis-je choisir un seul service ?', 'Oui. Vous pouvez commencer par une consultation, une stratégie ou une sélection sans vous engager sur un accompagnement complet.'],

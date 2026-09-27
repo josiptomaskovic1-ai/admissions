@@ -127,7 +127,7 @@ Desktop navigation exposes only services, process, pricing, FAQ, language, and o
 
 ### Forms and overlays
 
-The site has no first-party data-entry form. Calendly remains an external link and is never embedded without a separate consent/privacy review. Native details/summary provides FAQ disclosure without client JavaScript.
+The contact page uses one compact, first-party form that validates name, email, and message locally, then prepares a draft in the visitor's email application. The site does not transmit or store form values. Calendly remains an external link and is never embedded without a separate consent/privacy review. Native details/summary provides FAQ disclosure without client JavaScript.
 
 ### Iconography
 

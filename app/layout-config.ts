@@ -22,7 +22,11 @@ export const siteMetadata: Metadata = {
   },
   description: 'Independent, one-to-one guidance for European university applications.',
   keywords: ['university admissions', 'studije u inostranstvu', 'prijave na fakultet', 'scholarships', 'European universities', 'Balkans'],
-  icons: { icon: [{ url: '/favicon.ico', sizes: '32x32' }, { url: '/favicon.svg', type: 'image/svg+xml' }] },
+  icons: {
+    icon: [{ url: '/adria-logo.png', type: 'image/png' }],
+    shortcut: '/adria-logo.png',
+    apple: '/adria-logo.png',
+  },
   category: 'education',
 };
 
