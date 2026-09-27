@@ -87,7 +87,7 @@ export const translations = {
     booking: {
       kicker: 'Sljedeći korak',
       title: '15 minuta da vidimo postoji li dobar fit.',
-      body: 'Kalendar vas povezuje s jednim dostupnim članom tima i automatski prepoznaje vremensku zonu. Razgovor pokriva cilj, rokove i uzajamni fit — ne detaljnu procjenu profila.',
+      body: 'Kalendar vas povezuje s jednim dostupnim članom tima i automatski prepoznaje vremensku zonu. Razgovor pokriva cilj, rokove i uzajamni fit.',
       event: 'Besplatan uvodni razgovor', duration: '15 minuta', location: 'Online · video poziv', timezone: 'Automatska vremenska zona',
       button: 'Otvori booking kalendar', pending: 'Booking kalendar spreman za povezivanje',
       paid: 'Za detaljnu procjenu profila rezervišite stratešku konsultaciju od 60 minuta.',
@@ -174,7 +174,7 @@ export const translations = {
     },
     booking: {
       kicker: 'Sledeći korak', title: '15 minuta da vidimo postoji li dobar fit.',
-      body: 'Kalendar vas povezuje sa jednim dostupnim članom tima i automatski prepoznaje vremensku zonu. Razgovor pokriva cilj, rokove i uzajamni fit — ne detaljnu procenu profila.',
+      body: 'Kalendar vas povezuje sa jednim dostupnim članom tima i automatski prepoznaje vremensku zonu. Razgovor pokriva cilj, rokove i uzajamni fit.',
       event: 'Besplatan uvodni razgovor', duration: '15 minuta', location: 'Online · video poziv', timezone: 'Automatska vremenska zona',
       button: 'Otvori booking kalendar', pending: 'Booking kalendar spreman za povezivanje',
       paid: 'Za detaljnu procenu profila rezervišite stratešku konsultaciju od 60 minuta.',
@@ -254,7 +254,7 @@ export const translations = {
     },
     booking: {
       kicker: 'Sljedeći korak', title: '15 minuta da vidimo postoji li dobar fit.',
-      body: 'Kalendar vas povezuje s jednim dostupnim članom tima i automatski prepoznaje vremensku zonu. Razgovor pokriva cilj, rokove i međusobni fit — ne detaljnu procjenu profila.',
+      body: 'Kalendar vas povezuje s jednim dostupnim članom tima i automatski prepoznaje vremensku zonu. Razgovor pokriva cilj, rokove i međusobni fit.',
       event: 'Besplatan uvodni razgovor', duration: '15 minuta', location: 'Online · video poziv', timezone: 'Automatska vremenska zona',
       button: 'Otvori booking kalendar', pending: 'Booking kalendar spreman za povezivanje',
       paid: 'Za detaljnu procjenu profila rezervirajte strateško savjetovanje od 60 minuta.',
@@ -334,7 +334,7 @@ export const translations = {
     },
     booking: {
       kicker: 'Your next step', title: '15 minutes to see if the fit is right.',
-      body: 'The calendar connects you with one available team member and detects your time zone automatically. The call covers goals, timing and mutual fit — not a detailed profile assessment.',
+      body: 'The calendar connects you with one available team member and detects your time zone automatically. The call covers goals, timing and mutual fit.',
       event: 'Free introductory call', duration: '15 minutes', location: 'Online · video call', timezone: 'Automatic time zone',
       button: 'Open booking calendar', pending: 'Booking calendar ready to connect',
       paid: 'For a detailed profile review, book a 60-minute strategy consultation.',
@@ -414,7 +414,7 @@ export const translations = {
     },
     booking: {
       kicker: 'Nächster Schritt', title: '15 Minuten, um die Zusammenarbeit zu prüfen.',
-      body: 'Der Kalender verbindet Sie mit einem verfügbaren Teammitglied und erkennt Ihre Zeitzone automatisch. Das Gespräch klärt Ziele, Zeitplan und gegenseitige Passung — nicht das Profil im Detail.',
+      body: 'Der Kalender verbindet Sie mit einem verfügbaren Teammitglied und erkennt Ihre Zeitzone automatisch. Das Gespräch klärt Ziele, Zeitplan und gegenseitige Passung.',
       event: 'Kostenloses Kennenlerngespräch', duration: '15 Minuten', location: 'Online · Videoanruf', timezone: 'Automatische Zeitzone',
       button: 'Buchungskalender öffnen', pending: 'Buchungskalender bereit zur Verbindung',
       paid: 'Für eine ausführliche Profilanalyse buchen Sie eine 60-minütige Strategieberatung.',
@@ -494,7 +494,7 @@ export const translations = {
     },
     booking: {
       kicker: 'Prochaine étape', title: '15 minutes pour vérifier si nous sommes faits pour travailler ensemble.',
-      body: 'Le calendrier vous met en relation avec un membre disponible de l’équipe et détecte automatiquement votre fuseau horaire. L’appel porte sur vos objectifs, vos délais et notre adéquation — pas sur une analyse détaillée du profil.',
+      body: 'Le calendrier vous met en relation avec un membre disponible de l’équipe et détecte automatiquement votre fuseau horaire. L’appel porte sur vos objectifs, vos délais et notre adéquation.',
       event: 'Appel découverte gratuit', duration: '15 minutes', location: 'En ligne · visioconférence', timezone: 'Fuseau horaire automatique',
       button: 'Ouvrir le calendrier', pending: 'Calendrier de réservation prêt à être connecté',
       paid: 'Pour une analyse détaillée du profil, réservez une consultation stratégique de 60 minutes.',

@@ -125,9 +125,9 @@ The primary action is cobalt on white or white on cobalt. Secondary actions are 
 
 Desktop navigation exposes only services, process, pricing, FAQ, language, and one booking CTA. Mobile removes the content navigation but keeps language and booking. Prices use semantic definition lists or tables, not visual-only div rows.
 
-### Forms and overlays
+### Contact actions and overlays
 
-The contact page uses one compact, first-party form that validates name, email, and message locally, then prepares a draft in the visitor's email application. The site does not transmit or store form values. Calendly remains an external link and is never embedded without a separate consent/privacy review. Native details/summary provides FAQ disclosure without client JavaScript.
+The contact page exposes a direct email link and a separate Calendly booking action. It has no web form, so visitors are never led to expect that the site itself sends a message. Calendly remains an external link and is never embedded without a separate consent/privacy review. Native details/summary provides FAQ disclosure without client JavaScript.
 
 ### Iconography
 
