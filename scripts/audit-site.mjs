@@ -37,6 +37,9 @@ for (const locale of locales) {
     const path = `/${locale}${suffix}`;
     const { response, text } = await read(path);
     assert(response.status === 200, `${path} returned ${response.status}`);
+    const cacheControl = response.headers.get('cache-control') ?? '';
+    assert(cacheControl.includes('max-age=300'), `${path} is missing short browser caching`);
+    assert(cacheControl.includes('s-maxage=31536000'), `${path} is missing long-lived edge caching`);
     assert(text.includes('<title>Adria Admissions</title>'), `${path} must use the brand-only browser tab title`);
     assert((text.match(/<h1(?:\s|>)/g) ?? []).length === 1, `${path} must have exactly one H1`);
     assert(text.includes('<main'), `${path} is missing a main landmark`);

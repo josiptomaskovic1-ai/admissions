@@ -6,6 +6,9 @@ import { pageMetadata } from '../../seo';
 
 type Props = { params: Promise<{ locale: string }> };
 
+export const dynamic = 'force-static';
+export const revalidate = false;
+
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
 }
@@ -21,4 +24,3 @@ export default async function Privacy({ params }: Props) {
   if (!isLocale(locale)) notFound();
   return <LegalInfoPage locale={locale} kind="privacy" />;
 }
-

@@ -5,6 +5,9 @@ import '../globals.css';
 
 export const metadata: Metadata = siteMetadata;
 export const viewport: Viewport = siteViewport;
+export const dynamic = 'force-static';
+export const dynamicParams = false;
+export const revalidate = false;
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));

@@ -29,6 +29,13 @@ const securityHeaders = [
   { key: 'X-Permitted-Cross-Domain-Policies', value: 'none' },
 ];
 
+const staticPageCacheHeaders = [
+  {
+    key: 'Cache-Control',
+    value: 'public, max-age=300, s-maxage=31536000, stale-while-revalidate=86400',
+  },
+];
+
 const nextConfig: NextConfig = {
   poweredByHeader: false,
   reactStrictMode: true,
@@ -37,6 +44,14 @@ const nextConfig: NextConfig = {
       {
         source: '/:path*',
         headers: securityHeaders,
+      },
+      {
+        source: '/:locale(hr|bs|sr|en|de|fr)',
+        headers: staticPageCacheHeaders,
+      },
+      {
+        source: '/:locale(hr|bs|sr|en|de|fr)/:page(contact|privacy|service-information)',
+        headers: staticPageCacheHeaders,
       },
     ];
   },
