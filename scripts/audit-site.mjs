@@ -37,6 +37,7 @@ for (const locale of locales) {
     const path = `/${locale}${suffix}`;
     const { response, text } = await read(path);
     assert(response.status === 200, `${path} returned ${response.status}`);
+    assert(text.includes('<title>Adria Admissions</title>'), `${path} must use the brand-only browser tab title`);
     assert((text.match(/<h1(?:\s|>)/g) ?? []).length === 1, `${path} must have exactly one H1`);
     assert(text.includes('<main'), `${path} is missing a main landmark`);
     assert(text.includes('<header'), `${path} is missing a header landmark`);

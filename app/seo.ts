@@ -24,7 +24,7 @@ export function pageMetadata(locale: Locale, suffix = '', title?: string, descri
   const pageDescription = description ?? seo.description;
 
   return {
-    title: pageTitle,
+    title: { absolute: brandName },
     description: pageDescription,
     alternates: { canonical, languages: languageAlternates(suffix) },
     robots: publicLaunchReady ? { index: true, follow: true } : { index: false, follow: false, nocache: true },
