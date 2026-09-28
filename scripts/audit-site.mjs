@@ -31,6 +31,7 @@ async function read(path, options = {}) {
 const root = await read('/', { redirect: 'manual' });
 assert([301, 302, 307, 308].includes(root.response.status), `Root must redirect; received ${root.response.status}`);
 assert(root.response.headers.get('location') === '/sr', `Root must redirect to /sr; received ${root.response.headers.get('location')}`);
+assert((root.response.headers.get('cache-control') ?? '').includes('max-age=300'), 'Root redirect must be browser-cacheable');
 
 for (const locale of locales) {
   for (const suffix of pageSuffixes) {
