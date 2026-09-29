@@ -5,7 +5,7 @@ Status: tehnički spremna javna, neindeksirana preview verzija; nije pravno spre
 
 ## Sažetak
 
-Stranica je kompaktna, server-renderirana i dostupna na šest stabilnih jezičnih ruta. Najnovija izmjena poboljšava prvo razumijevanje ponude: hero sada govori „Studirajte vani. Birajte neovisno.”, a odmah nakon njega slijede neovisnost i Adria standard odlučivanja.
+Stranica je kompaktna, server-renderirana i dostupna na šest stabilnih jezičnih ruta. Najnovija izmjena poboljšava prvo razumijevanje ponude: hero sada govori „Studirajte vani. Prijavite se s jasnim planom.”, a odmah nakon njega slijede neovisnost i Adria standard odlučivanja.
 
 Povjerenje se ne gradi identitetima članova tima. Stranica umjesto toga pokazuje:
 

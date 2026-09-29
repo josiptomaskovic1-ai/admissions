@@ -5,9 +5,9 @@ export const translations = {
     hero: {
       eyebrow: 'Prijave na evropske univerzitete · savjetovanje na vašem jeziku',
       titleA: 'Studirajte u inostranstvu.',
-      titleB: 'Birajte nezavisno.',
+      titleB: 'Prijavite se s jasnim planom.',
       body: 'Nezavisno savjetovanje za evropske bachelor i master prijave — programi, troškovi, stipendije i rokovi povezani u jedan realan plan.',
-      primary: 'Zakažite besplatan razgovor od 15 min',
+      primary: 'Razjasnite sljedeći korak — 15 min besplatno',
       secondary: 'Pogledajte kako radimo',
     },
     trust: ['Nezavisno savjetovanje', 'Rad 1 na 1', 'Jasne cijene'],
@@ -104,9 +104,9 @@ export const translations = {
     hero: {
       eyebrow: 'Prijave na evropske univerzitete · savetovanje na vašem jeziku',
       titleA: 'Studirajte u inostranstvu.',
-      titleB: 'Birajte nezavisno.',
+      titleB: 'Prijavite se sa jasnim planom.',
       body: 'Nezavisno savetovanje za prijave na evropske osnovne i master studije — programi, troškovi, stipendije i rokovi povezani u jedan realan plan.',
-      primary: 'Zakažite besplatan razgovor od 15 min',
+      primary: 'Razjasnite sledeći korak — 15 min besplatno',
       secondary: 'Pogledajte kako radimo',
     },
     trust: ['Nezavisno savetovanje', 'Rad 1 na 1', 'Jasne cene'],
@@ -185,9 +185,9 @@ export const translations = {
     localeName: 'Hrvatski',
     nav: { services: 'Usluge', process: 'Kako radimo', pricing: 'Cijene', faq: 'Pitanja', book: 'Rezervirajte razgovor' },
     hero: {
-      eyebrow: 'Prijave na europska sveučilišta · savjetovanje na vašem jeziku', titleA: 'Studirajte vani.', titleB: 'Birajte neovisno.',
+      eyebrow: 'Prijave na europska sveučilišta · savjetovanje na vašem jeziku', titleA: 'Studirajte vani.', titleB: 'Prijavite se s jasnim planom.',
       body: 'Neovisno savjetovanje za prijave na europske preddiplomske i diplomske studije — programi, troškovi, stipendije i rokovi povezani u jedan realan plan.',
-      primary: 'Rezervirajte besplatan razgovor od 15 min', secondary: 'Pogledajte kako radimo',
+      primary: 'Razjasnite sljedeći korak — 15 min besplatno', secondary: 'Pogledajte kako radimo',
     },
     trust: ['Neovisno savjetovanje', 'Osobna podrška', 'Jasne cijene'],
     route: {
@@ -265,9 +265,9 @@ export const translations = {
     localeName: 'English',
     nav: { services: 'Services', process: 'How it works', pricing: 'Pricing', faq: 'FAQ', book: 'Book a call' },
     hero: {
-      eyebrow: 'European university applications · guidance in your language', titleA: 'Study abroad.', titleB: 'Choose independently.',
+      eyebrow: 'European university applications · guidance in your language', titleA: 'Study abroad.', titleB: 'Apply with a clear plan.',
       body: 'Independent guidance for European bachelor’s and master’s applications—programs, costs, funding and deadlines aligned in one realistic plan.',
-      primary: 'Book a free 15-minute call', secondary: 'See how we work',
+      primary: 'Clarify your next step — free 15 min', secondary: 'See how we work',
     },
     trust: ['Independent guidance', 'One-to-one support', 'Transparent pricing'],
     route: {
@@ -345,9 +345,9 @@ export const translations = {
     localeName: 'Deutsch',
     nav: { services: 'Leistungen', process: 'Ablauf', pricing: 'Preise', faq: 'FAQ', book: 'Gespräch buchen' },
     hero: {
-      eyebrow: 'Bewerbungen an europäischen Hochschulen · Beratung in Ihrer Sprache', titleA: 'Im Ausland studieren.', titleB: 'Unabhängig entscheiden.',
+      eyebrow: 'Bewerbungen an europäischen Hochschulen · Beratung in Ihrer Sprache', titleA: 'Im Ausland studieren.', titleB: 'Mit einem klaren Plan bewerben.',
       body: 'Unabhängige Beratung für europäische Bachelor- und Masterbewerbungen – Programme, Kosten, Förderung und Fristen in einem realistischen Plan.',
-      primary: 'Kostenloses 15-Minuten-Gespräch', secondary: 'So arbeiten wir',
+      primary: 'Nächsten Schritt klären — 15 Min. kostenlos', secondary: 'So arbeiten wir',
     },
     trust: ['Unabhängige Beratung', 'Persönliche Begleitung', 'Transparente Preise'],
     route: {
@@ -425,9 +425,9 @@ export const translations = {
     localeName: 'Français',
     nav: { services: 'Services', process: 'Notre méthode', pricing: 'Tarifs', faq: 'Questions', book: 'Réserver un appel' },
     hero: {
-      eyebrow: 'Candidatures universitaires en Europe · conseil dans votre langue', titleA: 'Étudiez à l’étranger.', titleB: 'Choisissez en toute indépendance.',
+      eyebrow: 'Candidatures universitaires en Europe · conseil dans votre langue', titleA: 'Étudiez à l’étranger.', titleB: 'Candidatez avec une stratégie claire.',
       body: 'Un conseil indépendant pour les candidatures en licence et master en Europe — programmes, coûts, financements et échéances réunis dans un plan réaliste.',
-      primary: 'Réserver un appel gratuit de 15 min', secondary: 'Voir notre méthode',
+      primary: 'Clarifiez la prochaine étape — 15 min offertes', secondary: 'Voir notre méthode',
     },
     trust: ['Conseil indépendant', 'Accompagnement individuel', 'Tarifs transparents'],
     route: {

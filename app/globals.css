@@ -1319,16 +1319,6 @@ h3 {
   font-size: 0.88rem;
 }
 
-.legal-status {
-  margin: 1rem 0;
-  padding: 1rem 1.2rem;
-  border: 1px solid rgba(230, 91, 67, 0.45);
-  border-radius: 0.55rem;
-  background: #fff5f2;
-  color: #7a2a1e;
-  font-size: 0.78rem;
-}
-
 @media (max-width: 68rem) {
   .contact-grid {
     grid-template-areas:

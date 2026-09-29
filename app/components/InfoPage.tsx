@@ -39,7 +39,6 @@ export function LegalInfoPage({ locale, kind }: { locale: Locale; kind: 'privacy
       <main id="main-content" className="legal-page section-shell" tabIndex={-1}>
         <header className="info-hero"><p className="section-kicker">{brandName}</p><h1>{title}</h1><p>{lead}</p></header>
         <div className="legal-grid">{sections.map(([heading, body], index) => <section key={heading}><span>{String(index + 1).padStart(2, '0')}</span><h2>{heading}</h2><p>{body}</p></section>)}</div>
-        <aside className="legal-status"><strong>{u.legalStatus}</strong></aside>
         <a className="text-link" href={`/${locale}`}>← {u.backHome}</a>
       </main>
       <SiteFooter locale={locale} />
