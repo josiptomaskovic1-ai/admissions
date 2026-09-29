@@ -24,12 +24,11 @@ export function HomePage({ locale }: { locale: Locale }) {
       <main id="main-content" tabIndex={-1}>
         <section className="hero section-shell" id="top">
           <div className="hero-copy">
-            <p className="eyebrow"><span aria-hidden="true" />{t.hero.eyebrow}</p>
             <h1>{t.hero.titleA} <em>{t.hero.titleB}</em></h1>
             <p className="hero-lede">{t.hero.body}</p>
             <div className="hero-actions">
               <a className="button button-primary" href="#booking">{t.hero.primary}<span aria-hidden="true">↗</span></a>
-              <a className="text-link" href="#services">{t.hero.secondary}<span aria-hidden="true">↓</span></a>
+              <a className="text-link" href="#process">{t.hero.secondary}<span aria-hidden="true">↓</span></a>
             </div>
           </div>
 
@@ -50,13 +49,22 @@ export function HomePage({ locale }: { locale: Locale }) {
 
         <section className="decision-section" id="process">
           <div className="section-shell">
+            <aside className="independence-band">
+              <div>
+                <h2>{t.principles.title}</h2>
+                <p>{t.principles.body}</p>
+              </div>
+              <ul>
+                {t.principles.labels.map((label) => <li key={label[1]}>{label[1]}</li>)}
+              </ul>
+            </aside>
             <div className="section-heading split-heading">
-              <div><p className="section-kicker">{t.signals.kicker}</p><h2>{t.signals.title}</h2></div>
+              <div><h2>{t.signals.title}</h2></div>
               <p>{t.signals.body}</p>
             </div>
             <div className="decision-grid">
-              {t.signals.items.map((item, index) => (
-                <article key={item[0]}><span>{String(index + 1).padStart(2, '0')}</span><h3>{item[0]}</h3><p>{item[1]}</p></article>
+              {t.signals.items.map((item) => (
+                <article key={item[0]}><h3>{item[0]}</h3><p>{item[1]}</p></article>
               ))}
             </div>
             <div className="process-strip" aria-label={t.process.title}>
@@ -70,13 +78,13 @@ export function HomePage({ locale }: { locale: Locale }) {
         <section className="services-section" id="services">
           <div className="section-shell">
             <div className="section-heading services-heading">
-              <div><p className="section-kicker light">{t.services.kicker}</p><h2>{t.services.title}</h2></div>
+              <div><h2>{t.services.title}</h2></div>
               <p>{t.services.body}</p>
             </div>
             <div className="service-grid">
-              {t.services.cards.map((card, index) => (
+              {t.services.cards.map((card) => (
                 <article className={'featured' in card && card.featured ? 'service-card featured' : 'service-card'} key={card.name}>
-                  <div className="service-topline"><span>{String(index + 1).padStart(2, '0')}</span>{'featured' in card && card.featured ? <strong>{u.core}</strong> : null}</div>
+                  {'featured' in card && card.featured ? <div className="service-topline"><strong>{u.core}</strong></div> : null}
                   <h3>{card.name}</h3>
                   <p className="service-price"><strong>{card.price}</strong><span>{card.meta}</span></p>
                   <p>{card.desc}</p>
@@ -86,7 +94,7 @@ export function HomePage({ locale }: { locale: Locale }) {
               ))}
             </div>
             <div className="pricing-band" id="pricing">
-              <div className="pricing-copy"><p className="section-kicker light">{t.pricing.kicker}</p><h2>{t.pricing.title}</h2><p>{t.pricing.body}</p></div>
+              <div className="pricing-copy"><h2>{t.pricing.title}</h2><p>{t.pricing.body}</p></div>
               <details className="price-details">
                 <summary>{u.pricingDetails}<span aria-hidden="true">＋</span></summary>
                 <div className="price-table-wrap">
@@ -102,17 +110,15 @@ export function HomePage({ locale }: { locale: Locale }) {
 
         <section className="closing-section section-shell">
           <div className="faq-block" id="faq">
-            <p className="section-kicker">{t.faq.kicker}</p>
             <h2>{t.faq.title}</h2>
             <div className="faq-list">
-              {t.faq.items.map((item, index) => (
-                <details key={item[0]}><summary><span>{String(index + 1).padStart(2, '0')}</span>{item[0]}<i aria-hidden="true">＋</i></summary><p>{item[1]}</p></details>
+              {t.faq.items.map((item) => (
+                <details key={item[0]}><summary>{item[0]}<i aria-hidden="true">＋</i></summary><p>{item[1]}</p></details>
               ))}
             </div>
           </div>
 
           <aside className="booking-card" id="booking">
-            <p className="section-kicker light">{t.booking.kicker}</p>
             <h2>{t.booking.title}</h2>
             <p>{t.booking.body}</p>
             <p className="team-note">{u.teamNote}</p>

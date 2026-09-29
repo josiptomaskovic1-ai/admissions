@@ -5,10 +5,10 @@ export const translations = {
     hero: {
       eyebrow: 'Prijave na evropske univerzitete · savjetovanje na vašem jeziku',
       titleA: 'Studirajte u inostranstvu.',
-      titleB: 'Prijavite se s jasnim planom.',
-      body: 'Individualno, nezavisno savjetovanje za studije u inostranstvu — od izbora programa do prijave koja jasno predstavlja ko ste.',
-      primary: 'Zakažite besplatan razgovor',
-      secondary: 'Pogledajte usluge',
+      titleB: 'Birajte nezavisno.',
+      body: 'Nezavisno savjetovanje za evropske bachelor i master prijave — programi, troškovi, stipendije i rokovi povezani u jedan realan plan.',
+      primary: 'Zakažite besplatan razgovor od 15 min',
+      secondary: 'Pogledajte kako radimo',
     },
     trust: ['Nezavisno savjetovanje', 'Rad 1 na 1', 'Jasne cijene'],
     route: {
@@ -104,10 +104,10 @@ export const translations = {
     hero: {
       eyebrow: 'Prijave na evropske univerzitete · savetovanje na vašem jeziku',
       titleA: 'Studirajte u inostranstvu.',
-      titleB: 'Prijavite se uz jasan plan.',
-      body: 'Individualno, nezavisno savetovanje za studije u inostranstvu — od izbora programa do prijave koja jasno predstavlja ko ste.',
-      primary: 'Zakažite besplatan razgovor',
-      secondary: 'Pogledajte usluge',
+      titleB: 'Birajte nezavisno.',
+      body: 'Nezavisno savetovanje za prijave na evropske osnovne i master studije — programi, troškovi, stipendije i rokovi povezani u jedan realan plan.',
+      primary: 'Zakažite besplatan razgovor od 15 min',
+      secondary: 'Pogledajte kako radimo',
     },
     trust: ['Nezavisno savetovanje', 'Rad 1 na 1', 'Jasne cene'],
     route: {
@@ -185,9 +185,9 @@ export const translations = {
     localeName: 'Hrvatski',
     nav: { services: 'Usluge', process: 'Kako radimo', pricing: 'Cijene', faq: 'Pitanja', book: 'Rezervirajte razgovor' },
     hero: {
-      eyebrow: 'Prijave na europska sveučilišta · savjetovanje na vašem jeziku', titleA: 'Studirajte u inozemstvu.', titleB: 'Prijavite se s jasnim planom.',
-      body: 'Individualno, neovisno savjetovanje za studij u inozemstvu — od odabira programa do prijave koja jasno predstavlja tko ste.',
-      primary: 'Rezervirajte besplatan razgovor', secondary: 'Pogledajte usluge',
+      eyebrow: 'Prijave na europska sveučilišta · savjetovanje na vašem jeziku', titleA: 'Studirajte vani.', titleB: 'Birajte neovisno.',
+      body: 'Neovisno savjetovanje za prijave na europske preddiplomske i diplomske studije — programi, troškovi, stipendije i rokovi povezani u jedan realan plan.',
+      primary: 'Rezervirajte besplatan razgovor od 15 min', secondary: 'Pogledajte kako radimo',
     },
     trust: ['Neovisno savjetovanje', 'Osobna podrška', 'Jasne cijene'],
     route: {
@@ -265,9 +265,9 @@ export const translations = {
     localeName: 'English',
     nav: { services: 'Services', process: 'How it works', pricing: 'Pricing', faq: 'FAQ', book: 'Book a call' },
     hero: {
-      eyebrow: 'European university applications · guidance in your language', titleA: 'Study abroad.', titleB: 'Apply with a clear plan.',
-      body: 'Independent, one-to-one guidance for studying abroad—from choosing the right programs to submitting an application that clearly represents who you are.',
-      primary: 'Book a free introductory call', secondary: 'Explore services',
+      eyebrow: 'European university applications · guidance in your language', titleA: 'Study abroad.', titleB: 'Choose independently.',
+      body: 'Independent guidance for European bachelor’s and master’s applications—programs, costs, funding and deadlines aligned in one realistic plan.',
+      primary: 'Book a free 15-minute call', secondary: 'See how we work',
     },
     trust: ['Independent guidance', 'One-to-one support', 'Transparent pricing'],
     route: {
@@ -345,9 +345,9 @@ export const translations = {
     localeName: 'Deutsch',
     nav: { services: 'Leistungen', process: 'Ablauf', pricing: 'Preise', faq: 'FAQ', book: 'Gespräch buchen' },
     hero: {
-      eyebrow: 'Bewerbungen an europäischen Hochschulen · Beratung in Ihrer Sprache', titleA: 'Studieren Sie im Ausland.', titleB: 'Bewerben Sie sich mit klarem Plan.',
-      body: 'Unabhängige, persönliche Beratung für ein Studium im Ausland – von der Auswahl passender Programme bis zu einer Bewerbung, die Sie klar und authentisch zeigt.',
-      primary: 'Kostenloses Kennenlerngespräch', secondary: 'Leistungen ansehen',
+      eyebrow: 'Bewerbungen an europäischen Hochschulen · Beratung in Ihrer Sprache', titleA: 'Im Ausland studieren.', titleB: 'Unabhängig entscheiden.',
+      body: 'Unabhängige Beratung für europäische Bachelor- und Masterbewerbungen – Programme, Kosten, Förderung und Fristen in einem realistischen Plan.',
+      primary: 'Kostenloses 15-Minuten-Gespräch', secondary: 'So arbeiten wir',
     },
     trust: ['Unabhängige Beratung', 'Persönliche Begleitung', 'Transparente Preise'],
     route: {
@@ -425,9 +425,9 @@ export const translations = {
     localeName: 'Français',
     nav: { services: 'Services', process: 'Notre méthode', pricing: 'Tarifs', faq: 'Questions', book: 'Réserver un appel' },
     hero: {
-      eyebrow: 'Candidatures universitaires en Europe · conseil dans votre langue', titleA: 'Étudiez à l’étranger.', titleB: 'Candidatez avec un plan clair.',
-      body: 'Un accompagnement indépendant et individuel pour étudier à l’étranger — du choix des programmes à une candidature qui vous représente avec clarté.',
-      primary: 'Réserver un appel gratuit', secondary: 'Découvrir les services',
+      eyebrow: 'Candidatures universitaires en Europe · conseil dans votre langue', titleA: 'Étudiez à l’étranger.', titleB: 'Choisissez en toute indépendance.',
+      body: 'Un conseil indépendant pour les candidatures en licence et master en Europe — programmes, coûts, financements et échéances réunis dans un plan réaliste.',
+      primary: 'Réserver un appel gratuit de 15 min', secondary: 'Voir notre méthode',
     },
     trust: ['Conseil indépendant', 'Accompagnement individuel', 'Tarifs transparents'],
     route: {

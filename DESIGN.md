@@ -76,6 +76,7 @@ The site should feel like a precise admissions decision desk: a calm, compact do
 - **Register:** Brand-led marketing with product-level clarity and accessibility.
 - **Memorable signature:** The stylized Adria “A” mark paired with the admissions route panel and connected route line.
 - **Restraint:** All other sections use quiet grids, concise copy, honest starting prices, and limited motion.
+- **Institutional trust:** Independence and the repeatable Adria decision standard appear immediately after the hero. Individual advisers remain anonymous.
 - **Anti-references:** Full-screen empty heroes, generic campus stock-photo collages, unverified acceptance claims, ornamental globes/maps, mega-menus, and repeated conversion banners.
 - **Token ownership/runtime mapping:** Model B. `app/globals.css` is the canonical runtime token source. This file mirrors approved values and rationale; token changes update both files in one changeset.
 
@@ -101,7 +102,7 @@ Syne carries the brand in concise display headings only. Manrope carries all bod
 
 ## Layout
 
-The content frame is capped at 78rem with fluid side gutters. Desktop sections use approximately 4.5rem vertical padding and mobile sections approximately 3rem. The header is 4.5rem high. The hero is content-sized rather than viewport-sized and should reveal the next content band on common laptop screens. Services and prices are one section; process and decision factors are one section; FAQ and booking share one closing section. No decorative block may create a standalone mobile viewport.
+The content frame is capped at 78rem with fluid side gutters. Desktop sections use approximately 4.5rem vertical padding and mobile sections approximately 3rem. The header is 4.5rem high. The hero is content-sized rather than viewport-sized and should reveal the next content band on common laptop screens. Independence, the decision standard, services, pricing, FAQ and booking must each earn their vertical space. Services and prices are one section; process and decision factors are one section; FAQ and booking share one closing section. No decorative block may create a standalone mobile viewport.
 
 ## Elevation & Depth
 
@@ -141,10 +142,12 @@ One brief route-panel entrance may run on initial load. Hover motion is subtle a
 
 The voice is candid, calm, and specific. It avoids prestige theater, guarantees, and fabricated proof. Prices are labeled as fixed or starting amounts. Admissions outcomes remain controlled by universities and scholarship bodies.
 
+Methodology is the primary proof until permissioned client evidence exists. Decorative section labels and non-informational numbering are omitted; numbers are reserved for real sequences.
+
 ## Do's and Don'ts
 
 - **Do:** Put the proposition, primary action, transparent starting range, and independence signal in the first viewport.
 - **Do:** Keep the route metaphor functional and compact across all six language options.
-- **Do:** Use real founder credentials, evidence, and testimonials only when supplied and verifiable.
+- **Do:** Use permissioned, anonymised client evidence only when supplied and verifiable; otherwise show methodology and deliverable structure.
 - **Don't:** Create premium feeling by adding blank vertical space or oversized decorative scenes.
 - **Don't:** imply university partnerships, guaranteed admission, scholarship outcomes, or verified results without evidence.
