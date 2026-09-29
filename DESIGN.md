@@ -140,7 +140,7 @@ One brief route-panel entrance may run on initial load. Hover motion is subtle a
 
 ### Content and data visualization
 
-The voice is candid, calm, and specific. It avoids prestige theater, guarantees, and fabricated proof. Prices are labeled as fixed or starting amounts. Admissions outcomes remain controlled by universities and scholarship bodies.
+The voice is warm, confident, and specific. It leads with effort and candidate benefit: what the team will do, how fully it will engage, and what becomes clearer. Necessary limits appear once in calm, positive language rather than as repeated “we do not” disclaimers. It avoids prestige theater, guarantees, and fabricated proof. Prices are labeled as fixed or starting amounts. Admissions outcomes remain controlled by universities and scholarship bodies.
 
 Methodology is the primary proof until permissioned client evidence exists. Decorative section labels and non-informational numbering are omitted; numbers are reserved for real sequences.
 

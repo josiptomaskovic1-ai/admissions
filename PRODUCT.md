@@ -10,6 +10,8 @@ Its core job is to turn a fragmented decision into one realistic plan: academic 
 
 Primary promise: clearer decisions and a stronger, authentic application process.
 
+Delivery promise: the public voice leads with maximum care, practical effort and candidate benefit. Necessary limits appear once, calmly, rather than as repeated defensive disclaimers.
+
 Distinctive mechanism: every recommendation is tested against the same five criteria — academic fit, total cost, deadlines, funding options and realistic application risk.
 
 Adria Admissions is not a university recruitment channel and must not present partner-university access as a reason to choose a programme.
@@ -34,6 +36,7 @@ Scope and price are confirmed in writing before payment. Universities and schola
 
 - The consultancy is the public brand. Individual adviser names, photographs, LinkedIn profiles and identifying biographies are not published.
 - Trust is earned through methodology, clear scope, ethical boundaries, transparent prices, useful sample structures and verifiable client evidence when permission exists.
+- Lead with what the team will do for the applicant and how the process becomes clearer.
 - Never invent testimonials, acceptance statistics, institutional relationships, client counts or case-study outcomes.
 - Never promise admission or funding.
 - Do not write application essays for the applicant. Advice, questions, structure and feedback must preserve the applicant’s authorship and voice.

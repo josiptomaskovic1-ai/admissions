@@ -52,6 +52,7 @@ html {
 body {
   margin: 0;
   min-width: 20rem;
+  overflow-x: clip;
   background: var(--white);
   color: var(--ink);
   font-family: var(--font-body), Arial, sans-serif;
@@ -1152,12 +1153,12 @@ h3 {
 .info-page,
 .legal-page {
   min-height: calc(100vh - 18rem);
-  padding-block: clamp(3.2rem, 7vw, 5.3rem);
+  padding-block: clamp(2.6rem, 5vw, 4rem);
 }
 
 .info-hero {
   max-width: 54rem;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
 }
 
 .info-hero h1 {
@@ -1229,6 +1230,11 @@ h3 {
   grid-area: prepare;
 }
 
+.prepare-card h2 {
+  margin-bottom: 1.2rem;
+  font-size: 1.1rem;
+}
+
 .contact-card h2 {
   font-size: clamp(1.7rem, 3vw, 2.6rem);
 }
@@ -1296,20 +1302,13 @@ h3 {
 }
 
 .legal-grid section {
-  min-height: 18rem;
   padding: clamp(1.2rem, 3vw, 2rem);
   border-right: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
 }
 
-.legal-grid section > span {
-  color: var(--cobalt);
-  font-size: 0.7rem;
-  font-weight: 850;
-}
-
 .legal-grid h2 {
-  margin-top: 2.5rem;
+  margin-top: 0;
   font-size: 1.4rem;
 }
 
@@ -1480,9 +1479,6 @@ h3 {
     min-height: auto;
   }
 
-  .legal-grid h2 {
-    margin-top: 1.5rem;
-  }
 }
 
 @media (max-width: 26rem) {
