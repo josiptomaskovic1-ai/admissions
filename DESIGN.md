@@ -65,7 +65,7 @@ components:
 
 ### Creative North Star
 
-The site should feel like a precise admissions decision desk: a calm, compact dossier that turns a complicated process into one visible route. The page is not a lifestyle magazine and not a university brochure. Its visual signature is a concise three-stop route panel that makes profile, direction, and application feel connected.
+The site should feel like a precise admissions decision desk: a calm, compact dossier that turns a complicated process into one visible route. The page is not a lifestyle magazine and not a university brochure. Its visual signature is now a dark five-factor decision card paired with a tangible sample report; together they make independent selection and the paid deliverable immediately understandable.
 
 ### Product context and register
 
@@ -74,8 +74,8 @@ The site should feel like a precise admissions decision desk: a calm, compact do
 - **Locales:** Croatian, Bosnian/Bošnjački, Serbian/Montenegrin Latin, English, German, and French. Each language has a stable URL; Bosnian is the default. No browser storage is used for language selection.
 - **Usage scene:** Mostly mobile and small-laptop comparison shopping under deadline pressure. Users should see the proposition, starting price, ethics, and booking route without prolonged scrolling.
 - **Register:** Brand-led marketing with product-level clarity and accessibility.
-- **Memorable signature:** The stylized Adria “A” mark paired with the admissions route panel and connected route line.
-- **Restraint:** All other sections use quiet grids, concise copy, honest starting prices, and limited motion.
+- **Memorable signature:** The enlarged stylized Adria “A” mark paired with the five-factor decision card and dossier-style sample report.
+- **Restraint:** All other sections use quiet grids, concise copy, exact standard-package prices, and limited motion.
 - **Institutional trust:** Independence and the repeatable Adria decision standard appear immediately after the hero. Individual advisers remain anonymous.
 - **Anti-references:** Full-screen empty heroes, generic campus stock-photo collages, unverified acceptance claims, ornamental globes/maps, mega-menus, and repeated conversion banners.
 - **Token ownership/runtime mapping:** Model B. `app/globals.css` is the canonical runtime token source. This file mirrors approved values and rationale; token changes update both files in one changeset.
@@ -102,7 +102,7 @@ Syne carries the brand in concise display headings only. Manrope carries all bod
 
 ## Layout
 
-The content frame is capped at 78rem with fluid side gutters. Desktop sections use approximately 4.5rem vertical padding and mobile sections approximately 3rem. The header is 4.5rem high. The hero is content-sized rather than viewport-sized and should reveal the next content band on common laptop screens. Independence, the decision standard, services, pricing, FAQ and booking must each earn their vertical space. Services and prices are one section; process and decision factors are one section; FAQ and booking share one closing section. No decorative block may create a standalone mobile viewport.
+The content frame is capped at 78rem with fluid side gutters. Desktop sections use approximately 4.5rem vertical padding and mobile sections approximately 3rem. The header is approximately 5.25rem high to give the brand mark sufficient presence. The hero is content-sized rather than viewport-sized and begins demonstrating the decision model in the first screen. Independence, audiences, methodology, deliverable sample, services, pricing, trust, FAQ and booking must each earn their vertical space. Service rows keep all package names and prices visible while detailed scope expands on demand. No decorative block may create a standalone mobile viewport.
 
 ## Elevation & Depth
 
@@ -124,7 +124,7 @@ The primary action is cobalt on white or white on cobalt. Secondary actions are 
 
 ### Navigation and data display
 
-Desktop navigation exposes only services, process, pricing, FAQ, language, and one booking CTA. Mobile removes the content navigation but keeps language and booking. Prices use semantic definition lists or tables, not visual-only div rows.
+Desktop navigation exposes only services, process, pricing, FAQ, contact, language, and one booking CTA. Mobile removes the content navigation, keeps contact and language, and may omit the duplicate header booking CTA because the hero action is immediately visible. Prices use semantic disclosure rows and definition lists. Every core package exposes its price, audience and limit before expansion.
 
 ### Contact actions and overlays
 
@@ -142,7 +142,7 @@ One brief route-panel entrance may run on initial load. Hover motion is subtle a
 
 The voice is warm, confident, and specific. It leads with effort and candidate benefit: what the team will do, how fully it will engage, and what becomes clearer. Necessary limits appear once in calm, positive language rather than as repeated “we do not” disclaimers. It avoids prestige theater, guarantees, and fabricated proof. Prices are labeled as fixed or starting amounts. Admissions outcomes remain controlled by universities and scholarship bodies.
 
-Methodology is the primary proof until permissioned client evidence exists. Decorative section labels and non-informational numbering are omitted; numbers are reserved for real sequences.
+Methodology and an explicitly illustrative, non-client dossier preview are the primary proof until permissioned client evidence exists. Decorative section labels and non-informational numbering are omitted; numbers are reserved for the real six-step sequence.
 
 ## Do's and Don'ts
 

@@ -1,6 +1,6 @@
 # Adria Admissions — growth, konverzija i tržišna strategija
 
-Istraživanje ažurirano: 29. rujna 2026.  
+Istraživanje i ponuda ažurirani: 30. rujna 2026.
 Primarni cilj: izgraditi premium, neovisnu admissions consultancy za europske bachelor i master prijave, uz potpunu anonimnost pojedinačnih savjetnika.
 
 ## 1. Pozicija koju tržište može razumjeti za 5–10 sekundi
@@ -85,26 +85,30 @@ Službeni izvori koje sadržaj mora koristiti: [DAAD scholarship database](https
 
 ## 5. Arhitektura usluga i cijene
 
-### Trenutačne cijene
+### Objavljena ljestvica
 
-Trenutačni javni raspon je razuman za validacijsku fazu, ali donji kraj nije dugoročno premium ako uključuje mnogo pripreme, revizija i komunikacije.
+| Usluga | Cijena | Granica opsega |
+|---|---:|---|
+| Fit Call | €0 | 15 min, samo kvalifikacija i sljedeći korak |
+| Strategy Consultation | €70 | 60 min; iznos se priznaje za kvalificirani veći paket kupljen u 14 dana |
+| Admissions Blueprint | €220 | pisana strategija; približno 8–12 smislenih stranica kada je primjenjivo |
+| University Direction | €350 | do 8 programa, jedna revizija i kratki review poziv |
+| Guided Application | €800 | do 2 standardna programa, dvije runde feedbacka, do 8 tjedana |
+| Full Partnership | €1.400 | do 3 standardne europske prijave, dvije runde feedbacka, do 4 mjeseca |
+| Full Partnership Plus | €1.700 | do 4 prijave, tri runde feedbacka, 2 check-ina, do 6 mjeseci |
+| Scholarship / Selective Intensive | €1.900–€2.500 | raspon ovisi o broju eseja, stipendija, intervjua i posebnih komponenti |
 
-| Usluga | Trenutačno | Operativna granica za približno €80–€100 efektivne vrijednosti sata |
-|---|---:|---:|
-| Strategy Consultation | €100 | najviše 75 min ukupnog rada, uključujući administraciju |
-| Admissions Blueprint | €240 | najviše 2.5–3 sata ukupnog rada |
-| University Direction | od €490 | približno 5 sati na početnoj cijeni |
-| Full Partnership | €1,400–€2,500 | €1,400 pokriva samo vrlo strogo ograničen opseg; 20 sati rada daje €70/h prije svih troškova |
+Fiksni dodaci: dodatna standardna prijava €280, dodatna stipendijska prijava standardnog opsega €300, priprema za intervju €140 i dodatna 60-minutna strategijska sesija €100. Paket od €800 može se platiti u dvije, a paketi od €1.400 naviše u tri rate.
 
-### Preporuka
+### Zašto ljestvica ima smisla
 
-Ne mijenjati cijene prije prvih stvarnih podataka o satima isporuke i stopi zatvaranja. Nakon 5–10 plaćenih klijenata:
+- €70 smanjuje rizik prvog plaćenog kontakta i odvaja dijagnostiku od prodajnog fit poziva.
+- €220 i €350 završavaju konkretnim dokumentom koji kupac može koristiti samostalno.
+- Skok na €800 objašnjen je radom na dvjema stvarnim prijavama, dokumentima i završnom kontrolom.
+- Razlika između €1.400 i €1.700 vidljiva je u četvrtoj prijavi, dodatnoj reviziji, check-in pozivima i duljem razdoblju podrške.
+- Raspon ostaje samo na intenzivnom paketu, gdje opterećenje doista varira zbog više eseja, stipendija, intervjua ili posebnih selekcijskih sastavnica.
 
-- zadržati €100 samo za uski „Decision Session” bez pregleda cijelog dosjea i bez pisanog izvještaja;
-- testirati Blueprint na €350–€450 ako uključuje pripremu, 60 minuta i pisani plan;
-- zadržati University Direction od €490 samo uz vrlo jasan limit do osam programa i jednu reviziju; kompleksne zemlje naplatiti više;
-- podići donji prag Full Partnershipa ili strogo smanjiti broj programa, dokumenata, revizija i razdoblje podrške;
-- svaku ponudu pratiti pisanom tablicom „uključeno / nije uključeno / rok isporuke / broj revizija”.
+Nakon prvih 5–10 plaćenih klijenata treba izmjeriti sate po usluzi, vrijeme odgovora, stopu zatvaranja i razloge odustajanja. Cijene se tada mijenjaju samo na temelju stvarnog opterećenja i potražnje, ne radi kozmetičnog premium dojma.
 
 ## 6. Homepage i povjerenje bez javnih identiteta
 
@@ -165,7 +169,7 @@ Svaka stranica treba odgovoriti na: za koga je, što se odlučuje, službeni izv
 
 ### Lead magnet
 
-**European Application Readiness Map** — kratka tablica koju kandidat sam popunjava:
+**2027 European Admissions Planner** — praktičan dokument koji kandidat sam popunjava:
 
 - cilj i razina studija;
 - zemlje/programi;
@@ -176,7 +180,7 @@ Svaka stranica treba odgovoriti na: za koga je, što se odlučuje, službeni izv
 - crvene zastavice;
 - sljedeća odluka.
 
-Ne objavljivati obrazac koji ne šalje podatke. Prvo odabrati email/CRM alat, definirati privolu i testirati slanje i odjavu.
+Traženi put je: oglas ili koristan sadržaj → tematska landing stranica → planner → email slijed → 15-minutni fit poziv → plaćena konsultacija → veći paket. Ne objavljivati obrazac koji ne šalje podatke. Prvo odabrati email/CRM alat, definirati privolu i testirati slanje, odjavu, brisanje i evidenciju izvora privole.
 
 ### Email slijed nakon preuzimanja
 
@@ -279,7 +283,7 @@ Obavezno prije plaćene usluge:
 
 ### Prvih 30 dana — validacija
 
-- Objaviti jasno pozicioniranje i neovisni Adria standard.
+- Objaviti jasno pozicioniranje, novu cjenovnu ljestvicu i neovisni Adria standard.
 - Voditi sve upite kroz jedan Calendly fit call.
 - Za svaki lead zabilježiti segment, cilj, rok, ponuđenu uslugu, ishod i razlog odbijanja.
 - Isporučiti 2–3 plaćena pilot angažmana uz precizno mjerenje vremena.

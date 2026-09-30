@@ -1,18 +1,19 @@
 # Adria Admissions — audit i spremnost za lansiranje
 
-Datum audita: 29. rujna 2026.
+Datum audita: 30. rujna 2026.
 Status: tehnički spremna javna, neindeksirana preview verzija; nije pravno spremna za sklapanje ugovora ili naplatu.
 
 ## Sažetak
 
-Stranica je kompaktna, server-renderirana i dostupna na šest stabilnih jezičnih ruta. Najnovija izmjena poboljšava prvo razumijevanje ponude: hero sada govori „Studirajte vani. Prijavite se s jasnim planom.”, a odmah nakon njega slijede neovisnost i Adria standard odlučivanja.
+Stranica je kompaktna, server-renderirana i dostupna na šest stabilnih jezičnih ruta. Nova naslovnica u prvom ekranu objašnjava europske prijave, ciljnu skupinu, neovisni model, plaćenu vrijednost i sljedeći korak. Petofaktorska decision kartica odmah pokazuje da se svaki program procjenjuje kroz akademsku usklađenost, ukupan trošak, financiranje, rokove i rizik.
 
 Povjerenje se ne gradi identitetima članova tima. Stranica umjesto toga pokazuje:
 
 - da Adria nije prodajni kanal sveučilišta;
 - kriterije preporuke;
 - jasan proces;
-- transparentan raspon cijena i opseg;
+- potpunu cjenovnu ljestvicu, broj prijava, revizije i trajanje podrške;
+- ilustrativni sample izvještaja bez podataka stvarnog kandidata;
 - etičku granicu da kandidat ostaje autor prijave.
 
 Nema izmišljenih rezultata, partnerstava, testimonijala ili jamstava.
@@ -25,17 +26,18 @@ Provjereno na desktopu i mobilnom viewportu od 390 px:
 - osnovni tekst je 16 px, a naslov je responzivan;
 - primarni CTA je vidljiv u prvom mobilnom ekranu;
 - njemački naslov i duge lokalizacije ne izlaze iz okvira;
-- ruta Profil → Smjer → Prijava ostaje jedini naglašeni vizualni motiv;
-- neovisnost je vidljiva odmah nakon prvog ekrana;
+- petofaktorska decision kartica i dossier sample ostaju dva naglašena vizualna motiva;
+- neovisnost je vidljiva u prvom ekranu;
 - ukrasni section labeli i brojevi bez funkcije uklonjeni su s naslovnice;
 - procesni brojevi ostaju samo gdje objašnjavaju stvarni slijed;
-- booking i FAQ ostaju nativni, bez nepotrebnog klijentskog JavaScripta.
+- osam paketa koristi kompaktne nativne disclosure redove pa su naziv, publika, cijena i limit vidljivi bez dugog niza kartica;
+- booking, paketi i FAQ ostaju nativne kontrole, bez dodatnog klijentskog stanja.
 
 Stranica je namjerno gušća od tipične lifestyle landing stranice. Ne koristi puni viewport za dekoraciju, generičke fotografije kampusa, višestruke CTA bannere ili dugačke prazne razmake.
 
 ## Accessibility audit
 
-Potvrđeno:
+Potvrđeno na šest mobilnih lokalizacija i hrvatskom desktop prikazu:
 
 - jedan H1 na svakoj ruti;
 - header, main i footer landmarki;
@@ -47,7 +49,7 @@ Potvrđeno:
 - minimalni touch targeti za glavne kontrole;
 - nema `alert`, `confirm`, `prompt`, lažnih `href="#"` akcija ili klikabilnih nesemantičkih elemenata.
 
-Projektni strict UI audit: 0 nalaza, 0 upozorenja.
+Ručna provjera uključuje desktop, mobilni viewport od 390 px, otvaranje paketa te mjerenje horizontalnog preljeva. Automatizirani projektni UI audit treba ponoviti nakon svake veće promjene dizajna.
 
 ## SEO audit
 
@@ -60,7 +62,7 @@ Implementirano:
 - brand-only naslov taba „Adria Admissions”;
 - `ProfessionalService` structured data;
 - `robots.txt` i `sitemap.xml`;
-- 24 lokalizirane stranice provjerene automatiziranim auditom.
+- 24 lokalizirane stranice, šest Calendly preusmjerenja, cijene, metadata, sidra, robots i sitemap provjereni automatiziranim auditom.
 
 Indeksiranje je namjerno isključeno:
 
@@ -78,12 +80,12 @@ Aktualna produkcijska provjera:
 - strict TypeScript: prolaz;
 - produkcijski Vinext/Vite build: prolaz;
 - 24 lokalizirane rute, 6 Calendly preusmjerenja, metapodaci i sidra: prolaz;
-- strict design/project audit: 0 nalaza;
+- browser tab na svim rutama ostaje „Adria Admissions”;
 - sve glavne sadržajne rute ostaju statički generirane;
 - stranica nema analitiku, chat widget, iframe kalendar, bazu podataka ili web obrazac;
 - aplikacijski kod ne dodaje klijentsko stanje na sadržajne stranice.
 
-Build prikazuje samo upozorenje o deprecated Node `punycode` ovisnosti unutar alata i Vinext preporuku za buduću migraciju na `vite build`; build završava uspješno.
+Build prikazuje samo upozorenje o deprecated Node `punycode` ovisnosti unutar alata i Vinext preporuku za buduću migraciju na `vite build`; build završava uspješno. Produkcijski `npm audit --omit=dev` nalazi 0 poznatih ranjivosti. Razvojni build alat zadržava četiri umjerena nalaza u `fflate` lancu kroz Vinext/Satori; automatsko uklanjanje traži prisilni breaking downgrade Vinexta pa nije primijenjeno. To nije kod koji se isporučuje posjetiteljima, ali treba ga ponovno provjeriti pri sljedećem ažuriranju Vinexta.
 
 ## Sigurnosni audit
 
@@ -121,12 +123,15 @@ Aktualni javni proizvodi:
 | Usluga | Cijena | Javni opseg |
 |---|---:|---|
 | Uvodni fit razgovor | 0 € | 15 minuta |
-| Strategy Consultation | 100 € | 60 minuta |
-| Admissions Blueprint | 240 € | profilni inputi, razgovor i pisani plan |
-| University Direction | od 490 € | do 8 programa, rokovi/troškovi i jedna revizija |
-| Full Application Partnership | 1.400–2.500 € | do četiri europska programa i unaprijed definiran period podrške |
+| Strategy Consultation | 70 € | 60 minuta; priznaje se za kvalificirani veći paket u 14 dana |
+| Admissions Blueprint | 220 € | pisana strategija i akcijski plan |
+| University Direction | 350 € | do 8 programa, jedna revizija i kratki review poziv |
+| Guided Application | 800 € | do dvije standardne prijave i osam tjedana |
+| Full Partnership | 1.400 € | do tri standardne europske prijave i četiri mjeseca |
+| Full Partnership Plus | 1.700 € | do četiri prijave, dodatna revizija i šest mjeseci |
+| Scholarship / Selective Intensive | 1.900–2.500 € | opseg raste s esejima, stipendijama, intervjuima i posebnim komponentama |
 
-Benchmark potvrđuje da su to validacijske, regionalno pristupačne cijene, ali donji prag Full Partnershipa može biti ekonomski slab bez strogog ograničenja sati i revizija. Detaljna preporuka nalazi se u `docs/GROWTH_AND_CONVERSION_STRATEGY.md`.
+Regionalni benchmark pokazuje besplatne i vrlo jeftine partner-agency modele, dok međunarodni specijalisti naplaćuju znatno više. Ova ljestvica zato ne pokušava biti najjeftinija: 70 € smanjuje rizik prvog plaćenog koraka, 220–350 € prodaju samostalne dokumente, a 800–1.700 € imaju precizan broj prijava, revizija i mjeseci podrške. Detaljna preporuka nalazi se u `docs/GROWTH_AND_CONVERSION_STRATEGY.md`.
 
 ## Pravni audit — blokatori prije naplate
 

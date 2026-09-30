@@ -2,13 +2,13 @@
 
 ## Product
 
-Adria Admissions is an independent, boutique admissions consultancy for applicants from Southeast Europe and the diaspora who are considering bachelor’s or master’s study in Europe.
+Adria Admissions is an independent, boutique admissions consultancy for applicants from Serbia, Croatia, Bosnia and Herzegovina, Montenegro and the wider diaspora who are considering bachelor’s or master’s study and scholarships in Europe.
 
 Its core job is to turn a fragmented decision into one realistic plan: academic fit, programme choice, total cost, funding options, deadlines and application quality.
 
 ## Positioning
 
-Primary promise: clearer decisions and a stronger, authentic application process.
+Primary promise: independent admissions strategy for European university and scholarship applications.
 
 Delivery promise: the public voice leads with maximum care, practical effort and candidate benefit. Necessary limits appear once, calmly, rather than as repeated defensive disclaimers.
 
@@ -24,13 +24,16 @@ Adria Admissions is not a university recruitment channel and must not present pa
 
 ## Current offer
 
-- Free 15-minute fit call.
-- Strategy Consultation — €100 / 60 minutes.
-- Admissions Blueprint — €240 fixed fee.
-- University Direction — from €490.
-- Full Application Partnership — €1,400–€2,500.
+- Free Fit Call — €0 / 15 minutes.
+- Strategy Consultation — €70 / 60 minutes; credited to a qualifying larger package purchased within 14 days.
+- Admissions Blueprint — €220 fixed fee.
+- University Direction — €350 / up to eight programmes, one revision and a short review call.
+- Guided Application — €800 / up to two standard programmes and eight weeks of support.
+- Full Partnership — €1,400 / up to three standard European applications and four months of support.
+- Full Partnership Plus — €1,700 / up to four standard European applications, an additional review round and six months of support.
+- Scholarship / Selective Intensive — €1,900–€2,500, driven by the number of essays, scholarships, interviews and special application components.
 
-Scope and price are confirmed in writing before payment. Universities and scholarship bodies make all final decisions.
+Fixed add-ons are €280 for an additional standard application, €300 for standard scholarship support, €140 for interview preparation and €100 for an additional 60-minute strategy session. The €800 package may be paid in up to two instalments; packages from €1,400 in up to three. Scope, revision count, support period and price are confirmed in writing before payment. Universities and scholarship bodies make all final decisions.
 
 ## Brand and trust commitments
 
@@ -47,7 +50,7 @@ The website and guidance support Croatian, Bosnian, Serbian/Montenegrin, English
 
 ## Conversion path
 
-The primary public action is the free 15-minute fit call through Calendly. General enquiries go to adria.admissions@gmail.com. The website does not currently collect enquiries, newsletter subscriptions or analytics data itself.
+The primary public action is the free 15-minute fit call through Calendly. General enquiries go to adria.admissions@gmail.com. The paid 60-minute consultation is the first diagnostic product and leads into larger packages where appropriate. The website does not currently collect enquiries, newsletter subscriptions or analytics data itself; the planned 2027 Admissions Planner must not launch with email capture until a provider, consent wording and deletion process are selected and tested.
 
 ## Legal and operating constraints
 

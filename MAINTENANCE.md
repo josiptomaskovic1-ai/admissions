@@ -14,13 +14,13 @@ Stranica je namjerno napravljena bez korisničkih računa, baze podataka, admini
 
 1. Otvorite početnu i kontaktnu stranicu na mobitelu i računalu.
 2. Kliknite booking gumb i potvrdite da Calendly prikazuje 15-minutni razgovor i ispravnu dostupnost.
-3. Kliknite adresu e-pošte ili ispunite testni obrazac bez slanja poruke.
+3. Otvorite kontaktnu stranicu i provjerite da je adria.admissions@gmail.com ispravno prikazana.
 4. Na GitHubu provjerite je li mjesečna provjera zelena. Ako jest, ne morate ništa raditi.
 
 ### Svaka tri mjeseca — oko 30 minuta
 
 1. Pregledajte Dependabot prijedloge. Spojite samo one za koje sve provjere prolaze.
-2. Provjerite cijene, trajanje usluga i rokove na svih šest jezika.
+2. Provjerite cijene, broj prijava, revizije i trajanje podrške na svih šest jezika.
 3. Provjerite vode li linkovi Privatnost, Kontakt i Calendly na ispravna mjesta.
 
 ### Jednom godišnje — oko 60 minuta

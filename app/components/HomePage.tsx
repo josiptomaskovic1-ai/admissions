@@ -1,20 +1,20 @@
 import type { Locale } from '../content';
-import { translations } from '../content';
+import { homeContent } from '../home-content';
 import { utility } from '../i18n';
 import { brandName, calendarLink, siteUrl } from '../site-config';
 import { SiteFooter, SiteHeader } from './SiteChrome';
 
 export function HomePage({ locale }: { locale: Locale }) {
-  const t = translations[locale];
+  const t = homeContent[locale];
   const u = utility[locale];
   const structuredData = {
     '@context': 'https://schema.org',
     '@type': 'ProfessionalService',
     name: brandName,
     url: `${siteUrl}/${locale}`,
-    description: t.footer.description,
-    areaServed: ['Europe', 'Balkans'],
-    serviceType: 'Independent university admissions guidance',
+    description: t.hero.body,
+    areaServed: ['Serbia', 'Croatia', 'Bosnia and Herzegovina', 'Montenegro', 'Europe'],
+    serviceType: 'Independent European university admissions strategy',
     availableLanguage: ['Bosnian', 'Croatian', 'Serbian', 'Montenegrin', 'English', 'German', 'French'],
   };
 
@@ -24,115 +24,110 @@ export function HomePage({ locale }: { locale: Locale }) {
       <main id="main-content" tabIndex={-1}>
         <section className="hero section-shell" id="top">
           <div className="hero-copy">
-            <h1>{t.hero.titleA} <em>{t.hero.titleB}</em></h1>
+            <h1>{t.hero.title} <em>{t.hero.accent}</em></h1>
             <p className="hero-lede">{t.hero.body}</p>
             <div className="hero-actions">
-              <a className="button button-primary" href="#booking">{t.hero.primary}<span aria-hidden="true">↗</span></a>
-              <a className="text-link" href="#process">{t.hero.secondary}<span aria-hidden="true">↓</span></a>
+              <a className="button button-primary" href="#booking">{t.hero.primary}</a>
+              <a className="text-link" href="#sample">{t.hero.secondary}</a>
             </div>
+            <ul className="hero-proof" aria-label={t.hero.proof.join(', ')}>
+              {t.hero.proof.map((item) => <li key={item}>{item}</li>)}
+            </ul>
           </div>
 
-          <aside className="route-panel" aria-label={t.route.title}>
-            <div className="route-head"><span>{t.route.title}</span><span className="status"><i />{t.route.live}</span></div>
-            <ol className="route-stops">
-              {t.route.stops.map((stop, index) => (
-                <li key={stop[0]}>
-                  <span className="route-node">{String(index + 1).padStart(2, '0')}</span>
-                  <span><strong>{stop[0]}</strong><small>{stop[1]}</small></span>
-                </li>
-              ))}
-            </ol>
-            <p>{t.route.note}</p>
-            <div className="route-foot"><span>{t.route.next}</span><strong>{t.route.free}</strong></div>
+          <aside className="decision-card" aria-label={t.decision.title}>
+            <div className="decision-card-head"><h2>{t.decision.title}</h2><p>{t.decision.note}</p></div>
+            <dl>{t.decision.factors.map(([label, value]) => <div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}</dl>
+            <p className="decision-card-foot">{t.decision.paid}</p>
           </aside>
         </section>
 
-        <section className="decision-section" id="process">
+        <section className="independent-section" id="process">
           <div className="section-shell">
-            <aside className="independence-band">
-              <div>
-                <h2>{t.principles.title}</h2>
-                <p>{t.principles.body}</p>
-              </div>
-              <ul>
-                {t.principles.labels.map((label) => <li key={label[1]}>{label[1]}</li>)}
-              </ul>
-            </aside>
-            <div className="section-heading split-heading">
-              <div><h2>{t.signals.title}</h2></div>
-              <p>{t.signals.body}</p>
+            <div className="section-heading split-heading"><h2>{t.independent.title}</h2><p>{t.independent.body}</p></div>
+            <div className="factor-grid">{t.independent.factors.map(([title, body]) => <article key={title}><h3>{title}</h3><p>{body}</p></article>)}</div>
+          </div>
+        </section>
+
+        <section className="audience-section section-shell">
+          <div className="section-heading compact-heading"><h2>{t.audiences.title}</h2><p>{t.audiences.body}</p></div>
+          <div className="audience-grid">
+            {t.audiences.groups.map((group) => <article key={group.title}><h3>{group.title}</h3><p>{group.lead}</p><ul>{group.points.map((point) => <li key={point}>{point}</li>)}</ul></article>)}
+          </div>
+        </section>
+
+        <section className="method-section">
+          <div className="section-shell">
+            <div className="section-heading split-heading inverse-heading"><h2>{t.method.title}</h2><p>{t.method.body}</p></div>
+            <ol className="method-line">{t.method.steps.map(([title, body], index) => <li key={title}><span>{index + 1}</span><div><h3>{title}</h3><p>{body}</p></div></li>)}</ol>
+          </div>
+        </section>
+
+        <section className="sample-section section-shell" id="sample">
+          <div className="section-heading split-heading"><h2>{t.sample.title}</h2><p>{t.sample.body}</p></div>
+          <article className="sample-document">
+            <header><div><span>{t.sample.badge}</span><h3>{t.sample.documentTitle}</h3></div><p>{t.sample.documentMeta}</p></header>
+            <div className="sample-table" role="table" aria-label={t.sample.documentTitle}>
+              {t.sample.rows.map(([programme, fit, risk]) => <div role="row" key={programme}><strong role="cell">{programme}</strong><span role="cell">{fit}</span><span role="cell">{risk}</span></div>)}
             </div>
-            <div className="decision-grid">
-              {t.signals.items.map((item) => (
-                <article key={item[0]}><h3>{item[0]}</h3><p>{item[1]}</p></article>
+            <ul className="sample-checks">{t.sample.timeline.map((item) => <li key={item}>{item}</li>)}</ul>
+            <p className="sample-note">{t.sample.note}</p>
+          </article>
+        </section>
+
+        <section className="offers-section" id="services">
+          <div className="section-shell">
+            <div className="section-heading split-heading inverse-heading"><h2>{t.offers.title}</h2><p>{t.offers.body}</p></div>
+            <div className="offer-list" id="pricing">
+              {t.offers.cards.map((offer) => (
+                <details className={offer.featured ? 'offer-row featured' : 'offer-row'} key={offer.name} open={offer.featured || undefined}>
+                  <summary>
+                    <span className="offer-identity"><strong>{offer.name}</strong><small>{offer.label}</small></span>
+                    <span className="offer-best"><small>{t.offers.bestFor}</small>{offer.bestFor}</span>
+                    <span className="offer-price"><strong>{offer.price}</strong><small>{offer.meta}</small></span>
+                    <span className="offer-toggle" aria-hidden="true" />
+                  </summary>
+                  <div className="offer-detail">
+                    <p>{offer.summary}</p>
+                    <div><strong>{t.offers.includes}</strong><ul>{offer.includes.map((item) => <li key={item}>{item}</li>)}</ul></div>
+                    <div><strong>{t.offers.limits}</strong><ul>{offer.limits.map((item) => <li key={item}>{item}</li>)}</ul></div>
+                    <a href="#booking">{t.offers.cta}</a>
+                  </div>
+                </details>
               ))}
             </div>
-            <div className="process-strip" aria-label={t.process.title}>
-              {t.process.steps.map((step, index) => (
-                <article key={step[0]}><span>{index + 1}</span><div><h3>{step[0]}</h3><p>{step[1]}</p></div></article>
-              ))}
+
+            <div className="pricing-policy">
+              <div className="pricing-intro"><h2>{t.pricing.title}</h2><p>{t.pricing.body}</p><p className="credit-note">{t.pricing.credit}</p></div>
+              <div className="addon-table"><h3>{t.pricing.addonsTitle}</h3><dl>{t.pricing.addons.map(([name, scope, price]) => <div key={name}><dt><strong>{name}</strong><small>{scope}</small></dt><dd>{price}</dd></div>)}</dl></div>
+              <div className="instalment-note"><h3>{t.pricing.instalmentsTitle}</h3><ul>{t.pricing.instalments.map((item) => <li key={item}>{item}</li>)}</ul></div>
             </div>
           </div>
         </section>
 
-        <section className="services-section" id="services">
-          <div className="section-shell">
-            <div className="section-heading services-heading">
-              <div><h2>{t.services.title}</h2></div>
-              <p>{t.services.body}</p>
-            </div>
-            <div className="service-grid">
-              {t.services.cards.map((card) => (
-                <article className={'featured' in card && card.featured ? 'service-card featured' : 'service-card'} key={card.name}>
-                  {'featured' in card && card.featured ? <div className="service-topline"><strong>{u.core}</strong></div> : null}
-                  <h3>{card.name}</h3>
-                  <p className="service-price"><strong>{card.price}</strong><span>{card.meta}</span></p>
-                  <p>{card.desc}</p>
-                  <ul>{card.bullets.map((bullet) => <li key={bullet}>{bullet}</li>)}</ul>
-                  <a href="#booking">{t.services.cta}<span aria-hidden="true">↗</span></a>
-                </article>
-              ))}
-            </div>
-            <div className="pricing-band" id="pricing">
-              <div className="pricing-copy"><h2>{t.pricing.title}</h2><p>{t.pricing.body}</p></div>
-              <details className="price-details">
-                <summary>{u.pricingDetails}<span aria-hidden="true">＋</span></summary>
-                <div className="price-table-wrap">
-                  <p>{u.pricingScope}</p>
-                  <table><tbody>{t.pricing.table.map((row) => <tr key={row[0]}><th scope="row">{row[0]}</th><td>{row[1]}</td><td>{row[2]}</td></tr>)}</tbody></table>
-                  <small>{t.pricing.note}</small>
-                </div>
-              </details>
-            </div>
-            <aside className="ethics-band"><span aria-hidden="true">↳</span><div><h3>{t.principles.ethicsTitle}</h3><p>{t.principles.ethicsBody}</p></div></aside>
+        <section className="value-section section-shell">
+          <div className="value-copy"><h2>{t.value.title}</h2><p>{t.value.body}</p></div>
+          <div className="value-points">{t.value.points.map(([title, body]) => <article key={title}><h3>{title}</h3><p>{body}</p></article>)}</div>
+        </section>
+
+        <section className="trust-section">
+          <div className="section-shell trust-layout">
+            <div><h2>{t.trust.title}</h2><p>{t.trust.body}</p></div>
+            <dl>{t.trust.items.map(([title, body]) => <div key={title}><dt>{title}</dt><dd>{body}</dd></div>)}</dl>
+            <p className="trust-note">{t.trust.note}</p>
           </div>
         </section>
 
         <section className="closing-section section-shell">
           <div className="faq-block" id="faq">
             <h2>{t.faq.title}</h2>
-            <div className="faq-list">
-              {t.faq.items.map((item) => (
-                <details key={item[0]}><summary>{item[0]}<i aria-hidden="true">＋</i></summary><p>{item[1]}</p></details>
-              ))}
-            </div>
+            <div className="faq-list">{t.faq.items.map(([question, answer]) => <details key={question}><summary>{question}<span aria-hidden="true" /></summary><p>{answer}</p></details>)}</div>
           </div>
-
           <aside className="booking-card" id="booking">
-            <h2>{t.booking.title}</h2>
-            <p>{t.booking.body}</p>
-            <p className="team-note">{u.teamNote}</p>
-            <dl>
-              <div><dt>{t.booking.event}</dt><dd>{t.booking.duration}</dd></div>
-              <div><dt>{t.booking.location}</dt><dd>{t.booking.timezone}</dd></div>
-            </dl>
-            {calendarLink ? (
-              <a className="button button-primary booking-button" href={`/${locale}/book`} target="_blank" rel="noopener noreferrer">{t.booking.button}<span className="sr-only"> — {u.external}</span><span aria-hidden="true">↗</span></a>
-            ) : (
-              <span className="button booking-button disabled" aria-disabled="true">{u.unavailable}</span>
-            )}
-            <p className="booking-note">{t.booking.paid}</p>
-            <a className="contact-link" href={`/${locale}/contact`}>{u.contact}<span aria-hidden="true">→</span></a>
+            <h2>{t.booking.title}</h2><p>{t.booking.body}</p><p className="team-note">{t.booking.team}</p>
+            <dl><div><dt>{t.booking.event}</dt><dd>{t.booking.duration}</dd></div><div><dt>{t.booking.location}</dt><dd>{t.booking.timezone}</dd></div></dl>
+            {calendarLink ? <a className="button button-primary booking-button" href={`/${locale}/book`} target="_blank" rel="noopener noreferrer">{t.booking.button}<span className="sr-only"> — {u.external}</span></a> : <span className="button booking-button disabled" aria-disabled="true">{u.unavailable}</span>}
+            <p className="booking-note">{t.booking.note}</p><a className="contact-link" href={`/${locale}/contact`}>{u.contact}</a>
           </aside>
         </section>
       </main>

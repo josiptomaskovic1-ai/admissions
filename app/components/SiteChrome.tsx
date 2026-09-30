@@ -39,7 +39,7 @@ export function SiteHeader({ locale, page = 'home' }: { locale: Locale; page?: P
               <span className="sr-only">{u.currentLanguage}: </span>
               <span aria-hidden="true">{localeMeta[locale].short}</span>
               <span className="sr-only">{localeMeta[locale].native}</span>
-              <span className="chevron" aria-hidden="true">⌄</span>
+              <span className="chevron" aria-hidden="true" />
             </summary>
             <div className="language-popover" aria-label={u.language}>
               {locales.map((item) => (
@@ -49,7 +49,7 @@ export function SiteHeader({ locale, page = 'home' }: { locale: Locale; page?: P
               ))}
             </div>
           </details>
-          <a className="button header-cta" href={`${home}#booking`}><span className="header-cta-label">{t.nav.book}</span><span className="header-cta-icon" aria-hidden="true">↗</span></a>
+          <a className="button header-cta" href={`${home}#booking`}><span className="header-cta-label">{t.nav.book}</span></a>
         </div>
       </header>
     </>
@@ -64,8 +64,7 @@ export function SiteFooter({ locale }: { locale: Locale }) {
     <footer className="site-footer">
       <div className="footer-main">
         <Brand locale={locale} footer />
-        <p>{t.footer.description}</p>
-        <strong>{t.footer.line}</strong>
+        <p className="footer-positioning"><span>{t.hero.titleA}</span> <em>{t.hero.titleB}</em></p>
       </div>
       <div className="footer-bottom">
         <span>© {new Date().getFullYear()} {brandName}. {t.footer.rights}</span>
