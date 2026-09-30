@@ -52,6 +52,7 @@ export function SiteHeader({ locale, page = 'home' }: { locale: Locale; page?: P
           <a className="button header-cta" href={`${home}#booking`}><span className="header-cta-label">{t.nav.book}</span></a>
         </div>
       </header>
+      <a className="mobile-booking-bar" href={`${home}#booking`}>{t.nav.book}</a>
     </>
   );
 }

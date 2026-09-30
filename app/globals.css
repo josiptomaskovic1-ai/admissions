@@ -2533,3 +2533,124 @@ h3 {
     padding-inline: 0.35rem;
   }
 }
+
+/* Accepted clarity pass: fewer repeated patterns, readable commercial terms,
+   and one persistent mobile action. */
+.mobile-booking-bar {
+  display: none;
+}
+
+.hero h1 {
+  max-width: 19ch;
+  font-size: clamp(2.6rem, 5vw, 4.5rem);
+}
+
+.independence-statement {
+  max-width: 58rem;
+  margin: 2rem 0 0;
+  padding: clamp(1.15rem, 2.5vw, 1.65rem) 0;
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+  color: var(--ink);
+  font-family: var(--font-display), Arial, sans-serif;
+  font-size: clamp(1.25rem, 2.7vw, 2rem);
+  font-weight: 750;
+  line-height: 1.25;
+}
+
+.sample-section .split-heading,
+.offers-section .split-heading {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0.75rem;
+}
+
+.sample-section .split-heading h2,
+.offers-section .split-heading h2 {
+  max-width: 24ch;
+}
+
+.sample-document {
+  border-left: 1px solid var(--border);
+}
+
+.offer-price strong {
+  font-size: 1.5rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.offer-identity small,
+.offer-best,
+.offer-best small,
+.offer-price small,
+.offer-detail > p,
+.offer-detail li,
+.offer-detail > div > strong,
+.pricing-intro > p,
+.credit-note,
+.instalment-note li,
+.addon-table dt,
+.addon-table dt small,
+.addon-table dd,
+.trust-layout dd,
+.trust-note,
+.booking-note,
+.sample-note {
+  font-size: 0.875rem;
+}
+
+.offer-detail {
+  grid-template-columns: minmax(12rem, 1.1fr) repeat(2, minmax(12rem, 1fr));
+}
+
+.pricing-cta {
+  width: fit-content;
+  min-height: 3.2rem;
+  margin-top: 1.5rem;
+}
+
+.trust-note {
+  border-left-color: var(--teal);
+}
+
+@media (max-width: 48rem) {
+  html {
+    scroll-padding-bottom: 5rem;
+  }
+
+  body {
+    padding-bottom: calc(4.5rem + env(safe-area-inset-bottom));
+  }
+
+  .header-cta {
+    display: none;
+  }
+
+  .mobile-booking-bar {
+    position: fixed;
+    z-index: 120;
+    right: 0.75rem;
+    bottom: calc(0.65rem + env(safe-area-inset-bottom));
+    left: 0.75rem;
+    display: grid;
+    min-height: 3.5rem;
+    padding: 0.8rem 1rem;
+    place-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    border-radius: 0.75rem;
+    background: var(--cobalt);
+    color: var(--white);
+    box-shadow: 0 14px 36px rgba(7, 29, 43, 0.28);
+    font-size: 0.95rem;
+    font-weight: 850;
+    text-align: center;
+  }
+
+  .hero h1 {
+    max-width: 19ch;
+    font-size: clamp(2.55rem, 11vw, 3.8rem);
+  }
+
+  .offer-detail {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

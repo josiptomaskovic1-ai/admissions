@@ -102,7 +102,7 @@ Syne carries the brand in concise display headings only. Manrope carries all bod
 
 ## Layout
 
-The content frame is capped at 78rem with fluid side gutters. Desktop sections use approximately 4.5rem vertical padding and mobile sections approximately 3rem. The header is approximately 5.25rem high to give the brand mark sufficient presence. The hero is content-sized rather than viewport-sized and begins demonstrating the decision model in the first screen. Independence, audiences, methodology, deliverable sample, services, pricing, trust, FAQ and booking must each earn their vertical space. Service rows keep all package names and prices visible while detailed scope expands on demand. No decorative block may create a standalone mobile viewport.
+The content frame is capped at 78rem with fluid side gutters. Desktop sections use approximately 4.5rem vertical padding and mobile sections approximately 3rem. The header is approximately 5.25rem high to give the brand mark sufficient presence. The hero is content-sized rather than viewport-sized and begins demonstrating the decision model in the first screen. Independence, audiences, methodology, deliverable sample, services, pricing, trust, FAQ and booking must each earn their vertical space. Service rows keep six core services, local-language names and prices visible while detailed scope expands on demand. The five decision criteria appear once in the hero card; independence is stated separately in one concise line rather than repeated as another grid. No decorative block may create a standalone mobile viewport.
 
 ## Elevation & Depth
 
@@ -124,7 +124,7 @@ The primary action is cobalt on white or white on cobalt. Secondary actions are 
 
 ### Navigation and data display
 
-Desktop navigation exposes only services, process, pricing, FAQ, contact, language, and one booking CTA. Mobile removes the content navigation, keeps contact and language, and may omit the duplicate header booking CTA because the hero action is immediately visible. Prices use semantic disclosure rows and definition lists. Every core package exposes its price, audience and limit before expansion.
+Desktop navigation exposes only services, process, pricing, FAQ, contact, language, and one booking CTA. Mobile removes the content navigation, keeps contact and language, and uses one fixed bottom booking action so the next step stays reachable without crowding the header. Prices use semantic disclosure rows and definition lists. Every core service exposes its price, audience and limit before expansion; one global booking action follows the list instead of repeating inside every row.
 
 ### Contact actions and overlays
 

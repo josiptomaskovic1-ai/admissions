@@ -4,12 +4,12 @@ const pageSuffixes = ['', '/contact', '/privacy', '/service-information'];
 const failures = [];
 const checked = new Map();
 const homepageExpectations = {
-  hr: ['15 min', '0 €', '70 €', '220 €', '350 €', '800 €', '1.400 €', '1.700 €', '1.900–2.500 €'],
-  bs: ['15 min', '0 €', '70 €', '220 €', '350 €', '800 €', '1.400 €', '1.700 €', '1.900–2.500 €'],
-  sr: ['15 min', '0 €', '70 €', '220 €', '350 €', '800 €', '1.400 €', '1.700 €', '1.900–2.500 €'],
-  en: ['15 min', '€0', '€70', '€220', '€350', '€800', '€1,400', '€1,700', '€1,900–2,500'],
-  de: ['15 Min.', '0 €', '70 €', '220 €', '350 €', '800 €', '1.400 €', '1.700 €', '1.900–2.500 €'],
-  fr: ['15 min', '0 €', '70 €', '220 €', '350 €', '800 €', '1 400 €', '1 700 €', '1 900–2 500 €'],
+  hr: ['15 min', 'Besplatno', '70 €', '350 €', '390 €', '590 €', '1.400 €'],
+  bs: ['15 min', 'Besplatno', '70 €', '350 €', '390 €', '590 €', '1.400 €'],
+  sr: ['15 min', 'Besplatno', '70 €', '350 €', '390 €', '590 €', '1.400 €'],
+  en: ['15 min', 'Free', '€70', '€350', '€390', '€590', '€1,400'],
+  de: ['15 Min.', 'Kostenlos', '70 €', '350 €', '390 €', '590 €', '1.400 €'],
+  fr: ['15 min', 'Gratuit', '70 €', '350 €', '390 €', '590 €', '1 400 €'],
 };
 const staleTeamCopy = /upoznat ćete članove našeg tima|upoznaćete članove našeg tima|meet members of our team|lernen Sie Mitglieder unseres Teams kennen|rencontrerez des membres de notre équipe/iu;
 
@@ -53,8 +53,9 @@ for (const locale of locales) {
     if (!suffix) {
       assert(text.includes('application/ld+json'), `${path} is missing structured data`);
       assert(!/20\s+min/iu.test(text), `${path} still exposes the superseded 20-minute introductory call`);
-      assert(!/(?:€\s*(?:240|490)|(?:240|490)\s*€)/u.test(text), `${path} still exposes a superseded €240/€490 core price`);
+      assert(!/(?:€\s*(?:220|800|1700|1900)|(?:220|800|1[.\s,]?700|1[.\s,]?900)\s*€)/u.test(text), `${path} still exposes a superseded core price`);
       assert(!staleTeamCopy.test(text), `${path} still promises that clients meet multiple team members`);
+      assert((text.match(/class="offer-row/g) ?? []).length === 6, `${path} must expose exactly six core services`);
       for (const expected of homepageExpectations[locale]) {
         assert(text.includes(expected), `${path} is missing the expected pricing/duration copy: ${expected}`);
       }

@@ -45,7 +45,7 @@ export function HomePage({ locale }: { locale: Locale }) {
         <section className="independent-section" id="process">
           <div className="section-shell">
             <div className="section-heading split-heading"><h2>{t.independent.title}</h2><p>{t.independent.body}</p></div>
-            <div className="factor-grid">{t.independent.factors.map(([title, body]) => <article key={title}><h3>{title}</h3><p>{body}</p></article>)}</div>
+            {t.independent.statement && <p className="independence-statement">{t.independent.statement}</p>}
           </div>
         </section>
 
@@ -91,11 +91,11 @@ export function HomePage({ locale }: { locale: Locale }) {
                     <p>{offer.summary}</p>
                     <div><strong>{t.offers.includes}</strong><ul>{offer.includes.map((item) => <li key={item}>{item}</li>)}</ul></div>
                     <div><strong>{t.offers.limits}</strong><ul>{offer.limits.map((item) => <li key={item}>{item}</li>)}</ul></div>
-                    <a href="#booking">{t.offers.cta}</a>
                   </div>
                 </details>
               ))}
             </div>
+            <a className="button button-primary pricing-cta" href="#booking">{t.offers.cta}</a>
 
             <div className="pricing-policy">
               <div className="pricing-intro"><h2>{t.pricing.title}</h2><p>{t.pricing.body}</p><p className="credit-note">{t.pricing.credit}</p></div>

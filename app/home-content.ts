@@ -30,7 +30,8 @@ type HomeContent = {
   independent: {
     title: string;
     body: string;
-    factors: Array<[string, string]>;
+    factors?: Array<[string, string]>;
+    statement?: string;
   };
   audiences: {
     title: string;
@@ -366,3 +367,209 @@ homeContent.fr = {
   ] },
   booking: { title: 'Vous ne savez pas par où commencer ?', body: 'Réservez un court appel. Nous clarifierons l’objectif et recommanderons le niveau d’aide le plus léger qui soit utile.', team: 'Vous rencontrerez un membre de l’équipe. Tous ont effectué une partie de leurs études à l’étranger et suivent le même standard Adria.', event: 'Appel de cadrage gratuit', duration: '15 minutes', location: 'Appel vidéo en ligne', timezone: 'Affiché dans votre fuseau horaire', button: 'Choisir un créneau', note: 'Sans obligation d’achat. La stratégie détaillée relève de la consultation payante.' },
 };
+
+// Accepted simplification: one decision framework, six clearly scoped services,
+// local-language names and positive, specific trust copy across every locale.
+Object.assign(homeContent.bs, {
+  hero: { ...homeContent.bs.hero, primary: 'Zakažite besplatan uvodni razgovor — 15 min' },
+  decision: {
+    title: 'Prije nego što preporučimo program',
+    note: 'Provjeravamo pet stvari:',
+    paid: 'Tek tada program ulazi u preporuku.',
+    factors: [['Akademska usklađenost', 'profil + uslovi'], ['Ukupan trošak', 'školarina + život'], ['Finansiranje', 'stipendije + budžet'], ['Rokovi', 'realan kalendar'], ['Rizik', 'uravnotežen izbor']],
+  },
+  independent: {
+    title: 'Prvo dobra odluka. Zatim snažna prijava.',
+    body: 'Program biramo prema vašem profilu, budžetu, ciljevima i rokovima. Tek poslije toga gradimo prijavu koja jasno pokazuje zašto baš vi odgovarate tom programu.',
+    statement: 'Nas plaćate vi, a ne univerziteti. Zato vam možemo reći i: tamo se nemojte prijaviti.',
+  },
+  method: {
+    title: 'Šest koraka do predate prijave.',
+    body: 'Poslije svakog koraka imate odluku ili gotov dokument.',
+    steps: [['Profil', 'Ciljevi, iskustvo, ocjene, budžet i ograničenja.'], ['Strategija', 'Prioriteti, zemlje i realan nivo ambicije.'], ['Izbor', 'Obrazložena lista programa, a ne generičan spisak.'], ['Finansiranje', 'Troškovi, stipendije i rokovi u jednoj slici.'], ['Prijava', 'Komentari i dorade vašeg CV-a i motivacionog pisma.'], ['Kontrola', 'Završna provjera uslova, dosljednosti i spremnosti.']],
+  },
+  sample: {
+    ...homeContent.bs.sample,
+    title: 'Pogledajte kako izvještaj izgleda prije naručivanja.',
+    body: 'Umjesto 40 otvorenih kartica — jedan dokument i jasna odluka.',
+    documentTitle: 'Izbor programa',
+    rows: [['Program A', 'Odlično odgovara profilu', 'Srednji rizik'], ['Program B', 'Uklapa se u budžet', 'Niži rizik'], ['Program C', 'Zahtjevna stipendija', 'Viši rizik']],
+  },
+  offers: {
+    title: 'Platite samo onoliko podrške koliko vam treba.',
+    body: 'Za svaku uslugu unaprijed znate šta dobijate, šta nije uključeno i koliko košta.',
+    cta: 'Zakažite besplatan uvodni razgovor', bestFor: 'Najbolje za', includes: 'Dobijate', limits: 'Obim',
+    cards: [
+      { name: 'Uvodni razgovor', label: 'Prvi korak', price: 'Besplatno', meta: '15 min', bestFor: 'provjeru možemo li vam pomoći', summary: 'Upoznajemo cilj, rok i vrstu podrške koja vam treba.', includes: ['preporuku najkorisnijeg sljedećeg koraka'], limits: ['bez analize profila i dokumenata'] },
+      { name: 'Strateška konsultacija', label: 'Jedna važna odluka', price: '70 €', meta: '60 min', bestFor: 'drugo mišljenje ili jasno usmjerenje', summary: 'Fokusiran razgovor o profilu, zemljama, budžetu, rizicima i narednim koracima.', includes: ['kratku pripremu', '60 minuta razgovora 1 na 1', 'pisani sažetak narednih koraka'], limits: ['jedna sesija', 'bez detaljnog izvještaja o programima'] },
+      { name: 'Izbor programa', label: 'Obrazložena lista', price: '350 €', meta: 'do 8 programa', bestFor: 'odluku gdje se zaista vrijedi prijaviti', summary: 'Poredimo programe, troškove, uslove, finansiranje i rokove.', includes: ['do 8 programa', 'jednu reviziju', 'kratki završni razgovor'], limits: ['jedna povezana grupa zemalja i ciljeva', 'ne uključuje izradu prijave'], featured: true },
+      { name: 'Podrška za prijavu', label: 'Jedan program', price: '390 €', meta: '1 prijava', bestFor: 'kandidata koji već zna gdje se prijavljuje', summary: 'Pomažemo da vaši dokumenti budu jasni, uvjerljivi i usklađeni sa zahtjevima programa.', includes: ['komentare i dorade CV-a i motivacionog pisma', 'dvije runde komentara po glavnom dokumentu', 'spisak dokumenata i završnu kontrolu'], limits: ['jedan standardni program', 'kandidat piše i predaje prijavu'] },
+      { name: 'Kompletno vođenje', label: 'Cijeli prijavni ciklus', price: '1.400 €', meta: 'do 3 prijave', bestFor: 'standardni evropski ciklus od izbora do predaje', summary: 'Vodimo strategiju, izbor programa, dokumente, rokove i završnu kontrolu.', includes: ['izbor programa i do 3 standardne prijave', 'dvije runde komentara po glavnom dokumentu', 'podršku do 4 mjeseca'], limits: ['bez posebnih testova, portfolija i složenih višestrukih eseja'] },
+      { name: 'Stipendijska prijava', label: 'Jedna stipendija', price: '590 €', meta: 'standardni obim', bestFor: 'jednu jasno odabranu stipendiju', summary: 'Gradimo jasnu strategiju i pomažemo da kandidatovi eseji pokažu motivaciju, iskustvo i plan.', includes: ['strategiju prijave', 'do tri runde komentara na eseje kandidata', 'upute za preporuke i završnu kontrolu'], limits: ['jedna standardna stipendijska prijava', 'posebno složene selekcije dogovaramo prije početka'] },
+    ],
+  },
+  pricing: {
+    title: 'Cijena je jasna prije početka.',
+    body: 'Dodatni rad i cijenu potvrđujemo unaprijed, prije nego što počnemo.',
+    addonsTitle: 'Fiksni dodaci',
+    addons: [['Dodatna standardna prijava', 'uz aktivni paket', '280 €'], ['Dodatna stipendijska prijava', 'standardni obim', '300 €'], ['Priprema za intervju', 'priprema + simulacija', '140 €'], ['Dodatna strateška konsultacija', '60 minuta', '70 €']],
+    instalmentsTitle: 'Plaćanje na rate', instalments: ['Kompletno vođenje od 1.400 €: do 3 rate'],
+    credit: 'Ako u roku od 14 dana nakon konsultacije od 70 € ugovorite odgovarajući veći paket, tih 70 € uračunavamo u cijenu.',
+  },
+  trust: {
+    ...homeContent.bs.trust,
+    body: 'Povjerenje gradimo jasnim obimom, provjerljivim radom i pisanom potvrdom onoga što dobijate.',
+    note: 'Prije početka rada dobit ćete pisanu potvrdu obima, rokova, cijene i načina plaćanja.',
+  },
+  booking: {
+    ...homeContent.bs.booking,
+    body: 'U 15 minuta upoznat ćemo vaš cilj, rokove i vrstu podrške koja vam treba.',
+    team: 'Razgovarat ćete s jednim članom našeg tima. Svi članovi imaju dio obrazovanja završen u inostranstvu. Ako nismo prava pomoć za vaš slučaj, reći ćemo vam to u prvih 15 minuta.',
+    event: 'Besplatan uvodni razgovor', note: 'Razgovor vas ni na šta ne obavezuje.',
+  },
+});
+
+homeContent.bs.faq.items[3] = ['Pišete li motivaciono pismo umjesto kandidata?', 'Ne preuzimamo autorstvo. Pomažemo s idejama, strukturom, pitanjima te komentarima i doradama kako bi kandidatov glas bio jasan i uvjerljiv.'];
+homeContent.bs.faq.items[6] = ['Mogu li platiti na rate?', 'Da. Kompletno vođenje od 1.400 € može se platiti u najviše tri rate, prema pisanom dogovoru.'];
+homeContent.bs.faq.items[7] = ['Već imam listu univerziteta. Možete li je provjeriti?', 'Da. Strateška konsultacija može riješiti usko pitanje, a Izbor programa može provjeriti i unaprijediti cijelu listu.'];
+homeContent.bs.faq.items[9] = ['Treba mi pomoć samo s jednom prijavom.', 'Podrška za prijavu namijenjena je upravo jednom standardnom programu: dobijate komentare i dorade glavnih dokumenata, spisak zahtjeva i završnu kontrolu.'];
+
+Object.assign(homeContent.sr, {
+  hero: { ...homeContent.sr.hero, primary: 'Zakažite besplatan uvodni razgovor — 15 min' },
+  decision: { title: 'Pre nego što preporučimo program', note: 'Proveravamo pet stvari:', paid: 'Tek tada program ulazi u preporuku.', factors: [['Akademska usklađenost', 'profil + uslovi'], ['Ukupan trošak', 'školarina + život'], ['Finansiranje', 'stipendije + budžet'], ['Rokovi', 'realan kalendar'], ['Rizik', 'uravnotežen izbor']] },
+  independent: { title: 'Prvo dobra odluka. Zatim snažna prijava.', body: 'Program biramo prema vašem profilu, budžetu, ciljevima i rokovima. Tek posle toga gradimo prijavu koja jasno pokazuje zašto baš vi odgovarate tom programu.', statement: 'Nas plaćate vi, a ne univerziteti. Zato možemo da vam kažemo i: tamo se nemojte prijavljivati.' },
+  method: { title: 'Šest koraka do predate prijave.', body: 'Posle svakog koraka imate odluku ili gotov dokument.', steps: [['Profil', 'Ciljevi, iskustvo, ocene, budžet i ograničenja.'], ['Strategija', 'Prioriteti, zemlje i realan nivo ambicije.'], ['Izbor', 'Obrazložena lista programa, a ne generičan spisak.'], ['Finansiranje', 'Troškovi, stipendije i rokovi u jednoj slici.'], ['Prijava', 'Komentari i dorade vašeg CV-a i motivacionog pisma.'], ['Kontrola', 'Završna provera uslova, doslednosti i spremnosti.']] },
+  sample: { ...homeContent.sr.sample, title: 'Pogledajte kako izveštaj izgleda pre naručivanja.', body: 'Umesto 40 otvorenih kartica — jedan dokument i jasna odluka.', documentTitle: 'Izbor programa', rows: [['Program A', 'Odlično odgovara profilu', 'Srednji rizik'], ['Program B', 'Uklapa se u budžet', 'Niži rizik'], ['Program C', 'Zahtevna stipendija', 'Viši rizik']] },
+  offers: {
+    title: 'Platite samo onoliko podrške koliko vam treba.', body: 'Za svaku uslugu unapred znate šta dobijate, šta nije uključeno i koliko košta.', cta: 'Zakažite besplatan uvodni razgovor', bestFor: 'Najbolje za', includes: 'Dobijate', limits: 'Obim',
+    cards: [
+      { name: 'Uvodni razgovor', label: 'Prvi korak', price: 'Besplatno', meta: '15 min', bestFor: 'proveru možemo li da vam pomognemo', summary: 'Upoznajemo cilj, rok i vrstu podrške koja vam treba.', includes: ['preporuku najkorisnijeg sledećeg koraka'], limits: ['bez analize profila i dokumenata'] },
+      { name: 'Strateška konsultacija', label: 'Jedna važna odluka', price: '70 €', meta: '60 min', bestFor: 'drugo mišljenje ili jasno usmerenje', summary: 'Fokusiran razgovor o profilu, zemljama, budžetu, rizicima i sledećim koracima.', includes: ['kratku pripremu', '60 minuta razgovora 1 na 1', 'pisani sažetak sledećih koraka'], limits: ['jedna sesija', 'bez detaljnog izveštaja o programima'] },
+      { name: 'Izbor programa', label: 'Obrazložena lista', price: '350 €', meta: 'do 8 programa', bestFor: 'odluku gde se zaista vredi prijaviti', summary: 'Poredimo programe, troškove, uslove, finansiranje i rokove.', includes: ['do 8 programa', 'jednu reviziju', 'kratak završni razgovor'], limits: ['jedna povezana grupa zemalja i ciljeva', 'ne uključuje izradu prijave'], featured: true },
+      { name: 'Podrška za prijavu', label: 'Jedan program', price: '390 €', meta: '1 prijava', bestFor: 'kandidata koji već zna gde se prijavljuje', summary: 'Pomažemo da vaši dokumenti budu jasni, uverljivi i usklađeni sa zahtevima programa.', includes: ['komentare i dorade CV-a i motivacionog pisma', 'dve runde komentara po glavnom dokumentu', 'spisak dokumenata i završnu kontrolu'], limits: ['jedan standardni program', 'kandidat piše i predaje prijavu'] },
+      { name: 'Kompletno vođenje', label: 'Ceo prijavni ciklus', price: '1.400 €', meta: 'do 3 prijave', bestFor: 'standardni evropski ciklus od izbora do predaje', summary: 'Vodimo strategiju, izbor programa, dokumente, rokove i završnu kontrolu.', includes: ['izbor programa i do 3 standardne prijave', 'dve runde komentara po glavnom dokumentu', 'podršku do 4 meseca'], limits: ['bez posebnih testova, portfolija i složenih višestrukih eseja'] },
+      { name: 'Stipendijska prijava', label: 'Jedna stipendija', price: '590 €', meta: 'standardni obim', bestFor: 'jednu jasno odabranu stipendiju', summary: 'Gradimo jasnu strategiju i pomažemo da kandidatovi eseji pokažu motivaciju, iskustvo i plan.', includes: ['strategiju prijave', 'do tri runde komentara na eseje kandidata', 'uputstva za preporuke i završnu kontrolu'], limits: ['jedna standardna stipendijska prijava', 'posebno složene selekcije dogovaramo pre početka'] },
+    ],
+  },
+  pricing: { title: 'Cena je jasna pre početka.', body: 'Dodatni rad i cenu potvrđujemo unapred, pre nego što počnemo.', addonsTitle: 'Fiksni dodaci', addons: [['Dodatna standardna prijava', 'uz aktivni paket', '280 €'], ['Dodatna stipendijska prijava', 'standardni obim', '300 €'], ['Priprema za intervju', 'priprema + simulacija', '140 €'], ['Dodatna strateška konsultacija', '60 minuta', '70 €']], instalmentsTitle: 'Plaćanje na rate', instalments: ['Kompletno vođenje od 1.400 €: do 3 rate'], credit: 'Ako u roku od 14 dana nakon konsultacije od 70 € ugovorite odgovarajući veći paket, tih 70 € uračunavamo u cenu.' },
+  trust: { ...homeContent.sr.trust, body: 'Poverenje gradimo jasnim obimom, proverljivim radom i pisanom potvrdom onoga što dobijate.', note: 'Pre početka rada dobićete pisanu potvrdu obima, rokova, cene i načina plaćanja.' },
+  booking: { ...homeContent.sr.booking, body: 'U 15 minuta upoznaćemo vaš cilj, rokove i vrstu podrške koja vam treba.', team: 'Razgovaraćete s jednim članom našeg tima. Svi članovi imaju deo obrazovanja završen u inostranstvu. Ako nismo prava pomoć za vaš slučaj, reći ćemo vam to u prvih 15 minuta.', event: 'Besplatan uvodni razgovor', note: 'Razgovor vas ni na šta ne obavezuje.' },
+});
+
+homeContent.sr.faq.items[3] = ['Pišete li motivaciono pismo umesto kandidata?', 'Ne preuzimamo autorstvo. Pomažemo idejama, strukturom, pitanjima, komentarima i doradama kako bi glas kandidata bio jasan i uverljiv.'];
+homeContent.sr.faq.items[6] = ['Mogu li da platim na rate?', 'Da. Kompletno vođenje od 1.400 € može se platiti u najviše tri rate, prema pisanom dogovoru.'];
+homeContent.sr.faq.items[7] = ['Već imam listu univerziteta. Možete li da je proverite?', 'Da. Strateška konsultacija može rešiti usko pitanje, a Izbor programa može proveriti i unaprediti celu listu.'];
+homeContent.sr.faq.items[9] = ['Treba mi pomoć samo s jednom prijavom.', 'Podrška za prijavu namenjena je upravo jednom standardnom programu: dobijate komentare i dorade glavnih dokumenata, spisak zahteva i završnu kontrolu.'];
+
+Object.assign(homeContent.hr, {
+  hero: { ...homeContent.hr.hero, primary: 'Rezervirajte besplatan uvodni razgovor — 15 min' },
+  decision: { title: 'Prije nego što preporučimo program', note: 'Provjeravamo pet stvari:', paid: 'Tek tada program ulazi u preporuku.', factors: [['Akademska usklađenost', 'profil + uvjeti'], ['Ukupan trošak', 'školarina + život'], ['Financiranje', 'stipendije + budžet'], ['Rokovi', 'izvediv kalendar'], ['Rizik', 'uravnotežen izbor']] },
+  independent: { title: 'Prvo dobra odluka. Zatim snažna prijava.', body: 'Program biramo prema vašem profilu, proračunu, ciljevima i rokovima. Tek nakon toga gradimo prijavu koja jasno pokazuje zašto baš vi odgovarate tom programu.', statement: 'Nas plaćate vi, a ne sveučilišta. Zato vam možemo reći i: tamo se nemojte prijaviti.' },
+  method: { title: 'Šest koraka do predane prijave.', body: 'Nakon svakog koraka imate odluku ili gotov dokument.', steps: [['Profil', 'Ciljevi, iskustvo, ocjene, proračun i ograničenja.'], ['Strategija', 'Prioriteti, zemlje i realna razina ambicije.'], ['Izbor', 'Obrazložena lista programa, a ne generičan popis.'], ['Financiranje', 'Troškovi, stipendije i rokovi na jednom mjestu.'], ['Prijava', 'Komentari i dorade vašeg životopisa i motivacijskog pisma.'], ['Kontrola', 'Završna provjera uvjeta, dosljednosti i spremnosti.']] },
+  sample: { ...homeContent.hr.sample, title: 'Pogledajte kako izvještaj izgleda prije naručivanja.', body: 'Umjesto 40 otvorenih kartica — jedan dokument i jasna odluka.', documentTitle: 'Izbor programa', rows: [['Program A', 'Odlično odgovara profilu', 'Srednji rizik'], ['Program B', 'Uklapa se u proračun', 'Niži rizik'], ['Program C', 'Zahtjevna stipendija', 'Viši rizik']] },
+  offers: {
+    title: 'Platite samo onoliko podrške koliko vam treba.', body: 'Za svaku uslugu unaprijed znate što dobivate, što nije uključeno i koliko košta.', cta: 'Rezervirajte besplatan uvodni razgovor', bestFor: 'Najbolje za', includes: 'Dobivate', limits: 'Opseg',
+    cards: [
+      { name: 'Uvodni razgovor', label: 'Prvi korak', price: 'Besplatno', meta: '15 min', bestFor: 'provjeru možemo li vam pomoći', summary: 'Upoznajemo cilj, rok i vrstu podrške koja vam treba.', includes: ['preporuku najkorisnijeg sljedećeg koraka'], limits: ['bez analize profila i dokumenata'] },
+      { name: 'Strateško savjetovanje', label: 'Jedna važna odluka', price: '70 €', meta: '60 min', bestFor: 'drugo mišljenje ili jasno usmjerenje', summary: 'Usmjeren razgovor o profilu, zemljama, proračunu, rizicima i sljedećim koracima.', includes: ['kratku pripremu', '60 minuta razgovora 1 na 1', 'pisani sažetak sljedećih koraka'], limits: ['jedna sesija', 'bez detaljnog izvještaja o programima'] },
+      { name: 'Izbor programa', label: 'Obrazložena lista', price: '350 €', meta: 'do 8 programa', bestFor: 'odluku gdje se zaista vrijedi prijaviti', summary: 'Uspoređujemo programe, troškove, uvjete, financiranje i rokove.', includes: ['do 8 programa', 'jednu reviziju', 'kratki završni razgovor'], limits: ['jedna povezana skupina zemalja i ciljeva', 'ne uključuje izradu prijave'], featured: true },
+      { name: 'Podrška za prijavu', label: 'Jedan program', price: '390 €', meta: '1 prijava', bestFor: 'kandidata koji već zna gdje se prijavljuje', summary: 'Pomažemo da vaši dokumenti budu jasni, uvjerljivi i usklađeni sa zahtjevima programa.', includes: ['komentare i dorade životopisa i motivacijskog pisma', 'dva kruga komentara po glavnom dokumentu', 'popis dokumenata i završnu kontrolu'], limits: ['jedan standardni program', 'kandidat piše i predaje prijavu'] },
+      { name: 'Potpuno vođenje', label: 'Cijeli prijavni ciklus', price: '1.400 €', meta: 'do 3 prijave', bestFor: 'standardni europski ciklus od izbora do predaje', summary: 'Vodimo strategiju, izbor programa, dokumente, rokove i završnu kontrolu.', includes: ['izbor programa i do 3 standardne prijave', 'dva kruga komentara po glavnom dokumentu', 'podršku do 4 mjeseca'], limits: ['bez posebnih testova, portfelja i složenih višestrukih eseja'] },
+      { name: 'Prijava za stipendiju', label: 'Jedna stipendija', price: '590 €', meta: 'standardni opseg', bestFor: 'jednu jasno odabranu stipendiju', summary: 'Gradimo jasnu strategiju i pomažemo da kandidatovi eseji pokažu motivaciju, iskustvo i plan.', includes: ['strategiju prijave', 'do tri kruga komentara na eseje kandidata', 'upute za preporuke i završnu kontrolu'], limits: ['jedna standardna prijava za stipendiju', 'posebno složene selekcije dogovaramo prije početka'] },
+    ],
+  },
+  pricing: { title: 'Cijena je jasna prije početka.', body: 'Dodatni rad i cijenu potvrđujemo unaprijed, prije nego što počnemo.', addonsTitle: 'Fiksni dodaci', addons: [['Dodatna standardna prijava', 'uz aktivni paket', '280 €'], ['Dodatna prijava za stipendiju', 'standardni opseg', '300 €'], ['Priprema za razgovor', 'priprema + simulacija', '140 €'], ['Dodatno strateško savjetovanje', '60 minuta', '70 €']], instalmentsTitle: 'Obročno plaćanje', instalments: ['Potpuno vođenje od 1.400 €: do 3 obroka'], credit: 'Ako u roku od 14 dana nakon savjetovanja od 70 € ugovorite odgovarajući veći paket, tih 70 € uračunavamo u cijenu.' },
+  trust: { ...homeContent.hr.trust, body: 'Povjerenje gradimo jasnim opsegom, provjerljivim radom i pisanom potvrdom onoga što dobivate.', note: 'Prije početka rada dobit ćete pisanu potvrdu opsega, rokova, cijene i načina plaćanja.' },
+  booking: { ...homeContent.hr.booking, body: 'U 15 minuta upoznat ćemo vaš cilj, rokove i vrstu podrške koja vam treba.', team: 'Razgovarat ćete s jednim članom našeg tima. Svi članovi dio su obrazovanja završili u inozemstvu. Ako nismo prava pomoć za vaš slučaj, reći ćemo vam to u prvih 15 minuta.', event: 'Besplatan uvodni razgovor', note: 'Razgovor vas ni na što ne obvezuje.' },
+});
+
+homeContent.hr.faq.items[3] = ['Pišete li motivacijsko pismo umjesto kandidata?', 'Ne preuzimamo autorstvo. Pomažemo idejama, strukturom, pitanjima, komentarima i doradama kako bi glas kandidata bio jasan i uvjerljiv.'];
+homeContent.hr.faq.items[6] = ['Mogu li platiti na rate?', 'Da. Potpuno vođenje od 1.400 € može se platiti u najviše tri obroka, prema pisanom dogovoru.'];
+homeContent.hr.faq.items[7] = ['Već imam popis sveučilišta. Možete li ga provjeriti?', 'Da. Strateško savjetovanje može riješiti usko pitanje, a Izbor programa može provjeriti i unaprijediti cijeli popis.'];
+homeContent.hr.faq.items[9] = ['Treba mi pomoć samo s jednom prijavom.', 'Podrška za prijavu namijenjena je upravo jednom standardnom programu: dobivate komentare i dorade glavnih dokumenata, popis zahtjeva i završnu kontrolu.'];
+
+Object.assign(homeContent.en, {
+  hero: { ...homeContent.en.hero, primary: 'Book a free introductory call — 15 min' },
+  decision: { title: 'Before we recommend a programme', note: 'We check five things:', paid: 'Only then does a programme enter the recommendation.', factors: [['Academic fit', 'profile + criteria'], ['Total cost', 'tuition + living'], ['Funding', 'scholarships + budget'], ['Deadlines', 'workable calendar'], ['Risk', 'balanced selection']] },
+  independent: { title: 'Make the right decision first. Build the strong application next.', body: 'We select programmes around your profile, budget, goals and deadlines. Only then do we build an application that makes your fit clear.', statement: 'You pay us — universities do not. That means we can also tell you where not to apply.' },
+  method: { title: 'Six steps to a submitted application.', body: 'Every step ends with a decision or a finished document.', steps: [['Profile', 'Goals, experience, grades, budget and constraints.'], ['Strategy', 'Priorities, countries and a realistic level of ambition.'], ['Selection', 'A reasoned programme list, not generic search results.'], ['Funding', 'Costs, scholarships and deadlines in one view.'], ['Application', 'Comments and revisions on your CV and motivation letter.'], ['Quality control', 'A final check of requirements, consistency and readiness.']] },
+  sample: { ...homeContent.en.sample, title: 'See the report before you order it.', body: 'Instead of 40 open tabs — one document and a clear decision.', documentTitle: 'Programme selection', rows: [['Programme A', 'Strong profile match', 'Medium risk'], ['Programme B', 'Fits the budget', 'Lower risk'], ['Programme C', 'Competitive scholarship', 'Higher risk']] },
+  offers: {
+    title: 'Pay only for the support you need.', body: 'For every service, you know the deliverables, boundaries and price before work begins.', cta: 'Book a free introductory call', bestFor: 'Best for', includes: 'You receive', limits: 'Scope',
+    cards: [
+      { name: 'Introductory call', label: 'First step', price: 'Free', meta: '15 min', bestFor: 'checking whether we can help', summary: 'We learn your goal, deadline and the support you need.', includes: ['a recommendation for the most useful next step'], limits: ['no profile or document analysis'] },
+      { name: 'Strategy consultation', label: 'One important decision', price: '€70', meta: '60 min', bestFor: 'a second opinion or clear direction', summary: 'A focused conversation about profile, countries, budget, risks and next steps.', includes: ['brief preparation', '60 minutes one to one', 'written next-step summary'], limits: ['one session', 'no detailed programme report'] },
+      { name: 'Programme selection', label: 'A reasoned list', price: '€350', meta: 'up to 8 programmes', bestFor: 'deciding where an application is worth the effort', summary: 'We compare programmes, costs, criteria, funding and deadlines.', includes: ['up to 8 programmes', 'one revision', 'a short review call'], limits: ['one connected group of countries and goals', 'application preparation not included'], featured: true },
+      { name: 'Application support', label: 'One programme', price: '€390', meta: '1 application', bestFor: 'applicants who already know where to apply', summary: 'We help make your documents clear, persuasive and aligned with programme requirements.', includes: ['comments and revisions on your CV and motivation letter', 'two feedback rounds per main document', 'document checklist and final quality check'], limits: ['one standard programme', 'the applicant writes and submits the application'] },
+      { name: 'Complete support', label: 'Full application cycle', price: '€1,400', meta: 'up to 3 applications', bestFor: 'a standard European cycle from selection to submission', summary: 'We guide strategy, programme selection, documents, deadlines and final checks.', includes: ['programme selection and up to 3 standard applications', 'two feedback rounds per main document', 'support for up to 4 months'], limits: ['special tests, portfolios and complex multi-essay processes excluded'] },
+      { name: 'Scholarship application', label: 'One scholarship', price: '€590', meta: 'standard scope', bestFor: 'one clearly selected scholarship', summary: 'We shape the strategy and help the applicant’s essays communicate motivation, experience and direction.', includes: ['application strategy', 'up to three feedback rounds on applicant-authored essays', 'recommender guidance and final check'], limits: ['one standard scholarship application', 'unusually complex selections scoped before work begins'] },
+    ],
+  },
+  pricing: { title: 'The price is clear before work begins.', body: 'Any additional work and its price are confirmed before we start.', addonsTitle: 'Fixed add-ons', addons: [['Additional standard application', 'with an active package', '€280'], ['Additional scholarship application', 'standard scope', '€300'], ['Interview preparation', 'preparation + mock', '€140'], ['Additional strategy consultation', '60 minutes', '€70']], instalmentsTitle: 'Instalments', instalments: ['Complete support at €1,400: up to 3 payments'], credit: 'If you purchase a qualifying larger package within 14 days of the €70 consultation, we credit the €70 toward that package.' },
+  trust: { ...homeContent.en.trust, body: 'We earn trust through clear scope, verifiable work and written confirmation of what you receive.', note: 'Before work begins, you receive written confirmation of scope, deadlines, price and payment method.' },
+  booking: { ...homeContent.en.booking, body: 'In 15 minutes, we will understand your goal, deadlines and the support you need.', team: 'You will speak with one member of our team. Every team member completed part of their education abroad. If we are not the right fit for your case, we will tell you in the first 15 minutes.', event: 'Free introductory call', note: 'The call does not commit you to a purchase.' },
+});
+
+homeContent.en.faq.items[3] = ['Do you write the motivation letter for the applicant?', 'We do not take over authorship. We help with ideas, structure, questions, comments and revisions so the applicant’s own voice is clear and persuasive.'];
+homeContent.en.faq.items[6] = ['Can I pay in instalments?', 'Yes. Complete support at €1,400 can be paid in up to three instalments under a written agreement.'];
+homeContent.en.faq.items[7] = ['I already have a university list. Can you review it?', 'Yes. A strategy consultation can resolve a focused question; Programme selection can test and improve the full list.'];
+homeContent.en.faq.items[9] = ['I only need help with one application.', 'Application support is designed for one standard programme: it includes comments and revisions on the main documents, a requirements checklist and a final quality check.'];
+
+Object.assign(homeContent.de, {
+  hero: { ...homeContent.de.hero, primary: 'Kostenloses Erstgespräch buchen — 15 Min.' },
+  decision: { title: 'Bevor wir einen Studiengang empfehlen', note: 'Wir prüfen fünf Punkte:', paid: 'Erst dann kommt ein Studiengang in die Empfehlung.', factors: [['Akademische Passung', 'Profil + Kriterien'], ['Gesamtkosten', 'Gebühren + Leben'], ['Finanzierung', 'Stipendien + Budget'], ['Fristen', 'machbarer Zeitplan'], ['Risiko', 'ausgewogene Auswahl']] },
+  independent: { title: 'Zuerst die richtige Entscheidung. Dann die starke Bewerbung.', body: 'Wir wählen Studiengänge nach Ihrem Profil, Budget, Ihren Zielen und Fristen aus. Erst danach entwickeln wir eine Bewerbung, die Ihre Passung klar zeigt.', statement: 'Sie bezahlen uns — nicht die Hochschulen. Deshalb sagen wir Ihnen auch, wo Sie sich besser nicht bewerben sollten.' },
+  method: { title: 'Sechs Schritte bis zur eingereichten Bewerbung.', body: 'Jeder Schritt endet mit einer Entscheidung oder einem fertigen Dokument.', steps: [['Profil', 'Ziele, Erfahrung, Noten, Budget und Rahmenbedingungen.'], ['Strategie', 'Prioritäten, Länder und ein realistisches Ambitionsniveau.'], ['Auswahl', 'Eine begründete Programmliste statt allgemeiner Suchergebnisse.'], ['Finanzierung', 'Kosten, Stipendien und Fristen auf einen Blick.'], ['Bewerbung', 'Kommentare und Überarbeitungen zu Lebenslauf und Motivationsschreiben.'], ['Qualitätskontrolle', 'Abschlussprüfung von Anforderungen, Konsistenz und Abgabereife.']] },
+  sample: { ...homeContent.de.sample, title: 'Sehen Sie den Bericht, bevor Sie ihn bestellen.', body: 'Statt 40 offener Tabs — ein Dokument und eine klare Entscheidung.', documentTitle: 'Programmauswahl', rows: [['Programm A', 'Sehr gute Profilpassung', 'Mittleres Risiko'], ['Programm B', 'Passt zum Budget', 'Niedrigeres Risiko'], ['Programm C', 'Anspruchsvolles Stipendium', 'Höheres Risiko']] },
+  offers: {
+    title: 'Bezahlen Sie nur für die Unterstützung, die Sie brauchen.', body: 'Leistung, Umfang und Preis stehen fest, bevor die Arbeit beginnt.', cta: 'Kostenloses Erstgespräch buchen', bestFor: 'Geeignet für', includes: 'Sie erhalten', limits: 'Umfang',
+    cards: [
+      { name: 'Erstgespräch', label: 'Erster Schritt', price: 'Kostenlos', meta: '15 Min.', bestFor: 'die Klärung, ob wir helfen können', summary: 'Wir lernen Ziel, Frist und Unterstützungsbedarf kennen.', includes: ['Empfehlung für den sinnvollsten nächsten Schritt'], limits: ['keine Profil- oder Dokumentenanalyse'] },
+      { name: 'Strategieberatung', label: 'Eine wichtige Entscheidung', price: '70 €', meta: '60 Min.', bestFor: 'eine zweite Meinung oder klare Richtung', summary: 'Fokussiertes Gespräch über Profil, Länder, Budget, Risiken und nächste Schritte.', includes: ['kurze Vorbereitung', '60 Minuten im Einzelgespräch', 'schriftliche Zusammenfassung der nächsten Schritte'], limits: ['eine Sitzung', 'kein detaillierter Programmbericht'] },
+      { name: 'Programmauswahl', label: 'Begründete Liste', price: '350 €', meta: 'bis zu 8 Programme', bestFor: 'die Entscheidung, wo sich eine Bewerbung lohnt', summary: 'Wir vergleichen Programme, Kosten, Kriterien, Finanzierung und Fristen.', includes: ['bis zu 8 Programme', 'eine Überarbeitung', 'kurzes Abschlussgespräch'], limits: ['eine zusammenhängende Länder- und Zielgruppe', 'Bewerbungserstellung nicht enthalten'], featured: true },
+      { name: 'Bewerbungsunterstützung', label: 'Ein Programm', price: '390 €', meta: '1 Bewerbung', bestFor: 'Bewerbende, die ihr Zielprogramm bereits kennen', summary: 'Wir helfen, Unterlagen klar, überzeugend und an den Anforderungen ausgerichtet zu gestalten.', includes: ['Kommentare und Überarbeitungen zu Lebenslauf und Motivationsschreiben', 'zwei Feedbackrunden je Kerndokument', 'Dokumentenliste und Abschlussprüfung'], limits: ['ein Standardprogramm', 'Bewerbende verfassen und übermitteln selbst'] },
+      { name: 'Komplette Begleitung', label: 'Gesamter Bewerbungszyklus', price: '1.400 €', meta: 'bis zu 3 Bewerbungen', bestFor: 'einen europäischen Standardzyklus von Auswahl bis Einreichung', summary: 'Wir begleiten Strategie, Programmauswahl, Unterlagen, Fristen und Abschlussprüfung.', includes: ['Programmauswahl und bis zu 3 Standardbewerbungen', 'zwei Feedbackrunden je Kerndokument', 'bis zu 4 Monate Unterstützung'], limits: ['Sondertests, Portfolios und komplexe Verfahren mit mehreren Essays ausgenommen'] },
+      { name: 'Stipendienbewerbung', label: 'Ein Stipendium', price: '590 €', meta: 'Standardumfang', bestFor: 'ein klar ausgewähltes Stipendium', summary: 'Wir entwickeln die Strategie und helfen, Motivation, Erfahrung und Ziele überzeugend darzustellen.', includes: ['Bewerbungsstrategie', 'bis zu drei Feedbackrunden auf selbst verfasste Essays', 'Hinweise für Empfehlungsschreiben und Abschlussprüfung'], limits: ['eine Standard-Stipendienbewerbung', 'besonders komplexe Verfahren werden vorab abgegrenzt'] },
+    ],
+  },
+  pricing: { title: 'Der Preis steht vor Beginn fest.', body: 'Zusatzarbeit und Preis bestätigen wir, bevor wir beginnen.', addonsTitle: 'Feste Zusatzpreise', addons: [['Zusätzliche Standardbewerbung', 'mit aktivem Paket', '280 €'], ['Zusätzliche Stipendienbewerbung', 'Standardumfang', '300 €'], ['Interviewvorbereitung', 'Vorbereitung + Simulation', '140 €'], ['Zusätzliche Strategieberatung', '60 Minuten', '70 €']], instalmentsTitle: 'Ratenzahlung', instalments: ['Komplette Begleitung für 1.400 €: bis zu 3 Raten'], credit: 'Wenn Sie innerhalb von 14 Tagen nach der 70-€-Beratung ein geeignetes größeres Paket buchen, werden die 70 € angerechnet.' },
+  trust: { ...homeContent.de.trust, body: 'Vertrauen entsteht durch klaren Umfang, nachvollziehbare Arbeit und eine schriftliche Leistungsbestätigung.', note: 'Vor Beginn erhalten Sie eine schriftliche Bestätigung von Umfang, Fristen, Preis und Zahlungsweise.' },
+  booking: { ...homeContent.de.booking, body: 'In 15 Minuten klären wir Ziel, Fristen und die benötigte Unterstützung.', team: 'Sie sprechen mit einem Mitglied unseres Teams. Alle Teammitglieder haben einen Teil ihrer Ausbildung im Ausland absolviert. Wenn wir für Ihren Fall nicht die richtige Unterstützung sind, sagen wir es Ihnen in den ersten 15 Minuten.', event: 'Kostenloses Erstgespräch', note: 'Das Gespräch verpflichtet Sie zu keinem Kauf.' },
+});
+
+homeContent.de.faq.items[3] = ['Schreiben Sie das Motivationsschreiben für Bewerbende?', 'Wir übernehmen nicht die Autorenschaft. Wir helfen mit Ideen, Struktur, Fragen, Kommentaren und Überarbeitungen, damit die eigene Stimme klar und überzeugend bleibt.'];
+homeContent.de.faq.items[6] = ['Kann ich in Raten zahlen?', 'Ja. Die komplette Begleitung für 1.400 € kann nach schriftlicher Vereinbarung in bis zu drei Raten bezahlt werden.'];
+homeContent.de.faq.items[7] = ['Ich habe bereits eine Hochschulliste. Prüfen Sie sie?', 'Ja. Eine Strategieberatung kann eine gezielte Frage klären; die Programmauswahl prüft und verbessert die gesamte Liste.'];
+homeContent.de.faq.items[9] = ['Ich brauche nur Hilfe bei einer Bewerbung.', 'Die Bewerbungsunterstützung ist für ein Standardprogramm gedacht: Kommentare und Überarbeitungen der Kerndokumente, eine Anforderungsliste und die Abschlussprüfung sind enthalten.'];
+
+Object.assign(homeContent.fr, {
+  hero: { ...homeContent.fr.hero, primary: 'Réserver un appel découverte gratuit — 15 min' },
+  decision: { title: 'Avant de recommander un programme', note: 'Nous vérifions cinq points :', paid: 'Ce n’est qu’ensuite qu’un programme entre dans notre recommandation.', factors: [['Adéquation académique', 'profil + critères'], ['Coût total', 'frais + vie'], ['Financement', 'bourses + budget'], ['Échéances', 'calendrier réaliste'], ['Risque', 'sélection équilibrée']] },
+  independent: { title: 'D’abord la bonne décision. Ensuite la candidature solide.', body: 'Nous sélectionnons les programmes selon votre profil, votre budget, vos objectifs et vos échéances. Nous construisons ensuite une candidature qui rend votre adéquation évidente.', statement: 'C’est vous qui nous payez, pas les universités. Nous pouvons donc aussi vous dire où il vaut mieux ne pas candidater.' },
+  method: { title: 'Six étapes jusqu’au dépôt de candidature.', body: 'Chaque étape se termine par une décision ou un document finalisé.', steps: [['Profil', 'Objectifs, expérience, notes, budget et contraintes.'], ['Stratégie', 'Priorités, pays et niveau d’ambition réaliste.'], ['Sélection', 'Une liste argumentée plutôt que des résultats génériques.'], ['Financement', 'Coûts, bourses et échéances dans une seule vue.'], ['Candidature', 'Commentaires et révisions sur votre CV et votre lettre de motivation.'], ['Contrôle qualité', 'Vérification finale des exigences, de la cohérence et de la préparation.']] },
+  sample: { ...homeContent.fr.sample, title: 'Voyez le rapport avant de le commander.', body: 'Au lieu de 40 onglets ouverts — un document et une décision claire.', documentTitle: 'Sélection de programmes', rows: [['Programme A', 'Très bonne adéquation au profil', 'Risque moyen'], ['Programme B', 'Respecte le budget', 'Risque plus faible'], ['Programme C', 'Bourse très sélective', 'Risque plus élevé']] },
+  offers: {
+    title: 'Payez uniquement pour l’accompagnement dont vous avez besoin.', body: 'Prestations, limites et prix sont connus avant le début du travail.', cta: 'Réserver un appel découverte gratuit', bestFor: 'Idéal pour', includes: 'Vous recevez', limits: 'Périmètre',
+    cards: [
+      { name: 'Appel découverte', label: 'Première étape', price: 'Gratuit', meta: '15 min', bestFor: 'vérifier si nous pouvons vous aider', summary: 'Nous découvrons votre objectif, votre échéance et votre besoin.', includes: ['une recommandation pour la prochaine étape utile'], limits: ['sans analyse du profil ni des documents'] },
+      { name: 'Consultation stratégique', label: 'Une décision importante', price: '70 €', meta: '60 min', bestFor: 'un second avis ou une direction claire', summary: 'Échange ciblé sur le profil, les pays, le budget, les risques et les prochaines étapes.', includes: ['courte préparation', '60 minutes en individuel', 'synthèse écrite des prochaines étapes'], limits: ['une séance', 'sans rapport détaillé sur les programmes'] },
+      { name: 'Sélection de programmes', label: 'Liste argumentée', price: '350 €', meta: 'jusqu’à 8 programmes', bestFor: 'décider où une candidature vaut réellement la peine', summary: 'Nous comparons programmes, coûts, critères, financements et échéances.', includes: ['jusqu’à 8 programmes', 'une révision', 'court appel de restitution'], limits: ['un ensemble cohérent de pays et d’objectifs', 'préparation des candidatures non incluse'], featured: true },
+      { name: 'Accompagnement de candidature', label: 'Un programme', price: '390 €', meta: '1 candidature', bestFor: 'les candidats qui savent déjà où postuler', summary: 'Nous aidons à rendre vos documents clairs, convaincants et conformes aux exigences.', includes: ['commentaires et révisions du CV et de la lettre de motivation', 'deux cycles de retours par document principal', 'liste des pièces et contrôle final'], limits: ['un programme standard', 'le candidat rédige et dépose sa candidature'] },
+      { name: 'Accompagnement complet', label: 'Cycle complet', price: '1 400 €', meta: 'jusqu’à 3 candidatures', bestFor: 'un cycle européen standard, de la sélection au dépôt', summary: 'Nous guidons la stratégie, la sélection, les documents, les échéances et le contrôle final.', includes: ['sélection et jusqu’à 3 candidatures standards', 'deux cycles de retours par document principal', 'jusqu’à 4 mois de suivi'], limits: ['tests spéciaux, portfolios et procédures complexes à essais multiples exclus'] },
+      { name: 'Candidature de bourse', label: 'Une bourse', price: '590 €', meta: 'périmètre standard', bestFor: 'une bourse clairement sélectionnée', summary: 'Nous construisons la stratégie et aidons les essais du candidat à exprimer motivation, expérience et projet.', includes: ['stratégie de candidature', 'jusqu’à trois cycles de retours sur les essais rédigés par le candidat', 'conseils pour les recommandations et contrôle final'], limits: ['une candidature de bourse standard', 'les sélections très complexes sont cadrées avant le début'] },
+    ],
+  },
+  pricing: { title: 'Le prix est clair avant de commencer.', body: 'Tout travail supplémentaire et son prix sont confirmés avant de commencer.', addonsTitle: 'Options à prix fixe', addons: [['Candidature standard supplémentaire', 'avec un forfait actif', '280 €'], ['Candidature de bourse supplémentaire', 'périmètre standard', '300 €'], ['Préparation à l’entretien', 'préparation + simulation', '140 €'], ['Consultation stratégique supplémentaire', '60 minutes', '70 €']], instalmentsTitle: 'Paiement échelonné', instalments: ['Accompagnement complet à 1 400 € : jusqu’à 3 paiements'], credit: 'Si vous achetez un forfait supérieur éligible dans les 14 jours suivant la consultation de 70 €, les 70 € sont déduits.' },
+  trust: { ...homeContent.fr.trust, body: 'Nous construisons la confiance par un périmètre clair, un travail vérifiable et une confirmation écrite de ce que vous recevez.', note: 'Avant de commencer, vous recevez une confirmation écrite du périmètre, des délais, du prix et du mode de paiement.' },
+  booking: { ...homeContent.fr.booking, body: 'En 15 minutes, nous clarifions votre objectif, vos échéances et l’accompagnement utile.', team: 'Vous parlerez avec un membre de notre équipe. Tous ont effectué une partie de leurs études à l’étranger. Si nous ne sommes pas la bonne aide pour votre situation, nous vous le dirons dans les 15 premières minutes.', event: 'Appel découverte gratuit', note: 'Cet appel ne vous engage à aucun achat.' },
+});
+
+homeContent.fr.faq.items[3] = ['Rédigez-vous la lettre de motivation à la place du candidat ?', 'Nous ne remplaçons pas l’auteur. Nous aidons avec les idées, la structure, les questions, les commentaires et les révisions afin de préserver une voix claire et convaincante.'];
+homeContent.fr.faq.items[6] = ['Puis-je payer en plusieurs fois ?', 'Oui. L’accompagnement complet à 1 400 € peut être réglé en trois fois au maximum, selon un accord écrit.'];
+homeContent.fr.faq.items[7] = ['J’ai déjà une liste d’universités. Pouvez-vous la revoir ?', 'Oui. Une consultation stratégique peut traiter une question ciblée ; la Sélection de programmes permet de tester et d’améliorer toute la liste.'];
+homeContent.fr.faq.items[9] = ['Je veux seulement de l’aide pour une candidature.', 'L’Accompagnement de candidature est conçu pour un programme standard : commentaires et révisions des documents principaux, liste des exigences et contrôle final sont inclus.'];
+
+homeContent.bs.value.points[1] = ['Rad koji možete vidjeti', 'Dobijate obrazložen plan, izbor programa ili pregled prijave — ne samo razgovor.'];
+homeContent.sr.value.points[1] = ['Rad koji možete da vidite', 'Dobijate obrazložen plan, izbor programa ili pregled prijave — ne samo razgovor.'];
+homeContent.hr.value.points[1] = ['Rad koji možete vidjeti', 'Dobivate obrazložen plan, izbor programa ili pregled prijave — ne samo razgovor.'];
+homeContent.de.value.points[1] = ['Sichtbare Arbeit', 'Sie erhalten einen begründeten Plan, eine Programmauswahl oder Bewerbungsprüfung — nicht nur ein Gespräch.'];

@@ -24,16 +24,14 @@ Adria Admissions is not a university recruitment channel and must not present pa
 
 ## Current offer
 
-- Free Fit Call — €0 / 15 minutes.
+- Free Introductory Call — free / 15 minutes.
 - Strategy Consultation — €70 / 60 minutes; credited to a qualifying larger package purchased within 14 days.
-- Admissions Blueprint — €220 fixed fee.
-- University Direction — €350 / up to eight programmes, one revision and a short review call.
-- Guided Application — €800 / up to two standard programmes and eight weeks of support.
-- Full Partnership — €1,400 / up to three standard European applications and four months of support.
-- Full Partnership Plus — €1,700 / up to four standard European applications, an additional review round and six months of support.
-- Scholarship / Selective Intensive — €1,900–€2,500, driven by the number of essays, scholarships, interviews and special application components.
+- Programme Selection — €350 / up to eight programmes, one revision and a short review call.
+- Application Support — €390 / one standard programme, two feedback rounds per main document and a final quality check.
+- Complete Support — €1,400 / programme selection, up to three standard European applications and four months of support.
+- Scholarship Application — €590 / one standard scholarship application and up to three feedback rounds on applicant-authored essays.
 
-Fixed add-ons are €280 for an additional standard application, €300 for standard scholarship support, €140 for interview preparation and €100 for an additional 60-minute strategy session. The €800 package may be paid in up to two instalments; packages from €1,400 in up to three. Scope, revision count, support period and price are confirmed in writing before payment. Universities and scholarship bodies make all final decisions.
+Fixed add-ons are €280 for an additional standard application, €300 for an additional standard scholarship application, €140 for interview preparation and €70 for an additional 60-minute strategy session. Complete Support may be paid in up to three instalments. Scope, revision count, support period and price are confirmed in writing before payment. Universities and scholarship bodies make all final decisions.
 
 ## Brand and trust commitments
 
@@ -50,7 +48,7 @@ The website and guidance support Croatian, Bosnian, Serbian/Montenegrin, English
 
 ## Conversion path
 
-The primary public action is the free 15-minute fit call through Calendly. General enquiries go to adria.admissions@gmail.com. The paid 60-minute consultation is the first diagnostic product and leads into larger packages where appropriate. The website does not currently collect enquiries, newsletter subscriptions or analytics data itself; the planned 2027 Admissions Planner must not launch with email capture until a provider, consent wording and deletion process are selected and tested.
+The primary public action is the free 15-minute introductory call through Calendly. General enquiries go to adria.admissions@gmail.com. The paid 60-minute consultation is the first diagnostic product and leads into larger packages where appropriate. The website does not currently collect enquiries, newsletter subscriptions or analytics data itself; the planned 2027 Admissions Planner must not launch with email capture until a provider, consent wording and deletion process are selected and tested.
 
 ## Legal and operating constraints
 
