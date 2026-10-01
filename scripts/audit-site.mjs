@@ -12,6 +12,14 @@ const homepageExpectations = {
   fr: ['15 min', 'Gratuit', '70 €', '350 €', '390 €', '590 €', '1 400 €'],
 };
 const staleTeamCopy = /upoznat ćete članove našeg tima|upoznaćete članove našeg tima|meet members of our team|lernen Sie Mitglieder unseres Teams kennen|rencontrerez des membres de notre équipe/iu;
+const localeContamination = {
+  hr: /\b(?:cene|univerziteti|finansiranje|uslovi|umesto|sledeći|obim|savetovanje|inostranstvu|izveštaj)\b/iu,
+  bs: /\b(?:cene|sveučilišta|financiranje|uvjeti|umesto|sledeći|izveštaj)\b/iu,
+  sr: /\b(?:cijene|sveučilišta|financiranje|uvjeti|prije|sljedeći|inozemstvu|izvještaj)\b/iu,
+  en: /\b(?:nächsten Zug|essais du candidat)\b/iu,
+  de: /Bewerber:innen|\bGebühren \+ Leben\b|nächsten Zug|Finanzierungsbild/iu,
+  fr: /essais du candidat|procédures complexes à essais multiples|la bonne aide/iu,
+};
 
 function assert(condition, message) {
   if (!condition) failures.push(message);
@@ -52,14 +60,18 @@ for (const locale of locales) {
     assert(text.includes('<header'), `${path} is missing a header landmark`);
     assert(text.includes('<footer'), `${path} is missing a footer landmark`);
     assert(text.includes(`rel="canonical" href="https://adriaadmissions.com${path}"`), `${path} has an incorrect canonical URL`);
+    assert(text.includes('href="https://www.linkedin.com/company/adria-admissions/"'), `${path} is missing the official LinkedIn link`);
+    assert(text.includes('href="https://www.instagram.com/adria.admissions/"'), `${path} is missing the official Instagram link`);
     assert((text.match(/hreflang=/gi) ?? []).length >= 7, `${path} is missing reciprocal language alternatives`);
     assert(text.includes('name="robots" content="noindex, nofollow, nocache"'), `${path} must stay noindex before launch readiness`);
+    assert(!localeContamination[locale].test(text), `${path} contains wording from another locale or a known mistranslation`);
 
     if (!suffix) {
       assert(text.includes('application/ld+json'), `${path} is missing structured data`);
       assert(!/20\s+min/iu.test(text), `${path} still exposes the superseded 20-minute introductory call`);
       assert(!/(?:€\s*(?:220|800|1700|1900)|(?:220|800|1[.\s,]?700|1[.\s,]?900)\s*€)/u.test(text), `${path} still exposes a superseded core price`);
       assert(!staleTeamCopy.test(text), `${path} still promises that clients meet multiple team members`);
+      assert(!text.includes('mobile-booking-bar'), `${path} still renders the removed floating mobile booking bar`);
       assert((text.match(/class="offer-row/g) ?? []).length === 6, `${path} must expose exactly six core services`);
       const methodMarkup = text.match(/class="method-line"[^>]*>([\s\S]*?)<\/ol>/)?.[1] ?? '';
       assert((methodMarkup.match(/<li/g) ?? []).length === 3, `${path} must expose exactly three process steps`);

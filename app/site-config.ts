@@ -17,9 +17,13 @@ function normalizedEmail(value: string | undefined): string {
 
 const defaultCalendarLink = 'https://calendly.com/adria-admissions';
 const defaultContactEmail = 'adria.admissions@gmail.com';
+const defaultLinkedInLink = 'https://www.linkedin.com/company/adria-admissions/';
+const defaultInstagramLink = 'https://www.instagram.com/adria.admissions/';
 
 export const calendarLink = normalizedHttpsUrl(process.env.NEXT_PUBLIC_CAL_LINK || defaultCalendarLink);
 export const contactEmail = normalizedEmail(process.env.NEXT_PUBLIC_CONTACT_EMAIL || defaultContactEmail);
+export const linkedInLink = normalizedHttpsUrl(process.env.NEXT_PUBLIC_LINKEDIN_URL || defaultLinkedInLink);
+export const instagramLink = normalizedHttpsUrl(process.env.NEXT_PUBLIC_INSTAGRAM_URL || defaultInstagramLink);
 const legalInformationReady = process.env.NEXT_PUBLIC_LEGAL_READY === 'true';
 export const publicLaunchReady = process.env.NEXT_PUBLIC_PUBLIC_LAUNCH === 'true'
   && legalInformationReady

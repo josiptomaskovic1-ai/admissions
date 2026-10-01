@@ -21,7 +21,7 @@ export const siteMetadata: Metadata = {
     template: `%s | ${brandName}`,
   },
   description: 'Independent, one-to-one guidance for European university applications.',
-  keywords: ['university admissions', 'studije u inostranstvu', 'prijave na fakultet', 'scholarships', 'European universities', 'Balkans'],
+  keywords: ['study abroad consulting', 'university applications', 'scholarships', 'European universities', 'Adria Admissions'],
   icons: {
     icon: [{ url: '/adria-logo.png', type: 'image/png' }],
     shortcut: '/adria-logo.png',
