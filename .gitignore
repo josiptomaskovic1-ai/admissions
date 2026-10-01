@@ -36,9 +36,9 @@ yarn-error.log*
 .vercel
 next-env.d.ts
 /dist/
+/.sites-runtime/
 /.wrangler/
 /outputs/
 /work/
 /premium-audit.json
 *.tsbuildinfo
-
