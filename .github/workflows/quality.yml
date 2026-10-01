@@ -42,8 +42,23 @@ jobs:
       - name: Type-check
         run: npm run typecheck
 
-      - name: Audit localized site content
-        run: npm run audit:site
-
       - name: Build production site
         run: npm run build
+
+      - name: Start the local audit server
+        shell: bash
+        run: |
+          npm run dev -- --host 127.0.0.1 --port 4173 > "$RUNNER_TEMP/adria-site.log" 2>&1 &
+          for attempt in {1..60}; do
+            if curl --fail --silent http://127.0.0.1:4173/ > /dev/null; then
+              exit 0
+            fi
+            sleep 1
+          done
+          cat "$RUNNER_TEMP/adria-site.log"
+          exit 1
+
+      - name: Audit localized site content
+        env:
+          AUDIT_ORIGIN: http://127.0.0.1:4173
+        run: npm run audit:site
