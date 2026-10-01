@@ -573,3 +573,242 @@ homeContent.bs.value.points[1] = ['Rad koji možete vidjeti', 'Dobijate obrazlo�
 homeContent.sr.value.points[1] = ['Rad koji možete da vidite', 'Dobijate obrazložen plan, izbor programa ili pregled prijave — ne samo razgovor.'];
 homeContent.hr.value.points[1] = ['Rad koji možete vidjeti', 'Dobivate obrazložen plan, izbor programa ili pregled prijave — ne samo razgovor.'];
 homeContent.de.value.points[1] = ['Sichtbare Arbeit', 'Sie erhalten einen begründeten Plan, eine Programmauswahl oder Bewerbungsprüfung — nicht nur ein Gespräch.'];
+
+// Trust-led redesign: the same concise decision story in every language.
+// Verified scope and prices stay in the offer objects above.
+Object.assign(homeContent.bs, {
+  hero: {
+    title: 'Studirajte u inostranstvu.',
+    accent: 'Prijavite se s jasnim planom.',
+    body: 'Za bachelor, master i stipendijske kandidate koji žele uporediti programe, troškove i finansiranje — te predati snažnu, urednu prijavu bez nepotrebnog lutanja.',
+    primary: 'Razjasnite svoj sljedeći korak — 15 min besplatno',
+    secondary: 'Pogledajte kako proces funkcioniše',
+    proof: ['Nezavisno savjetovanje', 'Jasne cijene', 'Evropske prijave'],
+  },
+  audiences: {
+    title: 'Kada Adria Admissions donosi najviše vrijednosti.',
+    body: 'Najbolje radimo s kandidatima koji žele donijeti promišljenu odluku i aktivno učestvovati u procesu.',
+    groups: [
+      { title: 'Za vas je ako', lead: 'Želite ličnu, stručnu podršku umjesto generičke liste programa.', points: ['birate bachelor ili master studij u Evropi', 'poredite mnogo opcija, troškova i rokova', 'želite ozbiljno pristupiti stipendijama', 'treba vam stručno drugo mišljenje prije prijave'] },
+      { title: 'Vjerovatno nije za vas ako', lead: 'Drugačiji model pomoći bit će bolji ako tražite prečicu umjesto zajedničkog rada.', points: ['tražite garantovan upis ili stipendiju', 'očekujete da neko napiše prijavu umjesto vas', 'želite slati isti materijal na mnogo programa', 'niste spremni aktivno učestvovati i poštovati rokove'] },
+    ],
+  },
+  value: {
+    title: 'Iskustvo koje stoji iza procesa.',
+    body: 'Naš savjetodavni tim poznaje evropske akademske sisteme, međunarodne prijave i stipendijske procese. To iskustvo pretvaramo u dosljedan način rada — bez tvrdnji o formalnim partnerstvima.',
+    points: [['Stipendijski procesi', 'Iskustvo obuhvata DAAD, Erasmus Mundus, OeAD i France Excellence prijave.'], ['Evropske prijave', 'Bachelor i master programi, različiti uslovi, rokovi i modeli finansiranja.'], ['Jedan standard rada', 'Svaki kandidat prolazi isti okvir: usklađenost, trošak, finansiranje, rokovi i rizik.']],
+  },
+  method: {
+    title: 'Od profila do predaje, u tri jasna koraka.',
+    body: 'Svaki korak završava konkretnom odlukom, dokumentom ili sljedećim potezom.',
+    steps: [['Upoznajemo vaš profil', 'Akademski rezultati, interesovanja, budžet, jezici, zemlje i karijerni cilj.'], ['Gradimo strategiju', 'Izbor programa, plan rokova, finansijska slika i prioriteti.'], ['Jačamo i vodimo prijavu', 'Komentari i dorade dokumenata, kontrola zahtjeva i podrška do predaje.']],
+  },
+  faq: { title: 'Pitanja prije odluke', items: [
+    ['Garantujete li upis ili stipendiju?', 'Odluku uvijek donosi univerzitet ili stipendijsko tijelo. Mi ulažemo maksimalan trud u strategiju, dokumente, rokove i završnu kontrolu kako bi kandidat predao svoju najsnažniju autentičnu prijavu.'],
+    ['Pišete li motivaciono pismo umjesto kandidata?', 'Ne preuzimamo autorstvo. Pomažemo s idejama, strukturom, pitanjima, komentarima i doradama kako bi kandidatov glas bio jasan i uvjerljiv.'],
+    ['Radite li bachelor i master prijave?', 'Da. Podržavamo bachelor i master prijave, kao i povezane stipendijske procese, kada se uklapaju u naš evropski fokus.'],
+    ['Za koje zemlje radite?', 'Fokusirani smo na evropske univerzitete. Program biramo prema profilu, budžetu, cilju i rokovima kandidata, a ne prema unaprijed zadanoj listi.'],
+    ['Pomažete li sa stipendijama?', 'Da. Tim ima iskustvo s DAAD, Erasmus Mundus, OeAD i France Excellence procesima. Važeće uslove uvijek provjeravamo u službenim izvorima.'],
+    ['Koliko programa pokriva usluga?', 'Izbor programa obuhvata do 8 programa, a Kompletno vođenje do 3 standardne prijave. Dodatni obim dogovaramo unaprijed i pisanim putem.'],
+    ['Kada je najbolje početi?', 'Idealno je javiti se 6–12 mjeseci prije prvog važnog roka. Ako je rok bliži, na uvodnom razgovoru procijenit ćemo šta je još realno uraditi kvalitetno.'],
+    ['Zašto članovi tima nisu javno navedeni?', 'Adria Admissions je izgrađen kao stručni savjetodavni brend, a ne kao lični brend. Identitet članova tima nije javno istaknut; prije saradnje jasno potvrđujemo metodologiju, obim, rokove, cijenu i očekivanja.'],
+  ] },
+});
+
+homeContent.sr.sample.badge = 'Ilustrativni primer';
+homeContent.sr.trust.title = 'Poverenje gradimo sistemom, ne velikim obećanjima.';
+
+Object.assign(homeContent.sr, {
+  hero: {
+    title: 'Studirajte u inostranstvu.',
+    accent: 'Prijavite se sa jasnim planom.',
+    body: 'Za kandidate za osnovne i master studije i stipendije koji žele da uporede programe, troškove i finansiranje — i predaju snažnu, uređenu prijavu bez nepotrebnog lutanja.',
+    primary: 'Razjasnite svoj sledeći korak — 15 min besplatno',
+    secondary: 'Pogledajte kako proces funkcioniše',
+    proof: ['Nezavisno savetovanje', 'Jasne cene', 'Evropske prijave'],
+  },
+  audiences: {
+    title: 'Kada Adria Admissions donosi najviše vrednosti.',
+    body: 'Najbolje radimo sa kandidatima koji žele da donesu promišljenu odluku i aktivno učestvuju u procesu.',
+    groups: [
+      { title: 'Za vas je ako', lead: 'Želite ličnu, stručnu podršku umesto generičke liste programa.', points: ['birate osnovne ili master studije u Evropi', 'poredite mnogo opcija, troškova i rokova', 'želite ozbiljno da pristupite stipendijama', 'treba vam stručno drugo mišljenje pre prijave'] },
+      { title: 'Verovatno nije za vas ako', lead: 'Drugačiji model pomoći biće bolji ako tražite prečicu umesto zajedničkog rada.', points: ['tražite garantovan upis ili stipendiju', 'očekujete da neko napiše prijavu umesto vas', 'želite da šaljete isti materijal na mnogo programa', 'niste spremni da aktivno učestvujete i poštujete rokove'] },
+    ],
+  },
+  value: {
+    title: 'Iskustvo koje stoji iza procesa.',
+    body: 'Naš savetodavni tim poznaje evropske akademske sisteme, međunarodne prijave i stipendijske procese. To iskustvo pretvaramo u dosledan način rada — bez tvrdnji o formalnim partnerstvima.',
+    points: [['Stipendijski procesi', 'Iskustvo obuhvata DAAD, Erasmus Mundus, OeAD i France Excellence prijave.'], ['Evropske prijave', 'Osnovni i master programi, različiti uslovi, rokovi i modeli finansiranja.'], ['Jedan standard rada', 'Svaki kandidat prolazi isti okvir: usklađenost, trošak, finansiranje, rokovi i rizik.']],
+  },
+  method: {
+    title: 'Od profila do predaje, u tri jasna koraka.',
+    body: 'Svaki korak završava konkretnom odlukom, dokumentom ili sledećim potezom.',
+    steps: [['Upoznajemo vaš profil', 'Akademski rezultati, interesovanja, budžet, jezici, zemlje i karijerni cilj.'], ['Gradimo strategiju', 'Izbor programa, plan rokova, finansijska slika i prioriteti.'], ['Jačamo i vodimo prijavu', 'Komentari i dorade dokumenata, kontrola zahteva i podrška do predaje.']],
+  },
+  faq: { title: 'Pitanja pre odluke', items: [
+    ['Da li garantujete upis ili stipendiju?', 'Odluku uvek donosi univerzitet ili stipendijsko telo. Mi ulažemo maksimalan trud u strategiju, dokumente, rokove i završnu kontrolu kako bi kandidat predao svoju najsnažniju autentičnu prijavu.'],
+    ['Pišete li motivaciono pismo umesto kandidata?', 'Ne preuzimamo autorstvo. Pomažemo sa idejama, strukturom, pitanjima, komentarima i doradama kako bi kandidatov glas bio jasan i uverljiv.'],
+    ['Radite li prijave za osnovne i master studije?', 'Da. Podržavamo prijave za osnovne i master studije, kao i povezane stipendijske procese, kada se uklapaju u naš evropski fokus.'],
+    ['Za koje zemlje radite?', 'Fokusirani smo na evropske univerzitete. Program biramo prema profilu, budžetu, cilju i rokovima kandidata, a ne prema unapred zadatoj listi.'],
+    ['Pomažete li sa stipendijama?', 'Da. Tim ima iskustvo sa DAAD, Erasmus Mundus, OeAD i France Excellence procesima. Važeće uslove uvek proveravamo u zvaničnim izvorima.'],
+    ['Koliko programa pokriva usluga?', 'Izbor programa obuhvata do 8 programa, a Kompletno vođenje do 3 standardne prijave. Dodatni obim dogovaramo unapred i pisanim putem.'],
+    ['Kada je najbolje početi?', 'Idealno je javiti se 6–12 meseci pre prvog važnog roka. Ako je rok bliži, na uvodnom razgovoru procenićemo šta je još realno uraditi kvalitetno.'],
+    ['Zašto članovi tima nisu javno navedeni?', 'Adria Admissions je izgrađen kao stručni savetodavni brend, a ne kao lični brend. Identitet članova tima nije javno istaknut; pre saradnje jasno potvrđujemo metodologiju, obim, rokove, cenu i očekivanja.'],
+  ] },
+});
+
+Object.assign(homeContent.hr, {
+  hero: {
+    title: 'Studirajte u inozemstvu.',
+    accent: 'Prijavite se s jasnim planom.',
+    body: 'Za kandidate za prijediplomske i diplomske studije te stipendije koji žele usporediti programe, troškove i financiranje — i predati snažnu, uređenu prijavu bez nepotrebnog lutanja.',
+    primary: 'Razjasnite svoj sljedeći korak — 15 min besplatno',
+    secondary: 'Pogledajte kako proces funkcionira',
+    proof: ['Neovisno savjetovanje', 'Jasne cijene', 'Europske prijave'],
+  },
+  audiences: {
+    title: 'Kada Adria Admissions donosi najviše vrijednosti.',
+    body: 'Najbolje radimo s kandidatima koji žele donijeti promišljenu odluku i aktivno sudjelovati u procesu.',
+    groups: [
+      { title: 'Za vas je ako', lead: 'Želite osobnu, stručnu podršku umjesto generičke liste programa.', points: ['birate prijediplomski ili diplomski studij u Europi', 'uspoređujete mnogo opcija, troškova i rokova', 'želite ozbiljno pristupiti stipendijama', 'treba vam stručno drugo mišljenje prije prijave'] },
+      { title: 'Vjerojatno nije za vas ako', lead: 'Drugačiji model pomoći bit će bolji ako tražite prečac umjesto zajedničkog rada.', points: ['tražite zajamčen upis ili stipendiju', 'očekujete da netko napiše prijavu umjesto vas', 'želite slati isti materijal na mnogo programa', 'niste spremni aktivno sudjelovati i poštovati rokove'] },
+    ],
+  },
+  value: {
+    title: 'Iskustvo koje stoji iza procesa.',
+    body: 'Naš savjetodavni tim poznaje europske akademske sustave, međunarodne prijave i stipendijske procese. To iskustvo pretvaramo u dosljedan način rada — bez tvrdnji o formalnim partnerstvima.',
+    points: [['Stipendijski procesi', 'Iskustvo obuhvaća DAAD, Erasmus Mundus, OeAD i France Excellence prijave.'], ['Europske prijave', 'Prijediplomski i diplomski programi, različiti uvjeti, rokovi i modeli financiranja.'], ['Jedan standard rada', 'Svaki kandidat prolazi isti okvir: usklađenost, trošak, financiranje, rokovi i rizik.']],
+  },
+  method: {
+    title: 'Od profila do predaje, u tri jasna koraka.',
+    body: 'Svaki korak završava konkretnom odlukom, dokumentom ili sljedećim potezom.',
+    steps: [['Upoznajemo vaš profil', 'Akademski rezultati, interesi, proračun, jezici, zemlje i karijerni cilj.'], ['Gradimo strategiju', 'Izbor programa, plan rokova, financijska slika i prioriteti.'], ['Jačamo i vodimo prijavu', 'Komentari i dorade dokumenata, kontrola zahtjeva i podrška do predaje.']],
+  },
+  faq: { title: 'Pitanja prije odluke', items: [
+    ['Jamčite li upis ili stipendiju?', 'Odluku uvijek donosi sveučilište ili stipendijsko tijelo. Mi ulažemo maksimalan trud u strategiju, dokumente, rokove i završnu kontrolu kako bi kandidat predao svoju najsnažniju autentičnu prijavu.'],
+    ['Pišete li motivacijsko pismo umjesto kandidata?', 'Ne preuzimamo autorstvo. Pomažemo s idejama, strukturom, pitanjima, komentarima i doradama kako bi kandidatov glas bio jasan i uvjerljiv.'],
+    ['Radite li prijave za prijediplomske i diplomske studije?', 'Da. Podržavamo prijave za obje razine studija, kao i povezane stipendijske procese, kada se uklapaju u naš europski fokus.'],
+    ['Za koje zemlje radite?', 'Fokusirani smo na europska sveučilišta. Program biramo prema profilu, proračunu, cilju i rokovima kandidata, a ne prema unaprijed zadanoj listi.'],
+    ['Pomažete li sa stipendijama?', 'Da. Tim ima iskustvo s DAAD, Erasmus Mundus, OeAD i France Excellence procesima. Važeće uvjete uvijek provjeravamo u službenim izvorima.'],
+    ['Koliko programa pokriva usluga?', 'Izbor programa obuhvaća do 8 programa, a Kompletno vođenje do 3 standardne prijave. Dodatni opseg dogovaramo unaprijed i pisanim putem.'],
+    ['Kada je najbolje početi?', 'Idealno je javiti se 6–12 mjeseci prije prvog važnog roka. Ako je rok bliži, na uvodnom razgovoru procijenit ćemo što je još realno kvalitetno napraviti.'],
+    ['Zašto članovi tima nisu javno navedeni?', 'Adria Admissions izgrađen je kao stručni savjetodavni brend, a ne kao osobni brend. Identitet članova tima nije javno istaknut; prije suradnje jasno potvrđujemo metodologiju, opseg, rokove, cijenu i očekivanja.'],
+  ] },
+});
+
+Object.assign(homeContent.en, {
+  hero: {
+    title: 'Study abroad.',
+    accent: 'Apply with a clear plan.',
+    body: 'For bachelor’s, master’s and scholarship applicants who want to compare programmes, total costs and funding — and submit a strong, well-organised application without unnecessary guesswork.',
+    primary: 'Clarify your next step — 15 min free',
+    secondary: 'See how the process works',
+    proof: ['Independent advice', 'Clear pricing', 'European applications'],
+  },
+  audiences: {
+    title: 'When Adria Admissions brings the most value.',
+    body: 'We work best with applicants who want to make a considered decision and take an active role in the process.',
+    groups: [
+      { title: 'A strong fit if you', lead: 'Want personal, expert support instead of a generic programme list.', points: ['are choosing a bachelor’s or master’s degree in Europe', 'are comparing many options, costs and deadlines', 'want to approach scholarships seriously', 'need an expert second opinion before applying'] },
+      { title: 'Probably not the right fit if you', lead: 'A different kind of help will suit you better if you want a shortcut rather than a collaborative process.', points: ['want guaranteed admission or funding', 'expect someone to write the application for you', 'plan to send the same material to many programmes', 'are not ready to participate actively and meet deadlines'] },
+    ],
+  },
+  value: {
+    title: 'Experience behind the process.',
+    body: 'Our advisory team understands European academic systems, international applications and scholarship processes. We turn that experience into a consistent way of working — without implying formal partnerships.',
+    points: [['Scholarship processes', 'Experience includes DAAD, Erasmus Mundus, OeAD and France Excellence applications.'], ['European applications', 'Bachelor’s and master’s programmes with different requirements, deadlines and funding models.'], ['One working standard', 'Every applicant follows the same framework: fit, cost, funding, deadlines and risk.']],
+  },
+  method: {
+    title: 'From profile to submission in three clear steps.',
+    body: 'Each step ends with a concrete decision, document or next move.',
+    steps: [['We understand your profile', 'Academic record, interests, budget, languages, countries and career goal.'], ['We build the strategy', 'Programme selection, deadline plan, financial picture and priorities.'], ['We strengthen and guide the application', 'Document feedback, requirement checks and support through submission.']],
+  },
+  faq: { title: 'Questions before you decide', items: [
+    ['Do you guarantee admission or a scholarship?', 'The university or funding body always makes the decision. We put maximum effort into strategy, documents, deadlines and final checks so each applicant can submit their strongest authentic application.'],
+    ['Do you write the motivation letter for the applicant?', 'We do not take over authorship. We help with ideas, structure, questions, detailed feedback and revisions so the applicant’s own voice stays clear and convincing.'],
+    ['Do you support bachelor’s and master’s applications?', 'Yes. We support both levels and related scholarship processes when they fit our European focus.'],
+    ['Which countries do you cover?', 'We focus on European universities. Programmes are selected around the applicant’s profile, budget, goals and deadlines — not a predetermined list.'],
+    ['Do you help with scholarships?', 'Yes. The team has experience with DAAD, Erasmus Mundus, OeAD and France Excellence processes. Current rules are always checked against official sources.'],
+    ['How many programmes does a service cover?', 'Programme Selection covers up to 8 programmes; Complete Support covers up to 3 standard applications. Any additional scope is agreed in writing first.'],
+    ['When should I start?', 'Ideally, contact us 6–12 months before the first important deadline. If it is closer, the introductory call will establish what can still be done well.'],
+    ['Why are team members not named publicly?', 'Adria Admissions is built as an expert advisory brand rather than a personal brand. Team identities are not displayed publicly; before any engagement, we clearly confirm the method, scope, timeline, price and expectations.'],
+  ] },
+});
+
+Object.assign(homeContent.de, {
+  hero: {
+    title: 'Studieren Sie im Ausland.',
+    accent: 'Bewerben Sie sich mit einem klaren Plan.',
+    body: 'Für Bachelor-, Master- und Stipendienbewerber:innen, die Programme, Gesamtkosten und Finanzierung vergleichen und eine starke, gut organisierte Bewerbung ohne unnötige Umwege einreichen möchten.',
+    primary: 'Klären Sie Ihren nächsten Schritt — 15 Min. kostenlos',
+    secondary: 'So funktioniert der Ablauf',
+    proof: ['Unabhängige Beratung', 'Klare Preise', 'Europäische Bewerbungen'],
+  },
+  audiences: {
+    title: 'Wann Adria Admissions den größten Mehrwert bietet.',
+    body: 'Wir arbeiten am besten mit Bewerber:innen, die bewusst entscheiden und aktiv am Prozess mitwirken möchten.',
+    groups: [
+      { title: 'Passend für Sie, wenn Sie', lead: 'Persönliche, fachkundige Unterstützung statt einer generischen Programmliste wünschen.', points: ['einen Bachelor oder Master in Europa wählen', 'viele Optionen, Kosten und Fristen vergleichen', 'Stipendien ernsthaft angehen möchten', 'vor der Bewerbung eine fachkundige zweite Meinung brauchen'] },
+      { title: 'Eher nicht passend, wenn Sie', lead: 'Eine andere Form der Hilfe passt besser, wenn Sie eine Abkürzung statt Zusammenarbeit suchen.', points: ['eine garantierte Zulassung oder Förderung erwarten', 'die Bewerbung vollständig schreiben lassen möchten', 'dieselben Unterlagen an viele Programme senden wollen', 'nicht aktiv mitarbeiten oder Fristen einhalten möchten'] },
+    ],
+  },
+  value: {
+    title: 'Erfahrung hinter dem Prozess.',
+    body: 'Unser Beratungsteam kennt europäische Hochschulsysteme, internationale Bewerbungen und Stipendienverfahren. Daraus entsteht ein einheitlicher Arbeitsstandard — ohne den Eindruck formeller Partnerschaften.',
+    points: [['Stipendienverfahren', 'Erfahrung umfasst Bewerbungen für DAAD, Erasmus Mundus, OeAD und France Excellence.'], ['Europäische Bewerbungen', 'Bachelor- und Masterprogramme mit unterschiedlichen Anforderungen, Fristen und Finanzierungsmodellen.'], ['Ein Arbeitsstandard', 'Jede Bewerbung folgt demselben Rahmen: Passung, Kosten, Finanzierung, Fristen und Risiko.']],
+  },
+  method: {
+    title: 'Vom Profil bis zur Einreichung in drei klaren Schritten.',
+    body: 'Jeder Schritt endet mit einer konkreten Entscheidung, einem Dokument oder dem nächsten Zug.',
+    steps: [['Wir verstehen Ihr Profil', 'Akademischer Hintergrund, Interessen, Budget, Sprachen, Länder und Karriereziel.'], ['Wir entwickeln die Strategie', 'Programmauswahl, Fristenplan, Finanzierungsbild und Prioritäten.'], ['Wir stärken und begleiten die Bewerbung', 'Feedback zu Unterlagen, Prüfung der Anforderungen und Begleitung bis zur Einreichung.']],
+  },
+  faq: { title: 'Fragen vor Ihrer Entscheidung', items: [
+    ['Garantieren Sie Zulassung oder Stipendium?', 'Die Entscheidung trifft immer die Hochschule oder Förderstelle. Wir investieren maximale Sorgfalt in Strategie, Unterlagen, Fristen und Abschlussprüfung, damit eine möglichst starke und authentische Bewerbung entsteht.'],
+    ['Schreiben Sie das Motivationsschreiben für Bewerber:innen?', 'Wir übernehmen nicht die Autorenschaft. Wir helfen mit Ideen, Struktur, Fragen, präzisem Feedback und Überarbeitungen, damit die eigene Stimme klar und überzeugend bleibt.'],
+    ['Begleiten Sie Bachelor- und Masterbewerbungen?', 'Ja. Wir begleiten beide Studienniveaus und passende Stipendienverfahren innerhalb unseres europäischen Fokus.'],
+    ['Welche Länder decken Sie ab?', 'Unser Fokus liegt auf europäischen Hochschulen. Programme wählen wir nach Profil, Budget, Zielen und Fristen — nicht aus einer vorgegebenen Liste.'],
+    ['Helfen Sie bei Stipendien?', 'Ja. Das Team hat Erfahrung mit DAAD-, Erasmus-Mundus-, OeAD- und France-Excellence-Verfahren. Aktuelle Regeln prüfen wir immer in offiziellen Quellen.'],
+    ['Wie viele Programme umfasst eine Leistung?', 'Die Programmauswahl umfasst bis zu 8 Programme, die komplette Begleitung bis zu 3 Standardbewerbungen. Zusätzlichen Umfang vereinbaren wir vorab schriftlich.'],
+    ['Wann sollte ich beginnen?', 'Idealerweise 6–12 Monate vor der ersten wichtigen Frist. Ist sie näher, klären wir im Erstgespräch, was sich noch sorgfältig umsetzen lässt.'],
+    ['Warum werden Teammitglieder nicht öffentlich genannt?', 'Adria Admissions ist als fachliche Beratungsmarke aufgebaut, nicht als Personenmarke. Teamidentitäten werden nicht öffentlich gezeigt; vor der Zusammenarbeit bestätigen wir Methode, Umfang, Zeitplan, Preis und Erwartungen klar.'],
+  ] },
+});
+
+Object.assign(homeContent.fr, {
+  hero: {
+    title: 'Étudiez à l’étranger.',
+    accent: 'Candidatez avec un plan clair.',
+    body: 'Pour les candidatures en licence, master et bourse qui exigent de comparer programmes, coût total et financement — puis de déposer un dossier solide et bien organisé, sans tâtonnements inutiles.',
+    primary: 'Clarifiez votre prochaine étape — 15 min gratuites',
+    secondary: 'Voir comment fonctionne le processus',
+    proof: ['Conseil indépendant', 'Prix clairs', 'Candidatures européennes'],
+  },
+  audiences: {
+    title: 'Quand Adria Admissions apporte le plus de valeur.',
+    body: 'Nous travaillons le mieux avec les candidat·es qui veulent décider avec discernement et participer activement au processus.',
+    groups: [
+      { title: 'Pour vous si vous', lead: 'Recherchez un accompagnement personnel et expert plutôt qu’une liste générique.', points: ['choisissez une licence ou un master en Europe', 'comparez de nombreuses options, coûts et échéances', 'voulez aborder les bourses sérieusement', 'avez besoin d’un second avis expert avant de candidater'] },
+      { title: 'Probablement moins adapté si vous', lead: 'Une autre aide conviendra mieux si vous cherchez un raccourci plutôt qu’un travail commun.', points: ['attendez une admission ou une bourse garantie', 'voulez faire rédiger votre candidature à votre place', 'souhaitez envoyer les mêmes documents partout', 'n’êtes pas prêt·e à participer et à respecter les échéances'] },
+    ],
+  },
+  value: {
+    title: 'L’expérience derrière le processus.',
+    body: 'Notre équipe maîtrise les systèmes universitaires européens, les candidatures internationales et les procédures de bourse. Cette expérience devient une méthode cohérente — sans suggérer de partenariat officiel.',
+    points: [['Procédures de bourse', 'Expérience des candidatures DAAD, Erasmus Mundus, OeAD et France Excellence.'], ['Candidatures européennes', 'Licences et masters aux exigences, échéances et modèles de financement variés.'], ['Une méthode commune', 'Chaque candidature suit le même cadre : adéquation, coût, financement, échéances et risque.']],
+  },
+  method: {
+    title: 'Du profil au dépôt en trois étapes claires.',
+    body: 'Chaque étape aboutit à une décision, un document ou une prochaine action concrète.',
+    steps: [['Nous comprenons votre profil', 'Parcours académique, intérêts, budget, langues, pays et objectif professionnel.'], ['Nous construisons la stratégie', 'Sélection des programmes, calendrier, vision financière et priorités.'], ['Nous renforçons et guidons le dossier', 'Retours sur les documents, contrôle des exigences et accompagnement jusqu’au dépôt.']],
+  },
+  faq: { title: 'Questions avant de décider', items: [
+    ['Garantissez-vous une admission ou une bourse ?', 'La décision appartient toujours à l’université ou à l’organisme financeur. Nous apportons un soin maximal à la stratégie, aux documents, aux échéances et au contrôle final pour construire le dossier authentique le plus solide possible.'],
+    ['Rédigez-vous la lettre de motivation à la place du candidat ?', 'Nous ne remplaçons pas l’auteur. Nous aidons avec les idées, la structure, les questions, des retours précis et les révisions afin de préserver une voix claire et convaincante.'],
+    ['Accompagnez-vous les candidatures en licence et en master ?', 'Oui. Nous accompagnons les deux niveaux ainsi que les démarches de bourse associées lorsqu’elles correspondent à notre expertise européenne.'],
+    ['Quels pays couvrez-vous ?', 'Nous nous concentrons sur les universités européennes. Les programmes sont choisis selon le profil, le budget, les objectifs et les échéances — jamais à partir d’une liste imposée.'],
+    ['Aidez-vous pour les bourses ?', 'Oui. L’équipe connaît les procédures DAAD, Erasmus Mundus, OeAD et France Excellence. Les règles en vigueur sont toujours vérifiées dans les sources officielles.'],
+    ['Combien de programmes une prestation couvre-t-elle ?', 'La Sélection de programmes en couvre jusqu’à 8 ; l’Accompagnement complet couvre jusqu’à 3 candidatures standards. Tout périmètre supplémentaire est convenu par écrit au préalable.'],
+    ['Quand faut-il commencer ?', 'Idéalement 6 à 12 mois avant la première échéance importante. Si elle est plus proche, l’appel découverte permet d’établir ce qui peut encore être réalisé avec soin.'],
+    ['Pourquoi les membres de l’équipe ne sont-ils pas nommés publiquement ?', 'Adria Admissions est une marque de conseil experte, et non une marque personnelle. L’identité des membres n’est pas affichée publiquement ; avant toute mission, nous confirmons clairement la méthode, le périmètre, le calendrier, le prix et les attentes.'],
+  ] },
+});

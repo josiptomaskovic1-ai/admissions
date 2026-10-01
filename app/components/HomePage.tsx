@@ -28,7 +28,7 @@ export function HomePage({ locale }: { locale: Locale }) {
             <p className="hero-lede">{t.hero.body}</p>
             <div className="hero-actions">
               <a className="button button-primary" href="#booking">{t.hero.primary}</a>
-              <a className="text-link" href="#sample">{t.hero.secondary}</a>
+              <a className="text-link" href="#process">{t.hero.secondary}</a>
             </div>
             <ul className="hero-proof" aria-label={t.hero.proof.join(', ')}>
               {t.hero.proof.map((item) => <li key={item}>{item}</li>)}
@@ -42,7 +42,7 @@ export function HomePage({ locale }: { locale: Locale }) {
           </aside>
         </section>
 
-        <section className="independent-section" id="process">
+        <section className="independent-section">
           <div className="section-shell">
             <div className="section-heading split-heading"><h2>{t.independent.title}</h2><p>{t.independent.body}</p></div>
             {t.independent.statement && <p className="independence-statement">{t.independent.statement}</p>}
@@ -56,7 +56,12 @@ export function HomePage({ locale }: { locale: Locale }) {
           </div>
         </section>
 
-        <section className="method-section">
+        <section className="value-section section-shell" id="experience">
+          <div className="value-copy"><h2>{t.value.title}</h2><p>{t.value.body}</p></div>
+          <div className="value-points">{t.value.points.map(([title, body]) => <article key={title}><h3>{title}</h3><p>{body}</p></article>)}</div>
+        </section>
+
+        <section className="method-section" id="process">
           <div className="section-shell">
             <div className="section-heading split-heading inverse-heading"><h2>{t.method.title}</h2><p>{t.method.body}</p></div>
             <ol className="method-line">{t.method.steps.map(([title, body], index) => <li key={title}><span>{index + 1}</span><div><h3>{title}</h3><p>{body}</p></div></li>)}</ol>
@@ -103,11 +108,6 @@ export function HomePage({ locale }: { locale: Locale }) {
               <div className="instalment-note"><h3>{t.pricing.instalmentsTitle}</h3><ul>{t.pricing.instalments.map((item) => <li key={item}>{item}</li>)}</ul></div>
             </div>
           </div>
-        </section>
-
-        <section className="value-section section-shell">
-          <div className="value-copy"><h2>{t.value.title}</h2><p>{t.value.body}</p></div>
-          <div className="value-points">{t.value.points.map(([title, body]) => <article key={title}><h3>{title}</h3><p>{body}</p></article>)}</div>
         </section>
 
         <section className="trust-section">

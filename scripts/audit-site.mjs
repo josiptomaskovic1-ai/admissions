@@ -41,6 +41,11 @@ for (const locale of locales) {
     const cacheControl = response.headers.get('cache-control') ?? '';
     assert(cacheControl.includes('max-age=300'), `${path} is missing short browser caching`);
     assert(cacheControl.includes('s-maxage=31536000'), `${path} is missing long-lived edge caching`);
+    assert((response.headers.get('content-security-policy') ?? '').includes("frame-ancestors 'none'"), `${path} is missing the anti-framing CSP`);
+    assert(response.headers.get('x-content-type-options') === 'nosniff', `${path} is missing MIME-sniffing protection`);
+    assert(response.headers.get('x-frame-options') === 'DENY', `${path} is missing clickjacking protection`);
+    assert((response.headers.get('permissions-policy') ?? '').includes('camera=()'), `${path} is missing the restrictive permissions policy`);
+    assert(response.headers.get('referrer-policy') === 'strict-origin-when-cross-origin', `${path} has an unexpected referrer policy`);
     assert(text.includes('<title>Adria Admissions</title>'), `${path} must use the brand-only browser tab title`);
     assert((text.match(/<h1(?:\s|>)/g) ?? []).length === 1, `${path} must have exactly one H1`);
     assert(text.includes('<main'), `${path} is missing a main landmark`);
@@ -56,6 +61,10 @@ for (const locale of locales) {
       assert(!/(?:€\s*(?:220|800|1700|1900)|(?:220|800|1[.\s,]?700|1[.\s,]?900)\s*€)/u.test(text), `${path} still exposes a superseded core price`);
       assert(!staleTeamCopy.test(text), `${path} still promises that clients meet multiple team members`);
       assert((text.match(/class="offer-row/g) ?? []).length === 6, `${path} must expose exactly six core services`);
+      const methodMarkup = text.match(/class="method-line"[^>]*>([\s\S]*?)<\/ol>/)?.[1] ?? '';
+      assert((methodMarkup.match(/<li/g) ?? []).length === 3, `${path} must expose exactly three process steps`);
+      assert((text.match(/class="faq-list"[\s\S]*?<\/div>/)?.[0].match(/<details/g) ?? []).length === 8, `${path} must expose exactly eight focused FAQs`);
+      assert(!/\[(?:unesite|insert|placeholder|statistic|testimonial)/iu.test(text), `${path} contains public placeholder content`);
       for (const expected of homepageExpectations[locale]) {
         assert(text.includes(expected), `${path} is missing the expected pricing/duration copy: ${expected}`);
       }
@@ -95,4 +104,4 @@ if (failures.length) {
   process.exit(1);
 }
 
-console.log(`Audit passed: ${locales.length * pageSuffixes.length} localized pages, ${locales.length} Calendly redirects, copy regressions, metadata, anchors, robots and sitemap.`);
+console.log(`Audit passed: ${locales.length * pageSuffixes.length} localized pages, ${locales.length} Calendly redirects, copy regressions, security headers, metadata, anchors, robots and sitemap.`);

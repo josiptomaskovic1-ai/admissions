@@ -76,7 +76,7 @@ The site should feel like a precise admissions decision desk: a calm, compact do
 - **Register:** Brand-led marketing with product-level clarity and accessibility.
 - **Memorable signature:** The enlarged stylized Adria “A” mark paired with the five-factor decision card and dossier-style sample report.
 - **Restraint:** All other sections use quiet grids, concise copy, exact standard-package prices, and limited motion.
-- **Institutional trust:** Independence and the repeatable Adria decision standard appear immediately after the hero. Individual advisers remain anonymous.
+- **Institutional trust:** Independence, a clear fit screen, relevant European application experience, and the repeatable Adria decision standard appear before pricing. Individual advisers remain anonymous.
 - **Anti-references:** Full-screen empty heroes, generic campus stock-photo collages, unverified acceptance claims, ornamental globes/maps, mega-menus, and repeated conversion banners.
 - **Token ownership/runtime mapping:** Model B. `app/globals.css` is the canonical runtime token source. This file mirrors approved values and rationale; token changes update both files in one changeset.
 
@@ -102,7 +102,7 @@ Syne carries the brand in concise display headings only. Manrope carries all bod
 
 ## Layout
 
-The content frame is capped at 78rem with fluid side gutters. Desktop sections use approximately 4.5rem vertical padding and mobile sections approximately 3rem. The header is approximately 5.25rem high to give the brand mark sufficient presence. The hero is content-sized rather than viewport-sized and begins demonstrating the decision model in the first screen. Independence, audiences, methodology, deliverable sample, services, pricing, trust, FAQ and booking must each earn their vertical space. Service rows keep six core services, local-language names and prices visible while detailed scope expands on demand. The five decision criteria appear once in the hero card; independence is stated separately in one concise line rather than repeated as another grid. No decorative block may create a standalone mobile viewport.
+The content frame is capped at 78rem with fluid side gutters. Desktop sections use approximately 4.5rem vertical padding and mobile sections approximately 3rem. The header is approximately 5.25rem high to give the brand mark sufficient presence. The hero is content-sized rather than viewport-sized and begins demonstrating the decision model in the first screen. Independence, fit, experience, methodology, deliverable sample, services, pricing, trust, FAQ and booking must each earn their vertical space. Service rows keep six core services, local-language names and prices visible while detailed scope expands on demand. The five decision criteria appear once in the hero card; independence is stated separately in one concise line rather than repeated as another grid. Methodology uses three outcome-led steps so the process can be understood at a glance. No decorative block may create a standalone mobile viewport.
 
 ## Elevation & Depth
 
@@ -142,7 +142,7 @@ One brief route-panel entrance may run on initial load. Hover motion is subtle a
 
 The voice is warm, confident, and specific. It leads with effort and candidate benefit: what the team will do, how fully it will engage, and what becomes clearer. Necessary limits appear once in calm, positive language rather than as repeated “we do not” disclaimers. It avoids prestige theater, guarantees, and fabricated proof. Prices are labeled as fixed or starting amounts. Admissions outcomes remain controlled by universities and scholarship bodies.
 
-Methodology and an explicitly illustrative, non-client dossier preview are the primary proof until permissioned client evidence exists. Decorative section labels and non-informational numbering are omitted; numbers are reserved for the real six-step sequence.
+Relevant experience, the three-step methodology, and an explicitly illustrative non-client dossier preview are the primary proof until permissioned client evidence exists. Decorative section labels and non-informational numbering are omitted; numbers are reserved for the real process sequence. Programme and scholarship names describe team experience only and never imply formal partnerships.
 
 ## Do's and Don'ts
 
