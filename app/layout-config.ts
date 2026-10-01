@@ -15,7 +15,7 @@ const syne = Syne({
 export const bodyClassName = `${manrope.variable} ${syne.variable}`;
 
 export const siteMetadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'https://virela-admissions.friesenjung.chatgpt.site'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'https://adriaadmissions.com'),
   title: {
     default: brandName,
     template: `%s | ${brandName}`,

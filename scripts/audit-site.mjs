@@ -51,7 +51,7 @@ for (const locale of locales) {
     assert(text.includes('<main'), `${path} is missing a main landmark`);
     assert(text.includes('<header'), `${path} is missing a header landmark`);
     assert(text.includes('<footer'), `${path} is missing a footer landmark`);
-    assert(text.includes(`rel="canonical" href="https://virela-admissions.friesenjung.chatgpt.site${path}"`), `${path} has an incorrect canonical URL`);
+    assert(text.includes(`rel="canonical" href="https://adriaadmissions.com${path}"`), `${path} has an incorrect canonical URL`);
     assert((text.match(/hreflang=/gi) ?? []).length >= 7, `${path} is missing reciprocal language alternatives`);
     assert(text.includes('name="robots" content="noindex, nofollow, nocache"'), `${path} must stay noindex before launch readiness`);
 

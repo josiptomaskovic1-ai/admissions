@@ -1,4 +1,4 @@
-export const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? 'https://virela-admissions.friesenjung.chatgpt.site').replace(/\/$/, '');
+export const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? 'https://adriaadmissions.com').replace(/\/$/, '');
 
 function normalizedHttpsUrl(value: string | undefined): string {
   if (!value) return '';
