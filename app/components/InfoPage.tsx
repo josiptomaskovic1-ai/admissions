@@ -1,7 +1,7 @@
 import type { Locale } from '../content';
 import { translations } from '../content';
 import { utility } from '../i18n';
-import { brandName, calendarLink, contactEmail } from '../site-config';
+import { brandName, calendarLink, contactEmail, instagramLink, linkedInLink } from '../site-config';
 import { SiteFooter, SiteHeader } from './SiteChrome';
 
 export function ContactPage({ locale }: { locale: Locale }) {
@@ -18,7 +18,15 @@ export function ContactPage({ locale }: { locale: Locale }) {
             <h2>{t.booking.event}</h2><p>{t.booking.body}</p><p className="team-note">{u.teamNote}</p>
             {calendarLink ? <a className="button button-primary" href={`/${locale}/book`} target="_blank" rel="noopener noreferrer">{t.booking.button}<span className="sr-only"> — {u.external}</span></a> : <span className="button disabled" aria-disabled="true">{u.unavailable}</span>}
           </section>
-          <section className="contact-card contact-direct-card"><h2>{contactEmail ? <a className="contact-email-link" href={`mailto:${contactEmail}`}>{contactEmail}</a> : brandName}</h2>{contactEmail ? null : <p>{u.contactPending}</p>}<h3>{u.contactTiming}</h3><p>{u.contactTimingBody}</p></section>
+          <section className="contact-card contact-direct-card">
+            <h2>{contactEmail ? <a className="contact-email-link" href={`mailto:${contactEmail}`}>{contactEmail}</a> : brandName}</h2>
+            {contactEmail ? null : <p>{u.contactPending}</p>}
+            <div className="social-links">
+              {linkedInLink && <a className="social-link" href={linkedInLink} target="_blank" rel="noopener noreferrer">LinkedIn<span className="sr-only"> — {u.external}</span></a>}
+              {instagramLink && <a className="social-link" href={instagramLink} target="_blank" rel="noopener noreferrer">Instagram<span className="sr-only"> — {u.external}</span></a>}
+            </div>
+            <h3>{u.contactTiming}</h3><p>{u.contactTimingBody}</p>
+          </section>
           <section className="contact-card prepare-card"><h2>{u.contactPrepare}</h2><ol>{u.contactPrepareItems.map((item, index) => <li key={item}><span>{index + 1}</span>{item}</li>)}</ol></section>
         </div>
       </main>

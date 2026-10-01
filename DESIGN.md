@@ -124,7 +124,7 @@ The primary action is cobalt on white or white on cobalt. Secondary actions are 
 
 ### Navigation and data display
 
-Desktop navigation exposes only services, process, pricing, FAQ, contact, language, and one booking CTA. Mobile removes the content navigation, keeps contact and language, and uses one fixed bottom booking action so the next step stays reachable without crowding the header. Prices use semantic disclosure rows and definition lists. Every core service exposes its price, audience and limit before expansion; one global booking action follows the list instead of repeating inside every row.
+Desktop navigation exposes only services, process, pricing, FAQ, contact, language, and one booking CTA. Mobile removes the content navigation and keeps contact and language in a compact header. Booking actions stay inside the page flow so they never cover reading content. Prices use semantic disclosure rows and definition lists. Every core service exposes its price, audience and limit before expansion; one global booking action follows the list instead of repeating inside every row.
 
 ### Contact actions and overlays
 
@@ -143,6 +143,8 @@ One brief route-panel entrance may run on initial load. Hover motion is subtle a
 The voice is warm, confident, and specific. It leads with effort and candidate benefit: what the team will do, how fully it will engage, and what becomes clearer. Necessary limits appear once in calm, positive language rather than as repeated “we do not” disclaimers. It avoids prestige theater, guarantees, and fabricated proof. Prices are labeled as fixed or starting amounts. Admissions outcomes remain controlled by universities and scholarship bodies.
 
 Relevant experience, the three-step methodology, and an explicitly illustrative non-client dossier preview are the primary proof until permissioned client evidence exists. Decorative section labels and non-informational numbering are omitted; numbers are reserved for the real process sequence. Programme and scholarship names describe team experience only and never imply formal partnerships.
+
+On phones, the dossier preview reflows into one card per programme with the programme, fit and risk kept together. Its checklist becomes a single readable column. Anchored sections reserve the sticky-header height so headings are never hidden after navigation.
 
 ## Do's and Don'ts
 

@@ -390,7 +390,7 @@ Object.assign(homeContent.bs, {
   },
   sample: {
     ...homeContent.bs.sample,
-    title: 'Pogledajte kako izvještaj izgleda prije naručivanja.',
+    title: 'Pogledajte šta dobijate.',
     body: 'Umjesto 40 otvorenih kartica — jedan dokument i jasna odluka.',
     documentTitle: 'Izbor programa',
     rows: [['Program A', 'Odlično odgovara profilu', 'Srednji rizik'], ['Program B', 'Uklapa se u budžet', 'Niži rizik'], ['Program C', 'Zahtjevna stipendija', 'Viši rizik']],
@@ -439,7 +439,7 @@ Object.assign(homeContent.sr, {
   decision: { title: 'Pre nego što preporučimo program', note: 'Proveravamo pet stvari:', paid: 'Tek tada program ulazi u preporuku.', factors: [['Akademska usklađenost', 'profil + uslovi'], ['Ukupan trošak', 'školarina + život'], ['Finansiranje', 'stipendije + budžet'], ['Rokovi', 'realan kalendar'], ['Rizik', 'uravnotežen izbor']] },
   independent: { title: 'Prvo dobra odluka. Zatim snažna prijava.', body: 'Program biramo prema vašem profilu, budžetu, ciljevima i rokovima. Tek posle toga gradimo prijavu koja jasno pokazuje zašto baš vi odgovarate tom programu.', statement: 'Nas plaćate vi, a ne univerziteti. Zato možemo da vam kažemo i: tamo se nemojte prijavljivati.' },
   method: { title: 'Šest koraka do predate prijave.', body: 'Posle svakog koraka imate odluku ili gotov dokument.', steps: [['Profil', 'Ciljevi, iskustvo, ocene, budžet i ograničenja.'], ['Strategija', 'Prioriteti, zemlje i realan nivo ambicije.'], ['Izbor', 'Obrazložena lista programa, a ne generičan spisak.'], ['Finansiranje', 'Troškovi, stipendije i rokovi u jednoj slici.'], ['Prijava', 'Komentari i dorade vašeg CV-a i motivacionog pisma.'], ['Kontrola', 'Završna provera uslova, doslednosti i spremnosti.']] },
-  sample: { ...homeContent.sr.sample, title: 'Pogledajte kako izveštaj izgleda pre naručivanja.', body: 'Umesto 40 otvorenih kartica — jedan dokument i jasna odluka.', documentTitle: 'Izbor programa', rows: [['Program A', 'Odlično odgovara profilu', 'Srednji rizik'], ['Program B', 'Uklapa se u budžet', 'Niži rizik'], ['Program C', 'Zahtevna stipendija', 'Viši rizik']] },
+  sample: { ...homeContent.sr.sample, title: 'Pogledajte šta dobijate.', body: 'Umesto 40 otvorenih kartica — jedan dokument i jasna odluka.', documentTitle: 'Izbor programa', rows: [['Program A', 'Odlično odgovara profilu', 'Srednji rizik'], ['Program B', 'Uklapa se u budžet', 'Niži rizik'], ['Program C', 'Zahtevna stipendija', 'Viši rizik']] },
   offers: {
     title: 'Platite samo onoliko podrške koliko vam treba.', body: 'Za svaku uslugu unapred znate šta dobijate, šta nije uključeno i koliko košta.', cta: 'Zakažite besplatan uvodni razgovor', bestFor: 'Najbolje za', includes: 'Dobijate', limits: 'Obim',
     cards: [
@@ -466,7 +466,7 @@ Object.assign(homeContent.hr, {
   decision: { title: 'Prije nego što preporučimo program', note: 'Provjeravamo pet stvari:', paid: 'Tek tada program ulazi u preporuku.', factors: [['Akademska usklađenost', 'profil + uvjeti'], ['Ukupan trošak', 'školarina + život'], ['Financiranje', 'stipendije + budžet'], ['Rokovi', 'izvediv kalendar'], ['Rizik', 'uravnotežen izbor']] },
   independent: { title: 'Prvo dobra odluka. Zatim snažna prijava.', body: 'Program biramo prema vašem profilu, proračunu, ciljevima i rokovima. Tek nakon toga gradimo prijavu koja jasno pokazuje zašto baš vi odgovarate tom programu.', statement: 'Nas plaćate vi, a ne sveučilišta. Zato vam možemo reći i: tamo se nemojte prijaviti.' },
   method: { title: 'Šest koraka do predane prijave.', body: 'Nakon svakog koraka imate odluku ili gotov dokument.', steps: [['Profil', 'Ciljevi, iskustvo, ocjene, proračun i ograničenja.'], ['Strategija', 'Prioriteti, zemlje i realna razina ambicije.'], ['Izbor', 'Obrazložena lista programa, a ne generičan popis.'], ['Financiranje', 'Troškovi, stipendije i rokovi na jednom mjestu.'], ['Prijava', 'Komentari i dorade vašeg životopisa i motivacijskog pisma.'], ['Kontrola', 'Završna provjera uvjeta, dosljednosti i spremnosti.']] },
-  sample: { ...homeContent.hr.sample, title: 'Pogledajte kako izvještaj izgleda prije naručivanja.', body: 'Umjesto 40 otvorenih kartica — jedan dokument i jasna odluka.', documentTitle: 'Izbor programa', rows: [['Program A', 'Odlično odgovara profilu', 'Srednji rizik'], ['Program B', 'Uklapa se u proračun', 'Niži rizik'], ['Program C', 'Zahtjevna stipendija', 'Viši rizik']] },
+  sample: { ...homeContent.hr.sample, title: 'Pogledajte što dobivate.', body: 'Umjesto 40 otvorenih kartica — jedan dokument i jasna odluka.', documentTitle: 'Izbor programa', rows: [['Program A', 'Odlično odgovara profilu', 'Srednji rizik'], ['Program B', 'Uklapa se u proračun', 'Niži rizik'], ['Program C', 'Zahtjevna stipendija', 'Viši rizik']] },
   offers: {
     title: 'Platite samo onoliko podrške koliko vam treba.', body: 'Za svaku uslugu unaprijed znate što dobivate, što nije uključeno i koliko košta.', cta: 'Rezervirajte besplatan uvodni razgovor', bestFor: 'Najbolje za', includes: 'Dobivate', limits: 'Opseg',
     cards: [
@@ -493,7 +493,7 @@ Object.assign(homeContent.en, {
   decision: { title: 'Before we recommend a programme', note: 'We check five things:', paid: 'Only then does a programme enter the recommendation.', factors: [['Academic fit', 'profile + criteria'], ['Total cost', 'tuition + living'], ['Funding', 'scholarships + budget'], ['Deadlines', 'workable calendar'], ['Risk', 'balanced selection']] },
   independent: { title: 'Make the right decision first. Build the strong application next.', body: 'We select programmes around your profile, budget, goals and deadlines. Only then do we build an application that makes your fit clear.', statement: 'You pay us — universities do not. That means we can also tell you where not to apply.' },
   method: { title: 'Six steps to a submitted application.', body: 'Every step ends with a decision or a finished document.', steps: [['Profile', 'Goals, experience, grades, budget and constraints.'], ['Strategy', 'Priorities, countries and a realistic level of ambition.'], ['Selection', 'A reasoned programme list, not generic search results.'], ['Funding', 'Costs, scholarships and deadlines in one view.'], ['Application', 'Comments and revisions on your CV and motivation letter.'], ['Quality control', 'A final check of requirements, consistency and readiness.']] },
-  sample: { ...homeContent.en.sample, title: 'See the report before you order it.', body: 'Instead of 40 open tabs — one document and a clear decision.', documentTitle: 'Programme selection', rows: [['Programme A', 'Strong profile match', 'Medium risk'], ['Programme B', 'Fits the budget', 'Lower risk'], ['Programme C', 'Competitive scholarship', 'Higher risk']] },
+  sample: { ...homeContent.en.sample, title: 'See what you receive.', body: 'Instead of 40 open tabs — one document and a clear decision.', documentTitle: 'Programme selection', rows: [['Programme A', 'Strong profile match', 'Medium risk'], ['Programme B', 'Fits the budget', 'Lower risk'], ['Programme C', 'Competitive scholarship', 'Higher risk']] },
   offers: {
     title: 'Pay only for the support you need.', body: 'For every service, you know the deliverables, boundaries and price before work begins.', cta: 'Book a free introductory call', bestFor: 'Best for', includes: 'You receive', limits: 'Scope',
     cards: [
@@ -520,7 +520,7 @@ Object.assign(homeContent.de, {
   decision: { title: 'Bevor wir einen Studiengang empfehlen', note: 'Wir prüfen fünf Punkte:', paid: 'Erst dann kommt ein Studiengang in die Empfehlung.', factors: [['Akademische Passung', 'Profil + Kriterien'], ['Gesamtkosten', 'Gebühren + Leben'], ['Finanzierung', 'Stipendien + Budget'], ['Fristen', 'machbarer Zeitplan'], ['Risiko', 'ausgewogene Auswahl']] },
   independent: { title: 'Zuerst die richtige Entscheidung. Dann die starke Bewerbung.', body: 'Wir wählen Studiengänge nach Ihrem Profil, Budget, Ihren Zielen und Fristen aus. Erst danach entwickeln wir eine Bewerbung, die Ihre Passung klar zeigt.', statement: 'Sie bezahlen uns — nicht die Hochschulen. Deshalb sagen wir Ihnen auch, wo Sie sich besser nicht bewerben sollten.' },
   method: { title: 'Sechs Schritte bis zur eingereichten Bewerbung.', body: 'Jeder Schritt endet mit einer Entscheidung oder einem fertigen Dokument.', steps: [['Profil', 'Ziele, Erfahrung, Noten, Budget und Rahmenbedingungen.'], ['Strategie', 'Prioritäten, Länder und ein realistisches Ambitionsniveau.'], ['Auswahl', 'Eine begründete Programmliste statt allgemeiner Suchergebnisse.'], ['Finanzierung', 'Kosten, Stipendien und Fristen auf einen Blick.'], ['Bewerbung', 'Kommentare und Überarbeitungen zu Lebenslauf und Motivationsschreiben.'], ['Qualitätskontrolle', 'Abschlussprüfung von Anforderungen, Konsistenz und Abgabereife.']] },
-  sample: { ...homeContent.de.sample, title: 'Sehen Sie den Bericht, bevor Sie ihn bestellen.', body: 'Statt 40 offener Tabs — ein Dokument und eine klare Entscheidung.', documentTitle: 'Programmauswahl', rows: [['Programm A', 'Sehr gute Profilpassung', 'Mittleres Risiko'], ['Programm B', 'Passt zum Budget', 'Niedrigeres Risiko'], ['Programm C', 'Anspruchsvolles Stipendium', 'Höheres Risiko']] },
+  sample: { ...homeContent.de.sample, title: 'Sehen Sie, was Sie erhalten.', body: 'Statt 40 offener Tabs — ein Dokument und eine klare Entscheidung.', documentTitle: 'Programmauswahl', rows: [['Programm A', 'Sehr gute Profilpassung', 'Mittleres Risiko'], ['Programm B', 'Passt zum Budget', 'Niedrigeres Risiko'], ['Programm C', 'Anspruchsvolles Stipendium', 'Höheres Risiko']] },
   offers: {
     title: 'Bezahlen Sie nur für die Unterstützung, die Sie brauchen.', body: 'Leistung, Umfang und Preis stehen fest, bevor die Arbeit beginnt.', cta: 'Kostenloses Erstgespräch buchen', bestFor: 'Geeignet für', includes: 'Sie erhalten', limits: 'Umfang',
     cards: [
@@ -547,7 +547,7 @@ Object.assign(homeContent.fr, {
   decision: { title: 'Avant de recommander un programme', note: 'Nous vérifions cinq points :', paid: 'Ce n’est qu’ensuite qu’un programme entre dans notre recommandation.', factors: [['Adéquation académique', 'profil + critères'], ['Coût total', 'frais + vie'], ['Financement', 'bourses + budget'], ['Échéances', 'calendrier réaliste'], ['Risque', 'sélection équilibrée']] },
   independent: { title: 'D’abord la bonne décision. Ensuite la candidature solide.', body: 'Nous sélectionnons les programmes selon votre profil, votre budget, vos objectifs et vos échéances. Nous construisons ensuite une candidature qui rend votre adéquation évidente.', statement: 'C’est vous qui nous payez, pas les universités. Nous pouvons donc aussi vous dire où il vaut mieux ne pas candidater.' },
   method: { title: 'Six étapes jusqu’au dépôt de candidature.', body: 'Chaque étape se termine par une décision ou un document finalisé.', steps: [['Profil', 'Objectifs, expérience, notes, budget et contraintes.'], ['Stratégie', 'Priorités, pays et niveau d’ambition réaliste.'], ['Sélection', 'Une liste argumentée plutôt que des résultats génériques.'], ['Financement', 'Coûts, bourses et échéances dans une seule vue.'], ['Candidature', 'Commentaires et révisions sur votre CV et votre lettre de motivation.'], ['Contrôle qualité', 'Vérification finale des exigences, de la cohérence et de la préparation.']] },
-  sample: { ...homeContent.fr.sample, title: 'Voyez le rapport avant de le commander.', body: 'Au lieu de 40 onglets ouverts — un document et une décision claire.', documentTitle: 'Sélection de programmes', rows: [['Programme A', 'Très bonne adéquation au profil', 'Risque moyen'], ['Programme B', 'Respecte le budget', 'Risque plus faible'], ['Programme C', 'Bourse très sélective', 'Risque plus élevé']] },
+  sample: { ...homeContent.fr.sample, title: 'Voyez ce que vous recevez.', body: 'Au lieu de 40 onglets ouverts — un document et une décision claire.', documentTitle: 'Sélection de programmes', rows: [['Programme A', 'Très bonne adéquation au profil', 'Risque moyen'], ['Programme B', 'Respecte le budget', 'Risque plus faible'], ['Programme C', 'Bourse très sélective', 'Risque plus élevé']] },
   offers: {
     title: 'Payez uniquement pour l’accompagnement dont vous avez besoin.', body: 'Prestations, limites et prix sont connus avant le début du travail.', cta: 'Réserver un appel découverte gratuit', bestFor: 'Idéal pour', includes: 'Vous recevez', limits: 'Périmètre',
     cards: [
@@ -563,16 +563,6 @@ Object.assign(homeContent.fr, {
   trust: { ...homeContent.fr.trust, body: 'Nous construisons la confiance par un périmètre clair, un travail vérifiable et une confirmation écrite de ce que vous recevez.', note: 'Avant de commencer, vous recevez une confirmation écrite du périmètre, des délais, du prix et du mode de paiement.' },
   booking: { ...homeContent.fr.booking, body: 'En 15 minutes, nous clarifions votre objectif, vos échéances et l’accompagnement utile.', team: 'Vous parlerez avec un membre de notre équipe. Tous ont effectué une partie de leurs études à l’étranger. Si nous ne sommes pas la bonne aide pour votre situation, nous vous le dirons dans les 15 premières minutes.', event: 'Appel découverte gratuit', note: 'Cet appel ne vous engage à aucun achat.' },
 });
-
-homeContent.fr.faq.items[3] = ['Rédigez-vous la lettre de motivation à la place du candidat ?', 'Nous ne remplaçons pas l’auteur. Nous aidons avec les idées, la structure, les questions, les commentaires et les révisions afin de préserver une voix claire et convaincante.'];
-homeContent.fr.faq.items[6] = ['Puis-je payer en plusieurs fois ?', 'Oui. L’accompagnement complet à 1 400 € peut être réglé en trois fois au maximum, selon un accord écrit.'];
-homeContent.fr.faq.items[7] = ['J’ai déjà une liste d’universités. Pouvez-vous la revoir ?', 'Oui. Une consultation stratégique peut traiter une question ciblée ; la Sélection de programmes permet de tester et d’améliorer toute la liste.'];
-homeContent.fr.faq.items[9] = ['Je veux seulement de l’aide pour une candidature.', 'L’Accompagnement de candidature est conçu pour un programme standard : commentaires et révisions des documents principaux, liste des exigences et contrôle final sont inclus.'];
-
-homeContent.bs.value.points[1] = ['Rad koji možete vidjeti', 'Dobijate obrazložen plan, izbor programa ili pregled prijave — ne samo razgovor.'];
-homeContent.sr.value.points[1] = ['Rad koji možete da vidite', 'Dobijate obrazložen plan, izbor programa ili pregled prijave — ne samo razgovor.'];
-homeContent.hr.value.points[1] = ['Rad koji možete vidjeti', 'Dobivate obrazložen plan, izbor programa ili pregled prijave — ne samo razgovor.'];
-homeContent.de.value.points[1] = ['Sichtbare Arbeit', 'Sie erhalten einen begründeten Plan, eine Programmauswahl oder Bewerbungsprüfung — nicht nur ein Gespräch.'];
 
 // Trust-led redesign: the same concise decision story in every language.
 // Verified scope and prices stay in the offer objects above.
@@ -812,3 +802,81 @@ Object.assign(homeContent.fr, {
     ['Pourquoi les membres de l’équipe ne sont-ils pas nommés publiquement ?', 'Adria Admissions est une marque de conseil experte, et non une marque personnelle. L’identité des membres n’est pas affichée publiquement ; avant toute mission, nous confirmons clairement la méthode, le périmètre, le calendrier, le prix et les attentes.'],
   ] },
 });
+
+// Final effective locale pass. It must remain after every shared content
+// assignment so each published language uses its own terminology.
+homeContent.bs.hero.body = 'Za kandidate koji se prijavljuju na studije ili stipendije i žele uporediti programe, troškove i finansiranje — te predati snažnu, urednu prijavu bez nepotrebnog lutanja.';
+homeContent.bs.audiences.groups[0].points[0] = 'birate studijski program u Evropi';
+homeContent.bs.sample.documentMeta = 'Master studij · Evropa · 8 programa';
+homeContent.bs.offers.cards[2].includes[1] = 'jednu doradu';
+homeContent.bs.offers.cards[2].includes[2] = 'kratak završni razgovor';
+homeContent.bs.offers.cards[4].limits[0] = 'bez posebnih testova, portfolija i složenih postupaka s više eseja';
+homeContent.bs.offers.cards[5].name = 'Prijava za stipendiju';
+homeContent.bs.offers.cards[5].includes[2] = 'smjernice za preporuke i završnu kontrolu';
+homeContent.bs.value.points[1][1] = 'Programi prvog i drugog ciklusa, različiti uslovi, rokovi i modeli finansiranja.';
+homeContent.bs.faq.items[2] = ['Pomažete li s prijavama za prvi i drugi ciklus studija?', 'Da. Podržavamo prijave za oba ciklusa studija, kao i povezane stipendijske postupke, kada se uklapaju u naš evropski fokus.'];
+homeContent.bs.booking.body = 'U 15 minuta razjasnit ćemo vaš cilj, rokove i vrstu podrške koja vam treba.';
+homeContent.bs.booking.team = 'Razgovarat ćete s jednim članom našeg tima. Svi članovi tima dio svog obrazovanja završili su u inostranstvu. Ako naša podrška nije pravi izbor za vaš slučaj, reći ćemo vam to tokom razgovora.';
+homeContent.bs.booking.location = 'Online videopoziv';
+
+homeContent.hr.hero.secondary = 'Pogledajte kako izgleda postupak';
+homeContent.hr.sample.documentMeta = 'Diplomski studij · Europa · 8 programa';
+homeContent.hr.offers.cards[1].limits[0] = 'jedan razgovor';
+homeContent.hr.offers.cards[2].includes[1] = 'jednu doradu';
+homeContent.hr.offers.cards[2].includes[2] = 'kratak završni razgovor';
+homeContent.hr.offers.cards[4].limits[0] = 'bez posebnih testova, portfelja i složenih postupaka s više eseja';
+homeContent.hr.offers.cards[5].limits[1] = 'posebno složene prijave dogovaramo prije početka';
+homeContent.hr.value.body = 'Naš savjetodavni tim poznaje europske akademske sustave, međunarodne prijave i stipendijske postupke. To iskustvo pretvaramo u dosljedan način rada — bez tvrdnji o formalnim partnerstvima.';
+homeContent.hr.value.points[0][0] = 'Stipendijski postupci';
+homeContent.hr.trust.items[0][1] = 'Prije plaćanja potvrđujemo što je uključeno, rok, broj dorada i razdoblje podrške.';
+homeContent.hr.faq.items[2][1] = 'Da. Podržavamo prijave za obje razine studija, kao i povezane stipendijske postupke, kada se uklapaju u naš europski fokus.';
+homeContent.hr.faq.items[4][1] = 'Da. Tim ima iskustvo s prijavama za DAAD, Erasmus Mundus, OeAD i France Excellence. Važeće uvjete uvijek provjeravamo u službenim izvorima.';
+homeContent.hr.booking.body = 'U 15 minuta razjasnit ćemo vaš cilj, rokove i vrstu podrške koja vam treba.';
+homeContent.hr.booking.team = 'Razgovarat ćete s jednim članom našeg tima. Svi članovi tima dio svog obrazovanja završili su u inozemstvu. Ako naša podrška nije pravi izbor za vaš slučaj, reći ćemo vam to tijekom razgovora.';
+homeContent.hr.booking.location = 'Videopoziv';
+
+homeContent.sr.sample.documentMeta = 'Master studije · Evropa · 8 programa';
+homeContent.sr.offers.cards[1].limits[0] = 'jedan razgovor';
+homeContent.sr.offers.cards[2].includes[1] = 'jednu izmenu';
+homeContent.sr.offers.cards[2].includes[2] = 'kratak završni razgovor';
+homeContent.sr.offers.cards[4].limits[0] = 'bez posebnih testova, portfolija i složenih postupaka sa više eseja';
+homeContent.sr.offers.cards[5].name = 'Prijava za stipendiju';
+homeContent.sr.offers.cards[5].limits[1] = 'posebno složene prijave dogovaramo pre početka';
+homeContent.sr.trust.items[0][1] = 'Pre plaćanja potvrđujemo šta je uključeno, rok, broj izmena i period podrške.';
+homeContent.sr.booking.body = 'U 15 minuta razjasnićemo vaš cilj, rokove i vrstu podrške koja vam treba.';
+homeContent.sr.booking.team = 'Razgovaraćete s jednim članom našeg tima. Svi članovi tima deo svog obrazovanja završili su u inostranstvu. Ako naša podrška nije pravi izbor za vaš slučaj, reći ćemo vam to tokom razgovora.';
+homeContent.sr.booking.location = 'Onlajn video-poziv';
+
+homeContent.en.independent.title = 'Make the right decision first. Then build a strong application.';
+homeContent.en.decision.paid = 'Only then does a programme make our shortlist.';
+homeContent.en.offers.cards[2].limits = ['one coherent group of countries and goals', 'application documents not included'];
+homeContent.en.trust.items[0][1] = 'Before payment, we confirm what is included, the deadline, the number of revisions and the support period.';
+homeContent.en.booking.team = 'You will speak with one member of our team. Every team member completed part of their education abroad. If our support is not the right fit for your situation, we will tell you during the call.';
+
+homeContent.de.hero.body = 'Für Bewerbende um Bachelor- und Masterstudienplätze sowie Stipendien, die Programme, Gesamtkosten und Finanzierung vergleichen und eine starke, gut organisierte Bewerbung ohne unnötige Umwege einreichen möchten.';
+homeContent.de.decision.paid = 'Erst dann nehmen wir einen Studiengang in unsere Empfehlung auf.';
+homeContent.de.decision.factors[1][1] = 'Studiengebühren + Lebenshaltung';
+homeContent.de.audiences.body = 'Wir arbeiten am besten mit Bewerbenden, die bewusst entscheiden und aktiv am Prozess mitwirken möchten.';
+homeContent.de.audiences.groups[0].points[0] = 'ein Bachelor- oder Masterstudium in Europa wählen';
+homeContent.de.method.body = 'Jeder Schritt endet mit einer konkreten Entscheidung, einem Dokument oder dem nächsten Schritt.';
+homeContent.de.method.steps[1][1] = 'Programmauswahl, Fristenplan, Kostenübersicht und Prioritäten.';
+homeContent.de.offers.cards[2].limits[1] = 'Erstellung der Bewerbungsunterlagen nicht enthalten';
+homeContent.de.trust.items[0][1] = 'Vor der Zahlung bestätigen wir Leistungsumfang, Frist, Überarbeitungsrunden und Unterstützungszeitraum.';
+homeContent.de.faq.items[1][0] = 'Schreiben Sie das Motivationsschreiben für Bewerbende?';
+homeContent.de.faq.items[7][1] = 'Adria Admissions ist als fachliche Beratungsmarke aufgebaut, nicht als Personenmarke. Die Namen der Teammitglieder werden nicht öffentlich gezeigt; vor der Zusammenarbeit bestätigen wir Methode, Umfang, Zeitplan, Preis und Erwartungen klar.';
+homeContent.de.booking.team = 'Sie sprechen mit einem Mitglied unseres Teams. Alle Teammitglieder haben einen Teil ihres Studiums im Ausland absolviert. Wenn unsere Unterstützung nicht zu Ihrer Situation passt, sagen wir es Ihnen im Gespräch.';
+
+homeContent.fr.hero.accent = 'Préparez votre candidature avec un plan clair.';
+homeContent.fr.hero.body = 'Pour toute personne qui prépare une candidature en licence, en master ou à une bourse et souhaite comparer les programmes, le coût total et les financements — puis déposer un dossier solide et bien organisé, sans tâtonnements inutiles.';
+homeContent.fr.hero.proof[0] = 'Accompagnement indépendant';
+homeContent.fr.audiences.body = 'Nous travaillons surtout avec les personnes qui veulent décider avec discernement et participer activement au processus.';
+homeContent.fr.audiences.groups[1].points[3] = 'ne souhaitez pas participer activement ni respecter les échéances';
+homeContent.fr.offers.cards[4].limits[0] = 'tests particuliers, portfolios et procédures complexes comprenant plusieurs textes non inclus';
+homeContent.fr.offers.cards[5].summary = 'Nous construisons la stratégie et aidons le candidat à exprimer clairement sa motivation, son expérience et son projet dans ses propres textes.';
+homeContent.fr.offers.cards[5].includes[1] = 'jusqu’à trois cycles de retours sur les textes rédigés par le candidat';
+homeContent.fr.pricing.credit = 'Si vous choisissez une formule d’accompagnement admissible dans les 14 jours suivant la consultation de 70 €, ces 70 € sont déduits du prix.';
+homeContent.fr.trust.title = 'La confiance repose sur une méthode, pas sur de grandes promesses.';
+homeContent.fr.trust.items[1][1] = 'Chaque résultat est vérifié au regard des exigences, des échéances, de la cohérence et de l’authenticité.';
+homeContent.fr.trust.items[3][1] = 'Nous n’inventons ni expérience, ni résultat, ni partenariat, ni témoignage client, et nous ne garantissons jamais une décision.';
+homeContent.fr.booking.team = 'Vous parlerez avec un membre de notre équipe. Tous ont effectué une partie de leurs études à l’étranger. Si notre accompagnement n’est pas adapté à votre situation, nous vous le dirons pendant l’appel.';
+homeContent.fr.booking.note = 'Cet appel ne vous engage à rien.';

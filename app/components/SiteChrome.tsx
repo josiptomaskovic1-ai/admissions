@@ -1,7 +1,7 @@
 import type { Locale } from '../content';
 import { localeMeta, locales, utility } from '../i18n';
 import { translations } from '../content';
-import { brandName } from '../site-config';
+import { brandName, instagramLink, linkedInLink } from '../site-config';
 
 type PageKind = 'home' | 'contact' | 'privacy' | 'service-information';
 
@@ -52,7 +52,6 @@ export function SiteHeader({ locale, page = 'home' }: { locale: Locale; page?: P
           <a className="button header-cta" href={`${home}#booking`}><span className="header-cta-label">{t.nav.book}</span></a>
         </div>
       </header>
-      <a className="mobile-booking-bar" href={`${home}#booking`}>{t.nav.book}</a>
     </>
   );
 }
@@ -71,6 +70,8 @@ export function SiteFooter({ locale }: { locale: Locale }) {
         <span>© {new Date().getFullYear()} {brandName}. {t.footer.rights}</span>
         <nav aria-label={u.navigation}>
           <a href={`/${locale}/contact`}>{u.contact}</a>
+          {linkedInLink && <a href={linkedInLink} target="_blank" rel="noopener noreferrer">LinkedIn<span className="sr-only"> — {u.external}</span></a>}
+          {instagramLink && <a href={instagramLink} target="_blank" rel="noopener noreferrer">Instagram<span className="sr-only"> — {u.external}</span></a>}
           <a href={`/${locale}/privacy`}>{u.privacy}</a>
           <a href={`/${locale}/service-information`}>{u.serviceInfo}</a>
         </nav>
