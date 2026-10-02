@@ -85,7 +85,7 @@ export function HomePage({ locale }: { locale: Locale }) {
             <div className="section-heading split-heading inverse-heading"><h2>{t.offers.title}</h2><p>{t.offers.body}</p></div>
             <div className="offer-list" id="pricing">
               {t.offers.cards.map((offer) => (
-                <details className={offer.featured ? 'offer-row featured' : 'offer-row'} key={offer.name} open={offer.featured || undefined}>
+                <details className={offer.featured ? 'offer-row featured' : 'offer-row'} key={offer.name}>
                   <summary>
                     <span className="offer-identity"><strong>{offer.name}</strong><small>{offer.label}</small></span>
                     <span className="offer-best"><small>{t.offers.bestFor}</small>{offer.bestFor}</span>
