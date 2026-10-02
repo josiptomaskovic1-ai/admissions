@@ -39,7 +39,9 @@ async function read(path, options = {}) {
 const root = await read('/', { redirect: 'manual' });
 assert([301, 302, 307, 308].includes(root.response.status), `Root must redirect; received ${root.response.status}`);
 assert(root.response.headers.get('location') === '/sr', `Root must redirect to /sr; received ${root.response.headers.get('location')}`);
-assert((root.response.headers.get('cache-control') ?? '').includes('max-age=300'), 'Root redirect must be browser-cacheable');
+const rootCacheControl = root.response.headers.get('cache-control') ?? '';
+assert(rootCacheControl.includes('max-age=0'), 'Root redirect must not keep stale HTML in the browser cache');
+assert(rootCacheControl.includes('s-maxage=300'), 'Root redirect must use a short edge-cache lifetime');
 
 for (const locale of locales) {
   for (const suffix of pageSuffixes) {
@@ -47,8 +49,9 @@ for (const locale of locales) {
     const { response, text } = await read(path);
     assert(response.status === 200, `${path} returned ${response.status}`);
     const cacheControl = response.headers.get('cache-control') ?? '';
-    assert(cacheControl.includes('max-age=300'), `${path} is missing short browser caching`);
-    assert(cacheControl.includes('s-maxage=31536000'), `${path} is missing long-lived edge caching`);
+    assert(cacheControl.includes('max-age=0'), `${path} must not keep stale HTML in the browser cache`);
+    assert(cacheControl.includes('must-revalidate'), `${path} must revalidate cached HTML`);
+    assert(cacheControl.includes('s-maxage=300'), `${path} is missing short edge caching`);
     assert((response.headers.get('content-security-policy') ?? '').includes("frame-ancestors 'none'"), `${path} is missing the anti-framing CSP`);
     assert(response.headers.get('x-content-type-options') === 'nosniff', `${path} is missing MIME-sniffing protection`);
     assert(response.headers.get('x-frame-options') === 'DENY', `${path} is missing clickjacking protection`);
@@ -59,11 +62,15 @@ for (const locale of locales) {
     assert(text.includes('<main'), `${path} is missing a main landmark`);
     assert(text.includes('<header'), `${path} is missing a header landmark`);
     assert(text.includes('<footer'), `${path} is missing a footer landmark`);
+    const inlineStyles = text.match(/<style[^>]*data-adria-styles[^>]*>([\s\S]*?)<\/style>/i)?.[1] ?? '';
+    assert(inlineStyles.length > 20_000, `${path} is missing the complete inline stylesheet`);
+    assert(inlineStyles.includes('--cobalt:#2f57ff') || inlineStyles.includes('--cobalt: #2f57ff'), `${path} has an incomplete inline stylesheet`);
     assert(text.includes(`rel="canonical" href="https://adriaadmissions.com${path}"`), `${path} has an incorrect canonical URL`);
     assert(text.includes('href="https://www.linkedin.com/company/adria-admissions/"'), `${path} is missing the official LinkedIn link`);
     assert(text.includes('href="https://www.instagram.com/adria.admissions/"'), `${path} is missing the official Instagram link`);
     assert((text.match(/hreflang=/gi) ?? []).length >= 7, `${path} is missing reciprocal language alternatives`);
-    assert(text.includes('name="robots" content="noindex, nofollow, nocache"'), `${path} must stay noindex before launch readiness`);
+    assert(text.includes('name="robots" content="index, follow"'), `${path} must allow public indexing`);
+    assert(!/name="robots" content="[^"]*noindex/i.test(text), `${path} must not contain a noindex directive`);
     assert(!localeContamination[locale].test(text), `${path} contains wording from another locale or a known mistranslation`);
 
     if (suffix === '/privacy') {
@@ -111,11 +118,12 @@ for (const locale of locales) {
 
 const robots = await read('/robots.txt');
 assert(robots.response.status === 200, '/robots.txt must return 200');
-assert(/Disallow:\s*\//i.test(robots.text), 'robots.txt must block crawling before public launch');
+assert(/Allow:\s*\//i.test(robots.text), 'robots.txt must allow public crawling');
+assert(!/Disallow:\s*\//i.test(robots.text), 'robots.txt must not block the public site');
 
 const sitemap = await read('/sitemap.xml');
 assert(sitemap.response.status === 200, '/sitemap.xml must return 200');
-assert(!/<url>/i.test(sitemap.text), 'sitemap.xml must remain empty before public launch');
+assert((sitemap.text.match(/<url>/gi) ?? []).length === locales.length * pageSuffixes.length, 'sitemap.xml must list every localized public page');
 
 if (failures.length) {
   console.error(`Audit failed with ${failures.length} issue(s):`);
@@ -123,4 +131,4 @@ if (failures.length) {
   process.exit(1);
 }
 
-console.log(`Audit passed: ${locales.length * pageSuffixes.length} localized pages, ${locales.length} Calendly redirects, copy regressions, security headers, metadata, anchors, robots and sitemap.`);
+console.log(`Audit passed: ${locales.length * pageSuffixes.length} localized pages, ${locales.length} Calendly redirects, inline CSS resilience, cache safety, copy regressions, security headers, metadata, anchors, robots and sitemap.`);

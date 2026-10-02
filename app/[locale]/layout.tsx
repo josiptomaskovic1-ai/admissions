@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import { bodyClassName, siteMetadata, siteViewport } from '../layout-config';
 import { isLocale, localeMeta, locales } from '../i18n';
-import '../globals.css';
+import globalStyles from '../globals.css?inline';
 
 export const metadata: Metadata = siteMetadata;
 export const viewport: Viewport = siteViewport;
@@ -19,6 +19,9 @@ export default async function LocaleLayout({ children, params }: Readonly<{ chil
 
   return (
     <html lang={htmlLang}>
+      <head>
+        <style data-adria-styles>{globalStyles}</style>
+      </head>
       <body className={bodyClassName}>{children}</body>
     </html>
   );

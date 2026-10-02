@@ -24,9 +24,8 @@ export const calendarLink = normalizedHttpsUrl(process.env.NEXT_PUBLIC_CAL_LINK 
 export const contactEmail = normalizedEmail(process.env.NEXT_PUBLIC_CONTACT_EMAIL || defaultContactEmail);
 export const linkedInLink = normalizedHttpsUrl(process.env.NEXT_PUBLIC_LINKEDIN_URL || defaultLinkedInLink);
 export const instagramLink = normalizedHttpsUrl(process.env.NEXT_PUBLIC_INSTAGRAM_URL || defaultInstagramLink);
-const legalInformationReady = process.env.NEXT_PUBLIC_LEGAL_READY === 'true';
-export const publicLaunchReady = process.env.NEXT_PUBLIC_PUBLIC_LAUNCH === 'true'
-  && legalInformationReady
+export const legalInformationReady = process.env.NEXT_PUBLIC_LEGAL_READY === 'true';
+export const publicLaunchReady = process.env.NEXT_PUBLIC_PUBLIC_LAUNCH !== 'false'
   && Boolean(calendarLink)
   && Boolean(contactEmail);
 

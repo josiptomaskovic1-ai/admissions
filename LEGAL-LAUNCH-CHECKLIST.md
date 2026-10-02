@@ -1,8 +1,8 @@
 # Adria Admissions — legal launch checklist
 
-This is an internal release checklist, not legal advice. Keep public search indexing and payment collection disabled until every blocking item below has been completed with verified information.
+This is an internal release checklist, not legal advice. Public search indexing is enabled for the informational site. Keep payment collection and online contract formation disabled until every blocking item below has been completed with verified information.
 
-## Blocking before public launch
+## Blocking before paid launch
 
 - Add the registered business name, legal form, registration number, tax/VAT number where applicable, registered address and official contact details.
 - Identify the data controller and provide a complete privacy notice with lawful bases, retention periods, data-subject rights and the competent supervisory authority.
@@ -11,10 +11,10 @@ This is an internal release checklist, not legal advice. Keep public search inde
 - Confirm the contractual and data-processing arrangements for Calendly, hosting, Cloudflare and any future email or CRM provider.
 - Verify that the public offer, prices, instalments and cancellation terms match the signed client agreement.
 
-## Technical launch gate
+## Technical payment gate
 
-- Keep `NEXT_PUBLIC_LEGAL_READY` and `NEXT_PUBLIC_PUBLIC_LAUNCH` unset or `false` until the blocking legal items are approved.
-- Re-run the full localized site audit, accessibility checks, dependency audit and production build before enabling either flag.
+- Keep `NEXT_PUBLIC_LEGAL_READY` unset or `false` until the blocking legal items are approved. `NEXT_PUBLIC_PUBLIC_LAUNCH=false` remains available as an emergency search-indexing kill switch.
+- Re-run the full localized site audit, accessibility checks, dependency audit and production build before enabling payment collection.
 - Recheck cookies and third-party scripts after every provider or analytics change. A consent banner is not required while only essential security cookies are used; reassess before adding analytics or advertising.
 - Test the Calendly flow and every published contact address from a device that is not signed in to an administrator account.
 

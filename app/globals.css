@@ -51,7 +51,7 @@ html {
 
 body {
   margin: 0;
-  min-width: 20rem;
+  min-width: 0;
   overflow-x: clip;
   background: var(--white);
   color: var(--ink);
@@ -2781,5 +2781,138 @@ h3 {
   .trust-section,
   .closing-section {
     padding-block: 2.25rem;
+  }
+}
+
+/* Essential watch-sized fallback: keep the full site readable down to 200px.
+   The primary actions remain available while dense desktop navigation collapses. */
+@media (max-width: 18rem) {
+  :root {
+    --gutter: 0.65rem;
+  }
+
+  .site-header {
+    min-height: 3.6rem;
+    padding-block: 0.35rem;
+  }
+
+  .brand-mark {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .header-contact {
+    display: none;
+  }
+
+  .language-menu > summary {
+    min-width: 3rem;
+    min-height: 2.5rem;
+  }
+
+  .language-popover {
+    width: calc(100vw - 1rem);
+  }
+
+  .language-menu:not([open]) .language-popover {
+    display: none;
+  }
+
+  .site-header *,
+  main *,
+  .site-footer * {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .hero {
+    gap: 1.25rem;
+    padding-block: 1.4rem 1.8rem;
+  }
+
+  .hero h1,
+  .info-hero h1 {
+    max-width: none;
+    overflow-wrap: anywhere;
+    font-size: clamp(1.55rem, 13vw, 2.35rem);
+  }
+
+  .hero-lede,
+  .section-heading > p,
+  .info-hero > p:last-child {
+    font-size: 0.88rem;
+    line-height: 1.55;
+  }
+
+  .button,
+  .text-link,
+  .contact-link {
+    min-height: 2.6rem;
+    padding-inline: 0.65rem;
+    font-size: 0.75rem;
+    overflow-wrap: anywhere;
+  }
+
+  .hero-proof {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .decision-card,
+  .booking-card,
+  .audience-grid article,
+  .value-points article,
+  .trust-layout dl > div,
+  .legal-grid section {
+    padding: 0.85rem;
+  }
+
+  .decision-card {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .decision-card dl > div,
+  .booking-card dl > div,
+  .addon-table dl > div {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+
+  .sample-table > div {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      'programme'
+      'fit'
+      'risk';
+  }
+
+  .method-line li {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .sample-table span:last-child {
+    text-align: left;
+  }
+
+  .offer-row > summary {
+    grid-template-columns: minmax(0, 1fr) 1.25rem;
+  }
+
+  .offer-price,
+  .offer-best {
+    grid-column: 1;
+    grid-row: auto;
+    text-align: left;
+  }
+
+  .offer-toggle {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .footer-bottom nav {
+    align-items: flex-start;
+    flex-direction: column;
   }
 }
