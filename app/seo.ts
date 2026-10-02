@@ -4,9 +4,9 @@ import { localeMeta, locales } from './i18n';
 import { brandName, publicLaunchReady, siteUrl } from './site-config';
 
 const seoCopy: Record<Locale, { title: string; description: string }> = {
-  hr: { title: 'Savjetovanje za međunarodne prijave', description: 'Neovisno, individualno savjetovanje za bachelor i master prijave u Europi — za Balkan i dijasporu.' },
-  bs: { title: 'Savjetovanje za međunarodne prijave', description: 'Nezavisno, individualno savjetovanje za bachelor i master prijave u Evropi — za Balkan i dijasporu.' },
-  sr: { title: 'Savetovanje za međunarodne prijave', description: 'Nezavisno, individualno savetovanje za bachelor i master prijave u Evropi — za Balkan i dijasporu.' },
+  hr: { title: 'Savjetovanje za međunarodne prijave', description: 'Neovisno, individualno savjetovanje za prijediplomske i diplomske prijave u Europi — za Balkan i dijasporu.' },
+  bs: { title: 'Savjetovanje za međunarodne prijave', description: 'Nezavisno, individualno savjetovanje za prijave na prvi i drugi ciklus studija u Evropi — za Balkan i dijasporu.' },
+  sr: { title: 'Savetovanje za međunarodne prijave', description: 'Nezavisno, individualno savetovanje za prijave na osnovne i master studije u Evropi — za Balkan i dijasporu.' },
   en: { title: 'European university admissions guidance', description: 'Independent, one-to-one guidance for bachelor’s and master’s applications across Europe, for the Balkans and diaspora.' },
   de: { title: 'Beratung für internationale Hochschulbewerbungen', description: 'Unabhängige, persönliche Beratung für Bachelor- und Masterbewerbungen in Europa — für den Balkan und die Diaspora.' },
   fr: { title: 'Conseil pour les candidatures universitaires', description: 'Accompagnement indépendant et individuel pour les candidatures en licence et master en Europe, destiné aux Balkans et à la diaspora.' },

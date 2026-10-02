@@ -66,6 +66,12 @@ for (const locale of locales) {
     assert(text.includes('name="robots" content="noindex, nofollow, nocache"'), `${path} must stay noindex before launch readiness`);
     assert(!localeContamination[locale].test(text), `${path} contains wording from another locale or a known mistranslation`);
 
+    if (suffix === '/privacy') {
+      for (const cookie of ['cf_clearance', '__cf_bm', '__Host-appgarden-visitor']) {
+        assert(text.includes(cookie), `${path} is missing the disclosed essential cookie: ${cookie}`);
+      }
+    }
+
     if (!suffix) {
       assert(text.includes('application/ld+json'), `${path} is missing structured data`);
       assert(!/20\s+min/iu.test(text), `${path} still exposes the superseded 20-minute introductory call`);
@@ -73,6 +79,7 @@ for (const locale of locales) {
       assert(!staleTeamCopy.test(text), `${path} still promises that clients meet multiple team members`);
       assert(!text.includes('mobile-booking-bar'), `${path} still renders the removed floating mobile booking bar`);
       assert((text.match(/class="offer-row/g) ?? []).length === 6, `${path} must expose exactly six core services`);
+      assert(!/<details[^>]*class="[^"]*offer-row[^"]*"[^>]*\sopen(?:=|\s|>)/iu.test(text), `${path} must keep service details collapsed by default`);
       const methodMarkup = text.match(/class="method-line"[^>]*>([\s\S]*?)<\/ol>/)?.[1] ?? '';
       assert((methodMarkup.match(/<li/g) ?? []).length === 3, `${path} must expose exactly three process steps`);
       assert((text.match(/class="faq-list"[\s\S]*?<\/div>/)?.[0].match(/<details/g) ?? []).length === 8, `${path} must expose exactly eight focused FAQs`);

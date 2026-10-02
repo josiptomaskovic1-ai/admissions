@@ -261,8 +261,10 @@ h3 {
 
 .header-contact {
   display: none;
+  min-width: 2.75rem;
   min-height: 2.75rem;
   align-items: center;
+  justify-content: center;
   padding-inline: 0.35rem;
   color: var(--ink);
   font-size: 0.8rem;
@@ -1234,8 +1236,11 @@ h3 {
 
 .social-link {
   display: inline-flex;
+  min-width: 2.75rem;
   min-height: 2.75rem;
   align-items: center;
+  justify-content: center;
+  padding-inline: 0.25rem;
   margin-top: 0.6rem;
   color: var(--cobalt);
   font-weight: 800;
@@ -1569,21 +1574,6 @@ h3 {
 @media (max-width: 22rem) {
   .decision-grid {
     grid-template-columns: 1fr;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-
-  *,
-  *::before,
-  *::after {
-    scroll-behavior: auto !important;
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
   }
 }
 
@@ -2535,6 +2525,38 @@ h3 {
   }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .route-panel,
+  .decision-card {
+    animation: none;
+  }
+
+  .main-nav a::after,
+  .chevron,
+  .price-details > summary span,
+  .faq-list summary i,
+  .offer-toggle::after,
+  .faq-list summary span::after {
+    transition: none;
+  }
+
+  .button:hover:not(.disabled):not(:disabled) {
+    transform: none;
+  }
+}
+
+@media (max-width: 35rem) {
+  .info-hero h1 {
+    overflow-wrap: anywhere;
+    font-size: clamp(2.15rem, 10.8vw, 2.6rem);
+    hyphens: auto;
+  }
+}
+
 @media (max-width: 35rem) {
   .header-cta {
     display: none;
@@ -2746,5 +2768,18 @@ h3 {
 
   .sample-note {
     padding: 0.85rem 1.1rem;
+  }
+}
+
+@media (max-width: 48rem) {
+  .independent-section,
+  .audience-section,
+  .value-section,
+  .method-section,
+  .sample-section,
+  .offers-section,
+  .trust-section,
+  .closing-section {
+    padding-block: 2.25rem;
   }
 }
