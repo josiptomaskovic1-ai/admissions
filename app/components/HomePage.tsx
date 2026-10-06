@@ -1,12 +1,13 @@
 import type { Locale } from '../content';
 import { homeContent } from '../home-content';
 import { utility } from '../i18n';
-import { brandName, calendarLink, siteUrl } from '../site-config';
+import { brandName, calendarLink, intakeFormLinks, siteUrl } from '../site-config';
 import { SiteFooter, SiteHeader } from './SiteChrome';
 
 export function HomePage({ locale }: { locale: Locale }) {
   const t = homeContent[locale];
   const u = utility[locale];
+  const intakeFormLink = intakeFormLinks[locale];
   const structuredData = {
     '@context': 'https://schema.org',
     '@type': 'ProfessionalService',
@@ -127,7 +128,9 @@ export function HomePage({ locale }: { locale: Locale }) {
             <h2>{t.booking.title}</h2><p>{t.booking.body}</p><p className="team-note">{t.booking.team}</p>
             <dl><div><dt>{t.booking.event}</dt><dd>{t.booking.duration}</dd></div><div><dt>{t.booking.location}</dt><dd>{t.booking.timezone}</dd></div></dl>
             {calendarLink ? <a className="button button-primary booking-button" href={`/${locale}/book`} target="_blank" rel="noopener noreferrer">{t.booking.button}<span className="sr-only"> — {u.external}</span></a> : <span className="button booking-button disabled" aria-disabled="true">{u.unavailable}</span>}
-            <p className="booking-note">{t.booking.note}</p><a className="contact-link" href={`/${locale}/contact`}>{u.contact}</a>
+            <p className="booking-note">{t.booking.note}</p>
+            {intakeFormLink && <div className="intake-action"><a className="button intake-button" href={intakeFormLink} target="_blank" rel="noopener noreferrer">{u.intakeButton}<span className="sr-only"> — {u.external}</span></a><p>{u.intakeNote}</p></div>}
+            <a className="contact-link" href={`/${locale}/contact`}>{u.contact}</a>
           </aside>
         </section>
       </main>

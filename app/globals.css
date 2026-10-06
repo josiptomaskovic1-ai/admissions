@@ -1082,6 +1082,34 @@ h3 {
   width: 100%;
 }
 
+.intake-action {
+  display: grid;
+  gap: 0.45rem;
+  margin-top: 0.85rem;
+  padding-top: 0.85rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.intake-button {
+  width: 100%;
+  border-color: rgba(255, 255, 255, 0.42);
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--white);
+}
+
+.intake-button:hover {
+  border-color: var(--teal);
+  background: rgba(97, 216, 196, 0.11);
+}
+
+.intake-action p,
+.contact-card.primary-card .intake-action p {
+  margin: 0;
+  color: var(--dark-muted);
+  font-size: 0.72rem;
+  line-height: 1.5;
+}
+
 .booking-note {
   margin: 0.8rem 0 0;
   font-size: 0.75rem !important;
@@ -1287,6 +1315,10 @@ h3 {
   padding: 0.8rem;
   border-left: 2px solid var(--teal);
   background: rgba(97, 216, 196, 0.07);
+}
+
+.contact-card.primary-card .intake-action {
+  margin-top: 1rem;
 }
 
 .contact-card:not(.primary-card) .disabled {
@@ -2392,12 +2424,29 @@ h3 {
 
 @media (max-width: 48rem) {
   .site-header {
-    min-height: 4.8rem;
+    min-height: 5.6rem;
+    padding-block: 0.65rem;
   }
 
   .brand-mark {
-    width: 3.35rem;
-    height: 3.35rem;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 0.55rem;
+  }
+
+  .header-actions {
+    gap: 0.7rem;
+  }
+
+  .header-contact {
+    min-height: 3.25rem;
+    font-size: 0.84rem;
+  }
+
+  .language-menu > summary {
+    min-width: 4.4rem;
+    min-height: 3.4rem;
+    font-size: 0.82rem;
   }
 
   .hero,

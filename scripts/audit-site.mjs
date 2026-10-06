@@ -11,6 +11,14 @@ const homepageExpectations = {
   de: ['15 Min.', 'Kostenlos', '70 €', '350 €', '390 €', '590 €', '1.400 €'],
   fr: ['15 min', 'Gratuit', '70 €', '350 €', '390 €', '590 €', '1 400 €'],
 };
+const intakeFormIds = {
+  hr: '1FAIpQLScmoLcyo2oCnrR1dyFvr7P6aKVEb-b9zIxHe9dMEUyCkPt5bQ',
+  bs: '1FAIpQLSfITcq9vMPK_aJKJ9F8sRN27G7QTadS9JzAOJZ7xqgYpi2nPw',
+  sr: '1FAIpQLScgpPpZ013R3fHO8mZua_mFaGLcCm5tE8FhIfcrWFAu6Wl27A',
+  en: '1FAIpQLSemBY0pMv80aHr_Ov5cXl6zwkjSREN29D92F0boTl6Oh1Bf0A',
+  de: '1FAIpQLSc4GDPSgKRr6VLk_8qGNKotBmNzApHf_SVxdwfk-xSQRQOqPQ',
+  fr: '1FAIpQLScJmPmnsSzJWInVFGIIATwJ0fvdDtJvuE_1JXPZxhu_U2idmg',
+};
 const staleTeamCopy = /upoznat ćete članove našeg tima|upoznaćete članove našeg tima|meet members of our team|lernen Sie Mitglieder unseres Teams kennen|rencontrerez des membres de notre équipe/iu;
 const localeContamination = {
   hr: /\b(?:cene|univerziteti|finansiranje|uslovi|umesto|sledeći|obim|savetovanje|inostranstvu|izveštaj)\b/iu,
@@ -77,6 +85,13 @@ for (const locale of locales) {
       for (const cookie of ['cf_clearance', '__cf_bm', '__Host-appgarden-visitor']) {
         assert(text.includes(cookie), `${path} is missing the disclosed essential cookie: ${cookie}`);
       }
+      assert(text.includes('Google Forms'), `${path} is missing the Google Forms privacy disclosure`);
+      assert(/Google(?: |-)Drive/.test(text), `${path} is missing the Google Drive privacy disclosure`);
+    }
+
+    if (!suffix || suffix === '/contact') {
+      assert(text.includes(`/d/e/${intakeFormIds[locale]}/viewform`), `${path} is missing the correct localized intake form`);
+      assert(text.includes('rel="noopener noreferrer"'), `${path} must isolate external intake links`);
     }
 
     if (!suffix) {
