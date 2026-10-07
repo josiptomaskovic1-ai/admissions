@@ -47,11 +47,15 @@ async function read(path, options = {}) {
 }
 
 const root = await read('/', { redirect: 'manual' });
-assert([301, 302, 307, 308].includes(root.response.status), `Root must redirect; received ${root.response.status}`);
+assert(root.response.status === 308, `Root must permanently redirect to the default locale; received ${root.response.status}`);
 assert(root.response.headers.get('location') === '/sr', `Root must redirect to /sr; received ${root.response.headers.get('location')}`);
 const rootCacheControl = root.response.headers.get('cache-control') ?? '';
 assert(rootCacheControl.includes('max-age=0'), 'Root redirect must not keep stale HTML in the browser cache');
 assert(rootCacheControl.includes('s-maxage=300'), 'Root redirect must use a short edge-cache lifetime');
+
+const googleVerification = await read('/googlef25aacf1056b9f68.html');
+assert(googleVerification.response.status === 200, 'Google Search Console verification file must return 200');
+assert(googleVerification.text.trim() === 'google-site-verification: googlef25aacf1056b9f68.html', 'Google Search Console verification file has unexpected content');
 
 for (const locale of locales) {
   for (const suffix of pageSuffixes) {
