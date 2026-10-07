@@ -880,3 +880,40 @@ homeContent.fr.trust.items[1][1] = 'Chaque résultat est vérifié au regard des
 homeContent.fr.trust.items[3][1] = 'Nous n’inventons ni expérience, ni résultat, ni partenariat, ni témoignage client, et nous ne garantissons jamais une décision.';
 homeContent.fr.booking.team = 'Vous parlerez avec un membre de notre équipe. Tous ont effectué une partie de leurs études à l’étranger. Si notre accompagnement n’est pas adapté à votre situation, nous vous le dirons pendant l’appel.';
 homeContent.fr.booking.note = 'Cet appel ne vous engage à rien.';
+
+// The introductory call is available only after the short intake questionnaire.
+homeContent.bs.hero.primary = 'Ispunite upitnik pa odaberite termin';
+homeContent.bs.offers.cta = 'Ispunite upitnik i odaberite termin';
+homeContent.bs.booking.title = 'Prvo kratki upitnik. Zatim termin.';
+homeContent.bs.booking.body = 'Upitnik nam daje početne informacije kako bismo 15 minuta razgovora iskoristili za vaše najvažnije pitanje.';
+homeContent.bs.booking.note = 'Razgovor vas ne obavezuje na kupovinu.';
+
+homeContent.sr.hero.primary = 'Popunite upitnik pa izaberite termin';
+homeContent.sr.offers.cta = 'Popunite upitnik i izaberite termin';
+homeContent.sr.booking.title = 'Prvo kratak upitnik. Zatim termin.';
+homeContent.sr.booking.body = 'Upitnik nam daje početne informacije kako bismo 15 minuta razgovora iskoristili za vaše najvažnije pitanje.';
+homeContent.sr.booking.note = 'Razgovor vas ni na šta ne obavezuje.';
+
+homeContent.hr.hero.primary = 'Ispunite upitnik pa odaberite termin';
+homeContent.hr.offers.cta = 'Ispunite upitnik i odaberite termin';
+homeContent.hr.booking.title = 'Prvo kratki upitnik. Zatim termin.';
+homeContent.hr.booking.body = 'Upitnik nam daje početne informacije kako bismo 15 minuta razgovora iskoristili za vaše najvažnije pitanje.';
+homeContent.hr.booking.note = 'Razgovor vas ni na što ne obvezuje.';
+
+homeContent.en.hero.primary = 'Complete the questionnaire, then choose a time';
+homeContent.en.offers.cta = 'Complete the questionnaire and choose a time';
+homeContent.en.booking.title = 'A short questionnaire first. Then your call.';
+homeContent.en.booking.body = 'The questionnaire gives us the starting information we need to use the 15-minute call for your most important question.';
+homeContent.en.booking.note = 'The call does not commit you to a purchase.';
+
+homeContent.de.hero.primary = 'Fragebogen ausfüllen, dann Termin wählen';
+homeContent.de.offers.cta = 'Fragebogen ausfüllen und Termin wählen';
+homeContent.de.booking.title = 'Zuerst der kurze Fragebogen. Dann Ihr Termin.';
+homeContent.de.booking.body = 'Der Fragebogen gibt uns die nötigen Ausgangsinformationen, damit wir das 15-minütige Gespräch für Ihre wichtigste Frage nutzen können.';
+homeContent.de.booking.note = 'Das Gespräch verpflichtet Sie zu keinem Kauf.';
+
+homeContent.fr.hero.primary = 'Remplir le questionnaire, puis choisir un créneau';
+homeContent.fr.offers.cta = 'Remplir le questionnaire et choisir un créneau';
+homeContent.fr.booking.title = 'D’abord le court questionnaire. Puis votre créneau.';
+homeContent.fr.booking.body = 'Le questionnaire nous donne les premières informations nécessaires pour consacrer les 15 minutes à votre question la plus importante.';
+homeContent.fr.booking.note = 'Cet appel ne vous engage à rien.';

@@ -36,7 +36,7 @@ export const intakeFormLinks: Record<Locale, string> = {
 };
 export const legalInformationReady = process.env.NEXT_PUBLIC_LEGAL_READY === 'true';
 export const publicLaunchReady = process.env.NEXT_PUBLIC_PUBLIC_LAUNCH !== 'false'
-  && Boolean(calendarLink)
+  && Object.values(intakeFormLinks).every(Boolean)
   && Boolean(contactEmail);
 
 export const brandName = 'Adria Admissions';

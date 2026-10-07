@@ -1,7 +1,7 @@
 import type { Locale } from '../content';
 import { localeMeta, locales, utility } from '../i18n';
 import { translations } from '../content';
-import { brandName, instagramLink, linkedInLink } from '../site-config';
+import { brandName, instagramLink, intakeFormLinks, linkedInLink } from '../site-config';
 
 type PageKind = 'home' | 'contact' | 'privacy' | 'service-information';
 
@@ -49,7 +49,7 @@ export function SiteHeader({ locale, page = 'home' }: { locale: Locale; page?: P
               ))}
             </div>
           </details>
-          <a className="button header-cta" href={`${home}#booking`}><span className="header-cta-label">{t.nav.book}</span></a>
+          <a className="button header-cta" href={intakeFormLinks[locale]} target="_blank" rel="noopener noreferrer"><span className="header-cta-label">{t.nav.book}</span><span className="sr-only"> — {u.external}</span></a>
         </div>
       </header>
     </>

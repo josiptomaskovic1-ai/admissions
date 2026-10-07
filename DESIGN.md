@@ -148,8 +148,12 @@ On phones, the dossier preview reflows into one card per programme with the prog
 
 ## Do's and Don'ts
 
-- **Do:** Put the proposition, primary action, transparent starting range, and independence signal in the first viewport.
+- **Do:** Put the proposition, intake-first primary action, transparent starting range, and independence signal in the first viewport.
 - **Do:** Keep the route metaphor functional and compact across all six language options.
 - **Do:** Use permissioned, anonymised client evidence only when supplied and verifiable; otherwise show methodology and deliverable structure.
 - **Don't:** Create premium feeling by adding blank vertical space or oversized decorative scenes.
 - **Don't:** imply university partnerships, guaranteed admission, scholarship outcomes, or verified results without evidence.
+
+### Intake-first booking flow
+
+Every public booking action opens the matching three-minute intake questionnaire. The questionnaire is required before the free 15-minute call; its confirmation screen provides the event-specific scheduling link. The site does not expose a direct Calendly link. This sequence is shown as three compact steps — questionnaire, time selection, call — and must remain readable without horizontal overflow from very narrow mobile screens through large monitors.

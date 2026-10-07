@@ -92,6 +92,8 @@ for (const locale of locales) {
     if (!suffix || suffix === '/contact') {
       assert(text.includes(`/d/e/${intakeFormIds[locale]}/viewform`), `${path} is missing the correct localized intake form`);
       assert(text.includes('rel="noopener noreferrer"'), `${path} must isolate external intake links`);
+      assert(!text.includes(`href="/${locale}/book"`), `${path} still exposes a direct booking route`);
+      assert(!text.includes('href="https://calendly.com'), `${path} still exposes a direct Calendly link`);
     }
 
     if (!suffix) {
@@ -123,8 +125,8 @@ for (const locale of locales) {
   if (bookingLocation) {
     try {
       const destination = new URL(bookingLocation, origin);
-      assert(destination.origin === 'https://calendly.com', `/${locale}/book must redirect to Calendly; received ${destination.origin}`);
-      assert(destination.pathname === '/adria-admissions' || destination.pathname.startsWith('/adria-admissions/'), `/${locale}/book must use the Adria Admissions profile; received ${destination.pathname}`);
+      assert(destination.origin === 'https://docs.google.com', `/${locale}/book must redirect to Google Forms; received ${destination.origin}`);
+      assert(destination.pathname.includes(`/d/e/${intakeFormIds[locale]}/viewform`), `/${locale}/book must use the localized intake form; received ${destination.pathname}`);
     } catch {
       assert(false, `/${locale}/book returned an invalid Location header: ${bookingLocation}`);
     }
@@ -146,4 +148,4 @@ if (failures.length) {
   process.exit(1);
 }
 
-console.log(`Audit passed: ${locales.length * pageSuffixes.length} localized pages, ${locales.length} Calendly redirects, inline CSS resilience, cache safety, copy regressions, security headers, metadata, anchors, robots and sitemap.`);
+console.log(`Audit passed: ${locales.length * pageSuffixes.length} localized pages, ${locales.length} intake-first redirects, inline CSS resilience, cache safety, copy regressions, security headers, metadata, anchors, robots and sitemap.`);

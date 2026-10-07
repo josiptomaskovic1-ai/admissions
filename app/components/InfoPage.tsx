@@ -1,13 +1,13 @@
 import type { Locale } from '../content';
 import { translations } from '../content';
 import { utility } from '../i18n';
-import { brandName, calendarLink, contactEmail, instagramLink, intakeFormLinks, linkedInLink } from '../site-config';
+import { brandName, contactEmail, instagramLink, linkedInLink } from '../site-config';
+import { IntakeGate } from './IntakeGate';
 import { SiteFooter, SiteHeader } from './SiteChrome';
 
 export function ContactPage({ locale }: { locale: Locale }) {
   const t = translations[locale];
   const u = utility[locale];
-  const intakeFormLink = intakeFormLinks[locale];
 
   return (
     <div lang={locale === 'sr' ? 'sr-Latn' : locale}>
@@ -17,8 +17,7 @@ export function ContactPage({ locale }: { locale: Locale }) {
         <div className="contact-grid">
           <section className="contact-card primary-card">
             <h2>{t.booking.event}</h2><p>{t.booking.body}</p><p className="team-note">{u.teamNote}</p>
-            {calendarLink ? <a className="button button-primary" href={`/${locale}/book`} target="_blank" rel="noopener noreferrer">{t.booking.button}<span className="sr-only"> — {u.external}</span></a> : <span className="button disabled" aria-disabled="true">{u.unavailable}</span>}
-            {intakeFormLink && <div className="intake-action"><a className="button intake-button" href={intakeFormLink} target="_blank" rel="noopener noreferrer">{u.intakeButton}<span className="sr-only"> — {u.external}</span></a><p>{u.intakeNote}</p></div>}
+            <IntakeGate locale={locale} />
           </section>
           <section className="contact-card contact-direct-card">
             <h2>{contactEmail ? <a className="contact-email-link" href={`mailto:${contactEmail}`}>{contactEmail}</a> : brandName}</h2>
