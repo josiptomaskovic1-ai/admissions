@@ -1,8 +1,10 @@
 const origin = process.env.AUDIT_ORIGIN ?? 'http://localhost:3000';
 const locales = ['hr', 'bs', 'sr', 'en', 'de', 'fr'];
 const pageSuffixes = ['', '/contact', '/privacy', '/service-information'];
+const indexableSuffixes = ['', '/contact', '/service-information'];
 const failures = [];
 const checked = new Map();
+const indexedTitles = new Set();
 const homepageExpectations = {
   hr: ['15 min', 'Besplatno', '70 €', '350 €', '390 €', '590 €', '1.400 €'],
   bs: ['15 min', 'Besplatno', '70 €', '350 €', '390 €', '590 €', '1.400 €'],
@@ -65,7 +67,11 @@ for (const locale of locales) {
     assert(response.headers.get('x-frame-options') === 'DENY', `${path} is missing clickjacking protection`);
     assert((response.headers.get('permissions-policy') ?? '').includes('camera=()'), `${path} is missing the restrictive permissions policy`);
     assert(response.headers.get('referrer-policy') === 'strict-origin-when-cross-origin', `${path} has an unexpected referrer policy`);
-    assert(text.includes('<title>Adria Admissions</title>'), `${path} must use the brand-only browser tab title`);
+    const title = text.match(/<title>([^<]+)<\/title>/i)?.[1] ?? '';
+    assert(title.startsWith('Adria Admissions | '), `${path} must lead with the brand and use a descriptive page title`);
+    assert(title.length <= 75, `${path} has an unnecessarily long page title (${title.length} characters)`);
+    const description = text.match(/<meta name="description" content="([^"]+)"/i)?.[1] ?? '';
+    assert(description.length >= 90 && description.length <= 170, `${path} needs a useful meta description (currently ${description.length} characters)`);
     assert((text.match(/<h1(?:\s|>)/g) ?? []).length === 1, `${path} must have exactly one H1`);
     assert(text.includes('<main'), `${path} is missing a main landmark`);
     assert(text.includes('<header'), `${path} is missing a header landmark`);
@@ -77,8 +83,13 @@ for (const locale of locales) {
     assert(text.includes('href="https://www.linkedin.com/company/adria-admissions/"'), `${path} is missing the official LinkedIn link`);
     assert(text.includes('href="https://www.instagram.com/adria.admissions/"'), `${path} is missing the official Instagram link`);
     assert((text.match(/hreflang=/gi) ?? []).length >= 7, `${path} is missing reciprocal language alternatives`);
-    assert(text.includes('name="robots" content="index, follow"'), `${path} must allow public indexing`);
-    assert(!/name="robots" content="[^"]*noindex/i.test(text), `${path} must not contain a noindex directive`);
+    if (suffix === '/privacy') {
+      assert(/name="robots" content="[^"]*noindex/i.test(text), `${path} should stay out of search results`);
+    } else {
+      assert(text.includes('name="robots" content="index, follow"'), `${path} must allow public indexing`);
+      assert(!/name="robots" content="[^"]*noindex/i.test(text), `${path} must not contain a noindex directive`);
+      indexedTitles.add(title);
+    }
     assert(!localeContamination[locale].test(text), `${path} contains wording from another locale or a known mistranslation`);
 
     if (suffix === '/privacy') {
@@ -98,6 +109,9 @@ for (const locale of locales) {
 
     if (!suffix) {
       assert(text.includes('application/ld+json'), `${path} is missing structured data`);
+      assert(text.includes('"@type":"Organization"'), `${path} is missing Organization structured data`);
+      assert(text.includes('"@type":"Service"'), `${path} is missing Service structured data`);
+      if (locale === 'sr') assert(text.includes('"@type":"WebSite"'), `${path} is missing domain-level WebSite structured data`);
       assert(!/20\s+min/iu.test(text), `${path} still exposes the superseded 20-minute introductory call`);
       assert(!/(?:€\s*(?:220|800|1700|1900)|(?:220|800|1[.\s,]?700|1[.\s,]?900)\s*€)/u.test(text), `${path} still exposes a superseded core price`);
       assert(!staleTeamCopy.test(text), `${path} still promises that clients meet multiple team members`);
@@ -136,11 +150,15 @@ for (const locale of locales) {
 const robots = await read('/robots.txt');
 assert(robots.response.status === 200, '/robots.txt must return 200');
 assert(/Allow:\s*\//i.test(robots.text), 'robots.txt must allow public crawling');
-assert(!/Disallow:\s*\//i.test(robots.text), 'robots.txt must not block the public site');
+assert(!/^Disallow:\s*\/\s*$/im.test(robots.text), 'robots.txt must not block the public site');
+assert(/Disallow:\s*\/\*\/book/i.test(robots.text), 'robots.txt must keep redirect-only booking routes out of the crawl queue');
 
 const sitemap = await read('/sitemap.xml');
 assert(sitemap.response.status === 200, '/sitemap.xml must return 200');
-assert((sitemap.text.match(/<url>/gi) ?? []).length === locales.length * pageSuffixes.length, 'sitemap.xml must list every localized public page');
+assert((sitemap.text.match(/<url>/gi) ?? []).length === locales.length * indexableSuffixes.length, 'sitemap.xml must list every localized indexable page');
+assert((sitemap.text.match(/hreflang=/gi) ?? []).length >= locales.length * indexableSuffixes.length * 7, 'sitemap.xml must include every reciprocal language alternate');
+assert((sitemap.text.match(/<lastmod>/gi) ?? []).length === locales.length * indexableSuffixes.length, 'sitemap.xml must include an accurate last-modified date for every URL');
+assert(indexedTitles.size === locales.length * indexableSuffixes.length, 'Every indexable localized page must have a unique title');
 
 if (failures.length) {
   console.error(`Audit failed with ${failures.length} issue(s):`);
@@ -148,4 +166,4 @@ if (failures.length) {
   process.exit(1);
 }
 
-console.log(`Audit passed: ${locales.length * pageSuffixes.length} localized pages, ${locales.length} intake-first redirects, inline CSS resilience, cache safety, copy regressions, security headers, metadata, anchors, robots and sitemap.`);
+console.log(`Audit passed: ${locales.length * pageSuffixes.length} localized pages, ${locales.length * indexableSuffixes.length} indexable URLs, ${locales.length} intake-first redirects, structured data, inline CSS resilience, cache safety, copy regressions, security headers, metadata, anchors, robots and sitemap.`);

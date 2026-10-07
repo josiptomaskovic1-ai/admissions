@@ -1,7 +1,7 @@
 import type { Locale } from '../content';
 import { homeContent } from '../home-content';
-import { utility } from '../i18n';
-import { brandName, intakeFormLinks, siteUrl } from '../site-config';
+import { localeMeta, locales, utility } from '../i18n';
+import { brandName, contactEmail, instagramLink, intakeFormLinks, linkedInLink, siteUrl } from '../site-config';
 import { IntakeGate } from './IntakeGate';
 import { SiteFooter, SiteHeader } from './SiteChrome';
 
@@ -9,15 +9,59 @@ export function HomePage({ locale }: { locale: Locale }) {
   const t = homeContent[locale];
   const u = utility[locale];
   const intakeFormLink = intakeFormLinks[locale];
-  const structuredData = {
-    '@context': 'https://schema.org',
-    '@type': 'ProfessionalService',
+  const organizationId = `${siteUrl}/#organization`;
+  const websiteId = `${siteUrl}/#website`;
+  const serviceId = `${siteUrl}/${locale}#admissions-advisory`;
+  const sameAs = [linkedInLink, instagramLink].filter(Boolean);
+  const serviceTypes: Record<Locale, string> = {
+    hr: 'Savjetovanje za prijave na europska sveučilišta',
+    bs: 'Savjetovanje za prijave na evropske univerzitete',
+    sr: 'Savetovanje za prijave na evropske fakultete',
+    en: 'European university admissions guidance',
+    de: 'Beratung für Hochschulbewerbungen in Europa',
+    fr: 'Accompagnement des candidatures universitaires en Europe',
+  };
+  const organization = {
+    '@type': 'Organization',
+    '@id': organizationId,
     name: brandName,
+    url: `${siteUrl}/`,
+    logo: `${siteUrl}/adria-logo.png`,
+    image: `${siteUrl}/og.png`,
+    description: t.hero.body,
+    ...(contactEmail ? { email: contactEmail } : {}),
+    ...(sameAs.length ? { sameAs } : {}),
+  };
+  const website = {
+    '@type': 'WebSite',
+    '@id': websiteId,
+    url: `${siteUrl}/`,
+    name: brandName,
+    alternateName: ['Adria Admissions', 'adriaadmissions.com'],
+    publisher: { '@id': organizationId },
+    inLanguage: locales.map((item) => localeMeta[item].hrefLang),
+  };
+  const service = {
+    '@type': 'Service',
+    '@id': serviceId,
+    name: serviceTypes[locale],
     url: `${siteUrl}/${locale}`,
     description: t.hero.body,
-    areaServed: ['Serbia', 'Croatia', 'Bosnia and Herzegovina', 'Montenegro', 'Europe'],
-    serviceType: 'Independent European university admissions strategy',
+    provider: { '@id': organizationId },
+    areaServed: [
+      { '@type': 'Country', name: 'Bosnia and Herzegovina' },
+      { '@type': 'Country', name: 'Croatia' },
+      { '@type': 'Country', name: 'Montenegro' },
+      { '@type': 'Country', name: 'Serbia' },
+      { '@type': 'Place', name: 'Europe' },
+    ],
+    audience: { '@type': 'EducationalAudience', educationalRole: 'student' },
+    serviceType: serviceTypes[locale],
     availableLanguage: ['Bosnian', 'Croatian', 'Serbian', 'Montenegrin', 'English', 'German', 'French'],
+  };
+  const structuredData = {
+    '@context': 'https://schema.org',
+    '@graph': locale === 'sr' ? [website, organization, service] : [organization, service],
   };
 
   return (
@@ -135,7 +179,7 @@ export function HomePage({ locale }: { locale: Locale }) {
         </section>
       </main>
       <SiteFooter locale={locale} />
-      <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
+      <script id="adria-structured-data" type="application/ld+json">{JSON.stringify(structuredData)}</script>
     </div>
   );
 }

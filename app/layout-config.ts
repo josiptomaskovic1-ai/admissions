@@ -21,7 +21,10 @@ export const siteMetadata: Metadata = {
     template: `%s | ${brandName}`,
   },
   description: 'Independent, one-to-one guidance for European university applications.',
-  keywords: ['study abroad consulting', 'university applications', 'scholarships', 'European universities', 'Adria Admissions'],
+  applicationName: brandName,
+  creator: brandName,
+  publisher: brandName,
+  referrer: 'origin-when-cross-origin',
   icons: {
     icon: [{ url: '/adria-logo.png', type: 'image/png' }],
     shortcut: '/adria-logo.png',

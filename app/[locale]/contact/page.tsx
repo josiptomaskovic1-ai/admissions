@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { ContactPage } from '../../components/InfoPage';
-import { isLocale, locales, utility } from '../../i18n';
+import { isLocale, locales } from '../../i18n';
 import { pageMetadata } from '../../seo';
 
 type Props = { params: Promise<{ locale: string }> };
@@ -16,7 +16,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const value = (await params).locale;
   const locale = isLocale(value) ? value : 'bs';
-  return pageMetadata(locale, '/contact', utility[locale].contactTitle, utility[locale].contactLead);
+  return pageMetadata(locale, '/contact');
 }
 
 export default async function Contact({ params }: Props) {
