@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { LegalInfoPage } from '../../components/InfoPage';
-import { isLocale, locales, utility } from '../../i18n';
+import { isLocale, locales } from '../../i18n';
 import { pageMetadata } from '../../seo';
 
 type Props = { params: Promise<{ locale: string }> };
@@ -16,7 +16,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const value = (await params).locale;
   const locale = isLocale(value) ? value : 'bs';
-  return pageMetadata(locale, '/service-information', utility[locale].serviceTitle, utility[locale].serviceLead);
+  return pageMetadata(locale, '/service-information');
 }
 
 export default async function ServiceInformation({ params }: Props) {
