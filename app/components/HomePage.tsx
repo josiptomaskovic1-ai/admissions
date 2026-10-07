@@ -1,7 +1,8 @@
 import type { Locale } from '../content';
 import { homeContent } from '../home-content';
 import { utility } from '../i18n';
-import { brandName, calendarLink, intakeFormLinks, siteUrl } from '../site-config';
+import { brandName, intakeFormLinks, siteUrl } from '../site-config';
+import { IntakeGate } from './IntakeGate';
 import { SiteFooter, SiteHeader } from './SiteChrome';
 
 export function HomePage({ locale }: { locale: Locale }) {
@@ -28,7 +29,7 @@ export function HomePage({ locale }: { locale: Locale }) {
             <h1>{t.hero.title} <em>{t.hero.accent}</em></h1>
             <p className="hero-lede">{t.hero.body}</p>
             <div className="hero-actions">
-              <a className="button button-primary" href="#booking">{t.hero.primary}</a>
+              <a className="button button-primary" href={intakeFormLink} target="_blank" rel="noopener noreferrer">{t.hero.primary}<span className="sr-only"> — {u.external}</span></a>
               <a className="text-link" href="#process">{t.hero.secondary}</a>
             </div>
             <ul className="hero-proof" aria-label={t.hero.proof.join(', ')}>
@@ -101,7 +102,7 @@ export function HomePage({ locale }: { locale: Locale }) {
                 </details>
               ))}
             </div>
-            <a className="button button-primary pricing-cta" href="#booking">{t.offers.cta}</a>
+            <a className="button button-primary pricing-cta" href={intakeFormLink} target="_blank" rel="noopener noreferrer">{t.offers.cta}<span className="sr-only"> — {u.external}</span></a>
 
             <div className="pricing-policy">
               <div className="pricing-intro"><h2>{t.pricing.title}</h2><p>{t.pricing.body}</p><p className="credit-note">{t.pricing.credit}</p></div>
@@ -127,9 +128,8 @@ export function HomePage({ locale }: { locale: Locale }) {
           <aside className="booking-card" id="booking">
             <h2>{t.booking.title}</h2><p>{t.booking.body}</p><p className="team-note">{t.booking.team}</p>
             <dl><div><dt>{t.booking.event}</dt><dd>{t.booking.duration}</dd></div><div><dt>{t.booking.location}</dt><dd>{t.booking.timezone}</dd></div></dl>
-            {calendarLink ? <a className="button button-primary booking-button" href={`/${locale}/book`} target="_blank" rel="noopener noreferrer">{t.booking.button}<span className="sr-only"> — {u.external}</span></a> : <span className="button booking-button disabled" aria-disabled="true">{u.unavailable}</span>}
+            <IntakeGate locale={locale} />
             <p className="booking-note">{t.booking.note}</p>
-            {intakeFormLink && <div className="intake-action"><a className="button intake-button" href={intakeFormLink} target="_blank" rel="noopener noreferrer">{u.intakeButton}<span className="sr-only"> — {u.external}</span></a><p>{u.intakeNote}</p></div>}
             <a className="contact-link" href={`/${locale}/contact`}>{u.contact}</a>
           </aside>
         </section>

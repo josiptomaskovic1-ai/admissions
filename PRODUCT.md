@@ -48,7 +48,7 @@ The website and guidance support Croatian, Bosnian, Serbian/Montenegrin, English
 
 ## Conversion path
 
-The primary public action is the free 15-minute introductory call through Calendly. General enquiries go to adria.admissions@gmail.com. The paid 60-minute consultation is the first diagnostic product and leads into larger packages where appropriate. The website does not currently collect enquiries, newsletter subscriptions or analytics data itself; the planned 2027 Admissions Planner must not launch with email capture until a provider, consent wording and deletion process are selected and tested.
+The primary public action is the localized three-minute intake questionnaire. Every applicant must submit it before receiving the Calendly link for the free 15-minute introductory call. General enquiries go to adria.admissions@gmail.com. The paid 60-minute consultation is the first diagnostic product and leads into larger packages where appropriate. The website does not currently collect enquiries, newsletter subscriptions or analytics data itself; questionnaire responses are collected through Google Forms as disclosed in the privacy copy. The planned 2027 Admissions Planner must not launch with separate email capture until a provider, consent wording and deletion process are selected and tested.
 
 ## Legal and operating constraints
 
