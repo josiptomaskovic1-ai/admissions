@@ -1,4 +1,4 @@
-const origin = process.env.AUDIT_ORIGIN ?? 'http://localhost:3000';
+const origin = process.argv[2] ?? process.env.AUDIT_ORIGIN ?? 'http://localhost:3000';
 const locales = ['hr', 'bs', 'sr', 'en', 'de', 'fr'];
 const pageSuffixes = ['', '/contact', '/privacy', '/service-information'];
 const indexableSuffixes = ['', '/contact', '/service-information'];
@@ -21,6 +21,7 @@ const intakeFormIds = {
   de: '1FAIpQLSc4GDPSgKRr6VLk_8qGNKotBmNzApHf_SVxdwfk-xSQRQOqPQ',
   fr: '1FAIpQLScJmPmnsSzJWInVFGIIATwJ0fvdDtJvuE_1JXPZxhu_U2idmg',
 };
+const expectedHrefLangs = ['sr-Latn', 'hr', 'bs', 'en', 'de', 'fr', 'x-default'];
 const staleTeamCopy = /upoznat ćete članove našeg tima|upoznaćete članove našeg tima|meet members of our team|lernen Sie Mitglieder unseres Teams kennen|rencontrerez des membres de notre équipe/iu;
 const localeContamination = {
   hr: /\b(?:cene|univerziteti|finansiranje|uslovi|umesto|sledeći|obim|savetovanje|inostranstvu|izveštaj)\b/iu,
@@ -87,12 +88,17 @@ for (const locale of locales) {
     assert(text.includes('href="https://www.linkedin.com/company/adria-admissions/"'), `${path} is missing the official LinkedIn link`);
     assert(text.includes('href="https://www.instagram.com/adria.admissions/"'), `${path} is missing the official Instagram link`);
     assert((text.match(/hreflang=/gi) ?? []).length >= 7, `${path} is missing reciprocal language alternatives`);
+    for (const hrefLang of expectedHrefLangs) {
+      assert(text.includes(`hreflang="${hrefLang}"`), `${path} is missing the ${hrefLang} language alternative`);
+    }
     if (suffix === '/privacy') {
       assert(/name="robots" content="[^"]*noindex/i.test(text), `${path} should stay out of search results`);
     } else {
       assert(text.includes('name="robots" content="index, follow"'), `${path} must allow public indexing`);
       assert(!/name="robots" content="[^"]*noindex/i.test(text), `${path} must not contain a noindex directive`);
       indexedTitles.add(title);
+      assert(text.includes('application/ld+json'), `${path} is missing structured data`);
+      if (suffix) assert(text.includes('"@type":"BreadcrumbList"'), `${path} is missing breadcrumb structured data`);
     }
     assert(!localeContamination[locale].test(text), `${path} contains wording from another locale or a known mistranslation`);
 
@@ -115,7 +121,10 @@ for (const locale of locales) {
       assert(text.includes('application/ld+json'), `${path} is missing structured data`);
       assert(text.includes('"@type":"Organization"'), `${path} is missing Organization structured data`);
       assert(text.includes('"@type":"Service"'), `${path} is missing Service structured data`);
-      if (locale === 'sr') assert(text.includes('"@type":"WebSite"'), `${path} is missing domain-level WebSite structured data`);
+      assert(text.includes('"@type":"WebSite"'), `${path} is missing domain-level WebSite structured data`);
+      assert(text.includes('"@type":"WebPage"'), `${path} is missing localized WebPage structured data`);
+      assert(text.includes('"@type":"ContactPoint"'), `${path} is missing organization contact data`);
+      assert(description.includes('Adria Admissions'), `${path} must identify the brand in its search description`);
       assert(!/20\s+min/iu.test(text), `${path} still exposes the superseded 20-minute introductory call`);
       assert(!/(?:€\s*(?:220|800|1700|1900)|(?:220|800|1[.\s,]?700|1[.\s,]?900)\s*€)/u.test(text), `${path} still exposes a superseded core price`);
       assert(!staleTeamCopy.test(text), `${path} still promises that clients meet multiple team members`);
