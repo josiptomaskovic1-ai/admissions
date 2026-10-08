@@ -1,6 +1,7 @@
 import type { Locale } from '../content';
 import { homeContent } from '../home-content';
 import { localeMeta, locales, utility } from '../i18n';
+import { localizedSeo } from '../seo';
 import { brandName, contactEmail, instagramLink, intakeFormLinks, linkedInLink, siteUrl } from '../site-config';
 import { IntakeGate } from './IntakeGate';
 import { SiteFooter, SiteHeader } from './SiteChrome';
@@ -12,6 +13,8 @@ export function HomePage({ locale }: { locale: Locale }) {
   const organizationId = `${siteUrl}/#organization`;
   const websiteId = `${siteUrl}/#website`;
   const serviceId = `${siteUrl}/${locale}#admissions-advisory`;
+  const webPageId = `${siteUrl}/${locale}#webpage`;
+  const seo = localizedSeo(locale);
   const sameAs = [linkedInLink, instagramLink].filter(Boolean);
   const serviceTypes: Record<Locale, string> = {
     hr: 'Savjetovanje za prijave na europska sveučilišta',
@@ -30,6 +33,14 @@ export function HomePage({ locale }: { locale: Locale }) {
     image: `${siteUrl}/og.png`,
     description: t.hero.body,
     ...(contactEmail ? { email: contactEmail } : {}),
+    ...(contactEmail ? {
+      contactPoint: {
+        '@type': 'ContactPoint',
+        contactType: 'customer support',
+        email: contactEmail,
+        availableLanguage: ['Bosnian', 'Croatian', 'Serbian', 'English', 'German', 'French'],
+      },
+    } : {}),
     ...(sameAs.length ? { sameAs } : {}),
   };
   const website = {
@@ -41,6 +52,23 @@ export function HomePage({ locale }: { locale: Locale }) {
     publisher: { '@id': organizationId },
     inLanguage: locales.map((item) => localeMeta[item].hrefLang),
   };
+  const webPage = {
+    '@type': 'WebPage',
+    '@id': webPageId,
+    url: `${siteUrl}/${locale}`,
+    name: `${brandName} | ${seo.title}`,
+    description: seo.description,
+    isPartOf: { '@id': websiteId },
+    about: { '@id': serviceId },
+    publisher: { '@id': organizationId },
+    inLanguage: localeMeta[locale].hrefLang,
+    primaryImageOfPage: {
+      '@type': 'ImageObject',
+      url: `${siteUrl}/og.png`,
+      width: 1200,
+      height: 630,
+    },
+  };
   const service = {
     '@type': 'Service',
     '@id': serviceId,
@@ -48,6 +76,7 @@ export function HomePage({ locale }: { locale: Locale }) {
     url: `${siteUrl}/${locale}`,
     description: t.hero.body,
     provider: { '@id': organizationId },
+    mainEntityOfPage: { '@id': webPageId },
     areaServed: [
       { '@type': 'Country', name: 'Bosnia and Herzegovina' },
       { '@type': 'Country', name: 'Croatia' },
@@ -61,7 +90,7 @@ export function HomePage({ locale }: { locale: Locale }) {
   };
   const structuredData = {
     '@context': 'https://schema.org',
-    '@graph': locale === 'sr' ? [website, organization, service] : [organization, service],
+    '@graph': [website, organization, service, webPage],
   };
 
   return (

@@ -1,6 +1,7 @@
 import type { Locale } from '../content';
 import { translations } from '../content';
 import { utility } from '../i18n';
+import { pageStructuredData } from '../seo';
 import { brandName, contactEmail, instagramLink, linkedInLink } from '../site-config';
 import { IntakeGate } from './IntakeGate';
 import { SiteFooter, SiteHeader } from './SiteChrome';
@@ -8,6 +9,7 @@ import { SiteFooter, SiteHeader } from './SiteChrome';
 export function ContactPage({ locale }: { locale: Locale }) {
   const t = translations[locale];
   const u = utility[locale];
+  const structuredData = pageStructuredData(locale, '/contact');
 
   return (
     <div lang={locale === 'sr' ? 'sr-Latn' : locale}>
@@ -32,6 +34,7 @@ export function ContactPage({ locale }: { locale: Locale }) {
         </div>
       </main>
       <SiteFooter locale={locale} />
+      <script id="adria-page-structured-data" type="application/ld+json">{JSON.stringify(structuredData)}</script>
     </div>
   );
 }
@@ -41,6 +44,7 @@ export function LegalInfoPage({ locale, kind }: { locale: Locale; kind: 'privacy
   const title = kind === 'privacy' ? u.privacyTitle : u.serviceTitle;
   const lead = kind === 'privacy' ? u.privacyLead : u.serviceLead;
   const sections = kind === 'privacy' ? u.privacySections : u.serviceSections;
+  const structuredData = pageStructuredData(locale, kind === 'privacy' ? '/privacy' : '/service-information');
 
   return (
     <div lang={locale === 'sr' ? 'sr-Latn' : locale}>
@@ -50,6 +54,7 @@ export function LegalInfoPage({ locale, kind }: { locale: Locale; kind: 'privacy
         <div className="legal-grid">{sections.map(([heading, body]) => <section key={heading}><h2>{heading}</h2><p>{body}</p></section>)}</div>
       </main>
       <SiteFooter locale={locale} />
+      <script id="adria-page-structured-data" type="application/ld+json">{JSON.stringify(structuredData)}</script>
     </div>
   );
 }

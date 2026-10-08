@@ -11,7 +11,7 @@ const seoCopy: Record<Locale, Record<SeoSuffix, SeoEntry>> = {
   hr: {
     '': {
       title: 'Studij u inozemstvu i prijave na fakultete',
-      description: 'Neovisno savjetovanje za studij u inozemstvu, odabir programa, prijave na europska sveučilišta i stipendije. Podrška na hrvatskom jeziku.',
+      description: 'Adria Admissions pruža neovisno savjetovanje za studij u inozemstvu, odabir programa, prijave na europska sveučilišta i stipendije.',
     },
     '/contact': {
       title: 'Besplatni razgovor za studij u inozemstvu',
@@ -29,7 +29,7 @@ const seoCopy: Record<Locale, Record<SeoSuffix, SeoEntry>> = {
   bs: {
     '': {
       title: 'Studij u inostranstvu i prijave na fakultete',
-      description: 'Nezavisno savjetovanje za studij u inostranstvu, izbor programa, prijave na evropske univerzitete i stipendije. Podrška na bosanskom jeziku.',
+      description: 'Adria Admissions pruža nezavisno savjetovanje za studij u inostranstvu, izbor programa, prijave na evropske univerzitete i stipendije.',
     },
     '/contact': {
       title: 'Besplatan razgovor za studij u inostranstvu',
@@ -47,7 +47,7 @@ const seoCopy: Record<Locale, Record<SeoSuffix, SeoEntry>> = {
   sr: {
     '': {
       title: 'Studije u inostranstvu i prijave na fakultete',
-      description: 'Nezavisno savetovanje za studije u inostranstvu, izbor programa, prijave na evropske fakultete i stipendije. Podrška na srpskom jeziku.',
+      description: 'Adria Admissions pruža nezavisno savetovanje za studije u inostranstvu, izbor programa, prijave na evropske fakultete i stipendije.',
     },
     '/contact': {
       title: 'Besplatan razgovor za studije u inostranstvu',
@@ -65,7 +65,7 @@ const seoCopy: Record<Locale, Record<SeoSuffix, SeoEntry>> = {
   en: {
     '': {
       title: 'Study Abroad in Europe & University Applications',
-      description: 'Independent study abroad guidance for European bachelor’s, master’s and scholarship applications, from programme selection to final review.',
+      description: 'Adria Admissions provides independent guidance for European bachelor’s, master’s and scholarship applications, from programme selection to final review.',
     },
     '/contact': {
       title: 'Free Study Abroad Consultation',
@@ -83,7 +83,7 @@ const seoCopy: Record<Locale, Record<SeoSuffix, SeoEntry>> = {
   de: {
     '': {
       title: 'Studium im Ausland & Hochschulbewerbungen',
-      description: 'Unabhängige Beratung für ein Studium im Ausland, die Studienwahl sowie Bachelor-, Master- und Stipendienbewerbungen in Europa.',
+      description: 'Adria Admissions bietet unabhängige Beratung für ein Studium im Ausland sowie Bachelor-, Master- und Stipendienbewerbungen in Europa.',
     },
     '/contact': {
       title: 'Kostenloses Erstgespräch zum Auslandsstudium',
@@ -101,7 +101,7 @@ const seoCopy: Record<Locale, Record<SeoSuffix, SeoEntry>> = {
   fr: {
     '': {
       title: 'Étudier à l’étranger & candidatures universitaires',
-      description: 'Accompagnement indépendant pour étudier à l’étranger, choisir un programme et préparer des candidatures et bourses en Europe.',
+      description: 'Adria Admissions propose un accompagnement indépendant pour étudier à l’étranger et préparer des candidatures et bourses en Europe.',
     },
     '/contact': {
       title: 'Entretien gratuit pour étudier à l’étranger',
@@ -127,13 +127,46 @@ export function localizedSeo(locale: Locale, suffix: SeoSuffix = ''): SeoEntry {
   return seoCopy[locale][suffix];
 }
 
+export function pageStructuredData(locale: Locale, suffix: Exclude<SeoSuffix, ''>) {
+  const seo = localizedSeo(locale, suffix);
+  const url = `${siteUrl}/${locale}${suffix}`;
+  const pageId = `${url}#webpage`;
+  const breadcrumbId = `${url}#breadcrumb`;
+  const pageType = suffix === '/contact' ? 'ContactPage' : 'WebPage';
+
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': pageType,
+        '@id': pageId,
+        url,
+        name: `${brandName} | ${seo.title}`,
+        description: seo.description,
+        isPartOf: { '@id': `${siteUrl}/#website` },
+        about: { '@id': suffix === '/service-information' ? `${siteUrl}/${locale}#admissions-advisory` : `${siteUrl}/#organization` },
+        breadcrumb: { '@id': breadcrumbId },
+        inLanguage: localeMeta[locale].hrefLang,
+      },
+      {
+        '@type': 'BreadcrumbList',
+        '@id': breadcrumbId,
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: brandName, item: `${siteUrl}/${locale}` },
+          { '@type': 'ListItem', position: 2, name: seo.title, item: url },
+        ],
+      },
+    ],
+  };
+}
+
 export function pageMetadata(locale: Locale, suffix: SeoSuffix = '', index = true): Metadata {
   const seo = localizedSeo(locale, suffix);
   const canonical = `${siteUrl}/${locale}${suffix}`;
   const title = `${brandName} | ${seo.title}`;
   const alternateLocale = locales
     .filter((item) => item !== locale)
-    .map((item) => localeMeta[item].hrefLang.replace('-', '_'));
+    .map((item) => localeMeta[item].openGraph);
 
   return {
     title: { absolute: title },
@@ -150,7 +183,7 @@ export function pageMetadata(locale: Locale, suffix: SeoSuffix = '', index = tru
       type: 'website',
       url: canonical,
       siteName: brandName,
-      locale: localeMeta[locale].hrefLang.replace('-', '_'),
+      locale: localeMeta[locale].openGraph,
       alternateLocale,
       title,
       description: seo.description,

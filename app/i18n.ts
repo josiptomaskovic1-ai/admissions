@@ -2,13 +2,13 @@ import type { Locale } from './content';
 
 export const locales: Locale[] = ['sr', 'hr', 'bs', 'en', 'de', 'fr'];
 
-export const localeMeta: Record<Locale, { html: string; hrefLang: string; short: string; native: string }> = {
-  hr: { html: 'hr', hrefLang: 'hr-HR', short: 'HR', native: 'Hrvatski' },
-  bs: { html: 'bs', hrefLang: 'bs-BA', short: 'BS', native: 'Bosanski / bošnjački' },
-  sr: { html: 'sr-Latn', hrefLang: 'sr-Latn', short: 'SR/ME', native: 'Srpski / crnogorski' },
-  en: { html: 'en', hrefLang: 'en', short: 'EN', native: 'English' },
-  de: { html: 'de', hrefLang: 'de-DE', short: 'DE', native: 'Deutsch' },
-  fr: { html: 'fr', hrefLang: 'fr-FR', short: 'FR', native: 'Français' },
+export const localeMeta: Record<Locale, { html: string; hrefLang: string; openGraph: string; short: string; native: string }> = {
+  hr: { html: 'hr', hrefLang: 'hr', openGraph: 'hr_HR', short: 'HR', native: 'Hrvatski' },
+  bs: { html: 'bs', hrefLang: 'bs', openGraph: 'bs_BA', short: 'BS', native: 'Bosanski / bošnjački' },
+  sr: { html: 'sr-Latn', hrefLang: 'sr-Latn', openGraph: 'sr_RS', short: 'SR/ME', native: 'Srpski / crnogorski' },
+  en: { html: 'en', hrefLang: 'en', openGraph: 'en_GB', short: 'EN', native: 'English' },
+  de: { html: 'de', hrefLang: 'de', openGraph: 'de_DE', short: 'DE', native: 'Deutsch' },
+  fr: { html: 'fr', hrefLang: 'fr', openGraph: 'fr_FR', short: 'FR', native: 'Français' },
 };
 
 export function isLocale(value: string): value is Locale {
