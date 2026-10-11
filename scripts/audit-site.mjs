@@ -48,11 +48,20 @@ async function read(path, options = {}) {
 }
 
 const root = await read('/', { redirect: 'manual' });
-assert(root.response.status === 308, `Root must permanently redirect to the default locale; received ${root.response.status}`);
-assert(root.response.headers.get('location') === '/sr', `Root must redirect to /sr; received ${root.response.headers.get('location')}`);
+assert(root.response.status === 307, `Root must use a temporary locale redirect; received ${root.response.status}`);
+assert(/^\/(?:hr|bs|sr|en|de|fr)$/.test(root.response.headers.get('location') ?? ''), `Root must redirect to a supported locale; received ${root.response.headers.get('location')}`);
 const rootCacheControl = root.response.headers.get('cache-control') ?? '';
-assert(rootCacheControl.includes('max-age=0'), 'Root redirect must not keep stale HTML in the browser cache');
-assert(rootCacheControl.includes('s-maxage=300'), 'Root redirect must use a short edge-cache lifetime');
+assert(rootCacheControl.includes('no-store'), 'Root locale redirect must never be cached across visitors');
+const rootVary = root.response.headers.get('vary') ?? '';
+assert(rootVary.toLowerCase().includes('accept-language'), 'Root locale redirect must vary by browser language');
+assert(rootVary.toLowerCase().includes('cf-ipcountry'), 'Root locale redirect must vary by country signal');
+
+const rootWithQuery = await read('/?utm_source=locale-audit', { redirect: 'manual' });
+assert(rootWithQuery.response.status === 307, 'Root locale redirect with a query must remain temporary');
+assert(
+  /^\/(?:hr|bs|sr|en|de|fr)\?utm_source=locale-audit$/.test(rootWithQuery.response.headers.get('location') ?? ''),
+  `Root locale redirect must preserve query parameters; received ${rootWithQuery.response.headers.get('location')}`,
+);
 
 const googleVerification = await read('/googlef25aacf1056b9f68.html');
 assert(googleVerification.response.status === 200, 'Google Search Console verification file must return 200');

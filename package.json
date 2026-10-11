@@ -11,8 +11,9 @@
     "start": "vinext start",
     "lint": "eslint . --ignore-pattern dist --ignore-pattern .next",
     "typecheck": "tsc --noEmit",
+    "test:locale-routing": "node --experimental-strip-types scripts/test-locale-routing.ts",
     "audit:site": "node scripts/audit-site.mjs",
-    "check": "npm run lint && npm run typecheck && npm run build"
+    "check": "npm run lint && npm run typecheck && npm run test:locale-routing && npm run build"
   },
   "dependencies": {
     "next": "^16.3.8",
