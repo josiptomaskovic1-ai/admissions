@@ -22,7 +22,8 @@ export function ContactPage({ locale }: { locale: Locale }) {
             <IntakeGate locale={locale} />
           </section>
           <section className="contact-card contact-direct-card">
-            <h2>{contactEmail ? <a className="contact-email-link" href={`mailto:${contactEmail}`}>{contactEmail}</a> : brandName}</h2>
+            <h2>{u.contactDirect}</h2>
+            {contactEmail ? <a className="contact-email-link" href={`mailto:${contactEmail}`}>{contactEmail}</a> : <p>{brandName}</p>}
             {contactEmail ? null : <p>{u.contactPending}</p>}
             <div className="social-links">
               {linkedInLink && <a className="social-link" href={linkedInLink} target="_blank" rel="noopener noreferrer">LinkedIn<span className="sr-only"> — {u.external}</span></a>}

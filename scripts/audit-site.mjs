@@ -85,11 +85,18 @@ for (const locale of locales) {
     assert(inlineStyles.length > 20_000, `${path} is missing the complete inline stylesheet`);
     assert(inlineStyles.includes('--cobalt:#2f57ff') || inlineStyles.includes('--cobalt: #2f57ff'), `${path} has an incomplete inline stylesheet`);
     assert(text.includes(`rel="canonical" href="https://adriaadmissions.com${path}"`), `${path} has an incorrect canonical URL`);
+    const headEnd = text.toLowerCase().indexOf('</head>');
+    const headMarkup = headEnd >= 0 ? text.slice(0, headEnd) : '';
+    assert(headEnd >= 0, `${path} is missing a closing head element`);
+    assert(headMarkup.includes('<title>'), `${path} streams its title outside the document head`);
+    assert(/<meta name="description"/i.test(headMarkup), `${path} streams its description outside the document head`);
+    assert(headMarkup.includes(`rel="canonical" href="https://adriaadmissions.com${path}"`), `${path} streams its canonical URL outside the document head`);
+    assert((headMarkup.match(/hrefLang=/g) ?? []).length >= 7, `${path} streams its language alternatives outside the document head`);
     assert(text.includes('href="https://www.linkedin.com/company/adria-admissions/"'), `${path} is missing the official LinkedIn link`);
     assert(text.includes('href="https://www.instagram.com/adria.admissions/"'), `${path} is missing the official Instagram link`);
     assert((text.match(/hreflang=/gi) ?? []).length >= 7, `${path} is missing reciprocal language alternatives`);
     for (const hrefLang of expectedHrefLangs) {
-      assert(text.includes(`hreflang="${hrefLang}"`), `${path} is missing the ${hrefLang} language alternative`);
+      assert(new RegExp(`hreflang="${hrefLang.replace('-', '\\-')}"`, 'i').test(text), `${path} is missing the ${hrefLang} language alternative`);
     }
     if (suffix === '/privacy') {
       assert(/name="robots" content="[^"]*noindex/i.test(text), `${path} should stay out of search results`);
@@ -133,7 +140,9 @@ for (const locale of locales) {
       assert(!/<details[^>]*class="[^"]*offer-row[^"]*"[^>]*\sopen(?:=|\s|>)/iu.test(text), `${path} must keep service details collapsed by default`);
       const methodMarkup = text.match(/class="method-line"[^>]*>([\s\S]*?)<\/ol>/)?.[1] ?? '';
       assert((methodMarkup.match(/<li/g) ?? []).length === 3, `${path} must expose exactly three process steps`);
-      assert((text.match(/class="faq-list"[\s\S]*?<\/div>/)?.[0].match(/<details/g) ?? []).length === 8, `${path} must expose exactly eight focused FAQs`);
+      assert((text.match(/class="faq-list"[\s\S]*?<\/div>/)?.[0].match(/<details/g) ?? []).length === 6, `${path} must expose exactly six focused FAQs`);
+      assert((text.match(/role="columnheader"/g) ?? []).length === 3, `${path} must label all three columns in the sample comparison`);
+      assert(!/Obvezno prije rezervacije|Obavezno prije rezervacije|Obavezno pre rezervacije|Required before booking|Vor der Buchung erforderlich|Obligatoire avant la réservation/iu.test(text), `${path} still uses coercive intake wording`);
       assert(!/\[(?:unesite|insert|placeholder|statistic|testimonial)/iu.test(text), `${path} contains public placeholder content`);
       for (const expected of homepageExpectations[locale]) {
         assert(text.includes(expected), `${path} is missing the expected pricing/duration copy: ${expected}`);
@@ -170,7 +179,7 @@ const sitemap = await read('/sitemap.xml');
 assert(sitemap.response.status === 200, '/sitemap.xml must return 200');
 assert((sitemap.text.match(/<url>/gi) ?? []).length === locales.length * indexableSuffixes.length, 'sitemap.xml must list every localized indexable page');
 assert((sitemap.text.match(/hreflang=/gi) ?? []).length >= locales.length * indexableSuffixes.length * 7, 'sitemap.xml must include every reciprocal language alternate');
-assert((sitemap.text.match(/<lastmod>/gi) ?? []).length === locales.length * indexableSuffixes.length, 'sitemap.xml must include an accurate last-modified date for every URL');
+assert(!/<lastmod>/i.test(sitemap.text), 'sitemap.xml must not publish a hard-coded last-modified date');
 assert(indexedTitles.size === locales.length * indexableSuffixes.length, 'Every indexable localized page must have a unique title');
 
 if (failures.length) {
