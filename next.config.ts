@@ -37,6 +37,9 @@ const staticPageCacheHeaders = [
 ];
 
 const nextConfig: NextConfig = {
+  // Keep titles, descriptions, canonical URLs and hreflang links inside
+  // <head> for every user agent. This avoids body-streamed SEO metadata.
+  htmlLimitedBots: /.*/,
   poweredByHeader: false,
   reactStrictMode: true,
   async headers() {

@@ -24,8 +24,8 @@ rounded:
   lg: "1rem"
   pill: "999px"
 spacing:
-  section-mobile: "3rem"
-  section-desktop: "4.5rem"
+  section-mobile: "2.25rem"
+  section-desktop: "3.5rem"
   page-gutter: "1.5rem"
   content-max: "78rem"
 components:
@@ -33,7 +33,7 @@ components:
     backgroundColor: "{colors.primary}"
     textColor: "{colors.white}"
     rounded: "{rounded.md}"
-    height: "2.875rem"
+    height: "3.2rem"
   route-panel:
     backgroundColor: "{colors.ink}"
     textColor: "{colors.teal}"
@@ -71,7 +71,7 @@ The site should feel like a precise admissions decision desk: a calm, compact do
 
 - **Audience and primary job:** Balkan and diaspora students, parents, and early-career applicants who need to understand Adria Admissions' fit, scope, pricing, and next step quickly.
 - **Target markets:** Bosnia and Herzegovina, Serbia, Montenegro, Croatia, the wider Balkan diaspora, and English-, German-, and French-speaking European visitors.
-- **Locales:** Croatian, Bosnian/Bošnjački, Serbian/Montenegrin Latin, English, German, and French. Each language has a stable URL; Serbian/Montenegrin is the root fallback. No browser storage is used for language selection.
+- **Locales:** Croatian, Bosnian, Serbian/Montenegrin Latin, English, German, and French. Each language has a stable URL; Serbian/Montenegrin is the root fallback. No browser storage is used for language selection.
 - **Usage scene:** Mostly mobile and small-laptop comparison shopping under deadline pressure. Users should see the proposition, starting price, ethics, and booking route without prolonged scrolling.
 - **Register:** Brand-led marketing with product-level clarity and accessibility.
 - **Memorable signature:** The enlarged stylized Adria “A” mark paired with the five-factor decision card and dossier-style sample report.
@@ -102,7 +102,7 @@ Syne carries the brand in concise display headings only. Manrope carries all bod
 
 ## Layout
 
-The content frame is capped at 78rem with fluid side gutters. Desktop sections use approximately 4.5rem vertical padding and mobile sections approximately 3rem. The header is approximately 5.25rem high to give the brand mark sufficient presence. The hero is content-sized rather than viewport-sized and begins demonstrating the decision model in the first screen. Independence, fit, experience, methodology, deliverable sample, services, pricing, trust, FAQ and booking must each earn their vertical space. Service rows keep six core services, local-language names and prices visible while detailed scope expands on demand. The five decision criteria appear once in the hero card; independence is stated separately in one concise line rather than repeated as another grid. Methodology uses three outcome-led steps so the process can be understood at a glance. No decorative block may create a standalone mobile viewport.
+The content frame is capped at 78rem with fluid side gutters. Desktop sections use approximately 3.5rem vertical padding and mobile sections approximately 2.25rem. The header is approximately 5.25rem high to give the brand mark sufficient presence. The hero is content-sized rather than viewport-sized and demonstrates the decision model in the first screen. Experience, methodology, deliverable sample, services, pricing, FAQ and booking must each earn their vertical space; audience and trust messages are folded into these sections instead of repeated in standalone blocks. Service rows keep six core services, local-language names and prices visible while detailed scope expands on demand. The five decision criteria appear once in the hero card; independence is stated separately in one compact two-column band. Methodology uses three outcome-led steps so the process can be understood at a glance. No decorative block may create a standalone mobile viewport.
 
 ## Elevation & Depth
 
@@ -128,7 +128,7 @@ Desktop navigation exposes only services, process, pricing, FAQ, contact, langua
 
 ### Contact actions and overlays
 
-The contact page exposes a direct email link and a separate Calendly booking action. It has no web form, so visitors are never led to expect that the site itself sends a message. Calendly remains an external link and is never embedded without a separate consent/privacy review. Native details/summary provides FAQ disclosure without client JavaScript.
+The contact page labels the direct email as a general-contact route and keeps booking behind the localized three-minute questionnaire. It has no web form, so visitors are never led to expect that the site itself sends a message. Calendly is provided only after questionnaire submission and is never embedded without a separate consent/privacy review. Native details/summary provides FAQ disclosure without client JavaScript.
 
 ### Iconography
 
@@ -156,4 +156,4 @@ On phones, the dossier preview reflows into one card per programme with the prog
 
 ### Intake-first booking flow
 
-Every public booking action opens the matching three-minute intake questionnaire. The questionnaire is required before the free 15-minute call; its confirmation screen provides the event-specific scheduling link. The site does not expose a direct Calendly link. This sequence is shown as three compact steps — questionnaire, time selection, call — and must remain readable without horizontal overflow from very narrow mobile screens through large monitors.
+Every public booking action opens the matching three-minute intake questionnaire. The interface calls it the applicant’s first step, not an obligation, while preserving the rule that it precedes the free 15-minute call. Its confirmation screen provides the event-specific scheduling link. The site does not expose a direct Calendly link. This sequence is shown as three compact steps — questionnaire, time selection, call — and must remain readable without horizontal overflow from very narrow mobile screens through large monitors.

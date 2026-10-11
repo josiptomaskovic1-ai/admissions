@@ -6,6 +6,15 @@ import { brandName, contactEmail, instagramLink, intakeFormLinks, linkedInLink, 
 import { IntakeGate } from './IntakeGate';
 import { SiteFooter, SiteHeader } from './SiteChrome';
 
+const sampleColumnLabels: Record<Locale, [string, string, string]> = {
+  hr: ['Program', 'Usklađenost', 'Rizik'],
+  bs: ['Program', 'Usklađenost', 'Rizik'],
+  sr: ['Program', 'Usklađenost', 'Rizik'],
+  en: ['Programme', 'Fit', 'Risk'],
+  de: ['Studiengang', 'Passung', 'Risiko'],
+  fr: ['Programme', 'Adéquation', 'Risque'],
+};
+
 export function HomePage({ locale }: { locale: Locale }) {
   const t = homeContent[locale];
   const u = utility[locale];
@@ -119,15 +128,10 @@ export function HomePage({ locale }: { locale: Locale }) {
 
         <section className="independent-section">
           <div className="section-shell">
-            <div className="section-heading split-heading"><h2>{t.independent.title}</h2><p>{t.independent.body}</p></div>
-            {t.independent.statement && <p className="independence-statement">{t.independent.statement}</p>}
-          </div>
-        </section>
-
-        <section className="audience-section section-shell">
-          <div className="section-heading compact-heading"><h2>{t.audiences.title}</h2><p>{t.audiences.body}</p></div>
-          <div className="audience-grid">
-            {t.audiences.groups.map((group) => <article key={group.title}><h3>{group.title}</h3><p>{group.lead}</p><ul>{group.points.map((point) => <li key={point}>{point}</li>)}</ul></article>)}
+            <div className="independence-compact">
+              <h2>{t.independent.title}</h2>
+              <div><p>{t.independent.body}</p>{t.independent.statement && <p className="independence-statement">{t.independent.statement}</p>}</div>
+            </div>
           </div>
         </section>
 
@@ -148,6 +152,9 @@ export function HomePage({ locale }: { locale: Locale }) {
           <article className="sample-document">
             <header><div><span>{t.sample.badge}</span><h3>{t.sample.documentTitle}</h3></div><p>{t.sample.documentMeta}</p></header>
             <div className="sample-table" role="table" aria-label={t.sample.documentTitle}>
+              <div className="sr-only sample-table-head" role="row">
+                {sampleColumnLabels[locale].map((label) => <span role="columnheader" key={label}>{label}</span>)}
+              </div>
               {t.sample.rows.map(([programme, fit, risk]) => <div role="row" key={programme}><strong role="cell">{programme}</strong><span role="cell">{fit}</span><span role="cell">{risk}</span></div>)}
             </div>
             <ul className="sample-checks">{t.sample.timeline.map((item) => <li key={item}>{item}</li>)}</ul>
@@ -182,14 +189,6 @@ export function HomePage({ locale }: { locale: Locale }) {
               <div className="addon-table"><h3>{t.pricing.addonsTitle}</h3><dl>{t.pricing.addons.map(([name, scope, price]) => <div key={name}><dt><strong>{name}</strong><small>{scope}</small></dt><dd>{price}</dd></div>)}</dl></div>
               <div className="instalment-note"><h3>{t.pricing.instalmentsTitle}</h3><ul>{t.pricing.instalments.map((item) => <li key={item}>{item}</li>)}</ul></div>
             </div>
-          </div>
-        </section>
-
-        <section className="trust-section">
-          <div className="section-shell trust-layout">
-            <div><h2>{t.trust.title}</h2><p>{t.trust.body}</p></div>
-            <dl>{t.trust.items.map(([title, body]) => <div key={title}><dt>{title}</dt><dd>{body}</dd></div>)}</dl>
-            <p className="trust-note">{t.trust.note}</p>
           </div>
         </section>
 
